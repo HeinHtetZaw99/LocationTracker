@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.appbase.components.EmptyLoadingViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootEmptyView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/loadingRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingView"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/customErrorFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false" />
+
+    <LinearLayout
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/emptyIv"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:clickable="false" />
+
+        <TextView
+            android:id="@+id/emptyTv"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="center"
+
+            android:lineSpacingMultiplier="1.3"
+            android:text="@string/title_msg_emptyView"
+            android:textColor="@color/error" />
+
+        <TextView
+            android:id="@+id/pullToRefreshTv"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.3" />
+
+        <TextView
+            android:id="@+id/pullToRefreshBtn"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+
+            android:focusable="true"
+
+            android:gravity="center"
+            android:minWidth="120dp"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+</com.appbase.components.EmptyLoadingViewPod>

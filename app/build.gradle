@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.locationtracker"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':appbase')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation AndroidXCardView.card_view
+    implementation AndroidXRecyclerView.recycler_view
+    implementation Material.material
+    implementation AndroidXConstraintLayout.constraint_layout
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation AndroidArchLifeCycle.lifecycle
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt AndroidArchLifeCycle.lifecycle_compiler
+    implementation Glide.core
+    implementation Glide.transformations
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    kapt Glide.compiler
+    //facebook
+    implementation Facebook.facebook_login
+    //dagger
+    implementation Dagger.core
+    implementation Dagger.android_support
+    kapt Dagger.compiler
+    kapt Dagger.android_processor
+    implementation Material.material
+    //unnecessary
+    implementation Retrofit.gson
+    implementation Retrofit.gsonConverter
+    implementation CommonLibs.circle_image_view
+    implementation Retrofit.retrofit
+    implementation Retrofit.gson
+    implementation Retrofit.gsonConverter
+    implementation Retrofit.rxJavaAdapter
+    implementation Retrofit.loggingInterceptor
+    implementation Retrofit.okhttp
+    implementation CommonLibs.xmlToJson
+    debugImplementation CommonLibs.leakCanary
+    implementation Lottie.lottie
+    debugCompile Chunk.debug
+    releaseCompile Chunk.release
+    implementation CommonLibs.timber
+    implementation Coroutines.coroutines
+    implementation Coroutines.coroutinesAdapter
+    implementation Coroutines.coroutinesAndroid
+    debugImplementation AndroidDebugDatabase.core
+    implementation Firebase.analytics
+    implementation Firebase.crashlytics
+    testImplementation Mockito.android
+    testImplementation Mockito.kotlin
+    testImplementation Mockito.core
+    testImplementation Mockito.inline
+    implementation CommonLibs.dotPageIndicator
+    implementation CommonLibs.imageEditor
+    implementation WorkManager.ktx
+    implementation WorkManager.rxSupport
+    implementation WorkManager.gcmNetworkManager
+    testImplementation WorkManager.testing
+    implementation CommonLibs.flex_box
+    implementation CommonLibs.expandable_rv
+    implementation Room.ktxCoroutineSupport
+    implementation Room.roomRuntime
+    kapt Room.compiler
+    implementation Retrofit.xmlConverter
+}

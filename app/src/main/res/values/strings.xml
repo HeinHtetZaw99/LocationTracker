@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LocationTracker</string>
+    <string name="error_in_getting_locatin_data">တည်နေရာဒေတာမရယူနိုင်ပါ</string>
+</resources>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">AppBase</string>
+    <string name="error_msg_no_network" >No Internet Connection</string>
+    <string name="btn_msg_ok" >Ok</string>
+    <string name="error_generic" />
+    <string name="error_server_404" />
+    <string name="error_server_500" />
+    <string name="error_no_internet" />
+    <string name="error_socket_timeout" />
+    <string name="title_msg_emptyView" />
+    <string name="SP_USER_PHONE_NUMBER" />
+    <string name="SP_USER_ADDRESS" />
+    <string name="SP_USER_OCCUPATION" />
+    <string name="SP_USER_EXPIRE_DATE" />
+    <string name="SP_USER_EXPIRE_AT" />
+    <string name="SP_FB_FCM_TOKEN" />
+    <string name="SP_IS_FIRST_TIME" />
+    <string name="SP_IS_IN_TRIAL" />
+    <string name="SP_IS_IN_PREMIUM" />
+    <string name="SP_IS_IN_PENDING" />
+    <string name="SP_IS_ACTIVE" />
+    <string name="SP_HAS_USED_TRIAL" />
+    <string name="SP_USER_GENDER" />
+    <string name="SP_FREE_TRIAL_PERIOD" />
+    <string name="SP_PREMIUM_PERIOD" />
+    <string name="SP_LANGUAGE" />
+    <string name="SP_TOKEN" />
+    <string name="SP_MES_ID" />
+    <string name="SP_USER_NAME" />
+</resources>

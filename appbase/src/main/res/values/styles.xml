@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Base Font Styles Start Here-->
+    <style name="BoldL">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_L_size</item>
+    </style>
+
+    <style name="BoldXL" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_XL_size</item>
+    </style>
+
+    <style name="BoldXXL">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_XXL_size</item>
+    </style>
+
+    <style name="BoldXS">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_XS_size</item>
+    </style>
+
+    <style name="BoldN">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_N_size</item>
+    </style>
+
+    <style name="BoldS">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_S_size</item>
+    </style>
+
+    <style name="RegularXL">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XL_size</item>
+    </style>
+
+
+    <style name="RegularL">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_L_size</item>
+    </style>
+
+    <style name="RegularN">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_N_size</item>
+    </style>
+
+    <style name="RegularS">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_S_size</item>
+    </style>
+
+    <style name="RegularXS">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XS_size</item>
+    </style>
+
+    <style name="RegularXXS">
+        <item name="android:fontFamily">@font/font_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XXS_size</item>
+    </style>
+
+    <style name="MediumL">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_L_size</item>
+    </style>
+
+    <style name="Medium5XL">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_5XL_size</item>
+    </style>
+
+    <style name="MediumN">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_N_size</item>
+    </style>
+
+    <style name="MediumXL">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XL_size</item>
+    </style>
+
+    <style name="MediumS">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_S_size</item>
+    </style>
+
+    <style name="MediumXS">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XS_size</item>
+    </style>
+
+    <style name="LightS">
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_S_size</item>
+    </style>
+
+    <style name="LightN">
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_N_size</item>
+    </style>
+
+    <style name="LightL">
+        <item name="android:fontFamily">@font/font_light</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_L_size</item>
+    </style>
+
+
+    <style name="SemiBoldXL">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XL_size</item>
+    </style>
+
+    <style name="SemiBoldXXL">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XXL_size</item>
+    </style>
+
+
+    <style name="SemiBoldL">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_L_size</item>
+    </style>
+
+    <style name="SemiBoldN">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_N_size</item>
+    </style>
+
+    <style name="SemiBoldS">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_S_size</item>
+    </style>
+
+    <style name="SemiBoldXS">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XS_size</item>
+    </style>
+
+    <style name="SemiBoldXXS">
+        <item name="android:fontFamily">@font/font_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/SP_XXS_size</item>
+    </style>
+
+    <!--    Base Font Styles End Here-->
+
+   
+    <dimen name="standard_button_size">48dp</dimen>
+</resources>

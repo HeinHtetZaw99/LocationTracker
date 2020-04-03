@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_2xLarge">22sp</dimen>
+    <dimen name="text_size_xLarge">18sp</dimen>
+    <dimen name="text_size_large">16sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_xSmall">10sp</dimen>
+
+    <dimen name="margin_3xSmall">2dp</dimen>
+    <dimen name="margin_2xSmall">4dp</dimen>
+    <dimen name="margin_xSmall">8dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_default">14dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xlarge">20dp</dimen>
+    <dimen name="margin_2xlarge">24dp</dimen>
+    <dimen name="margin_3xlarge">36dp</dimen>
+    <dimen name="card_dimen_category_height">38dp</dimen>
+    <dimen name="margin_4xlarge">44dp</dimen>
+    <dimen name="margin_5xlarge">52dp</dimen>
+    <dimen name="card_elevation_normal">4dp</dimen>
+    <dimen name="card_default_corner_radius">8dp</dimen>
+
+    <dimen name="SP_N_size">14sp</dimen>
+    <dimen name="SP_L_size">16sp</dimen>
+    <dimen name="SP_XL_size">18sp</dimen>
+    <dimen name="SP_XXL_size">20sp</dimen>
+    <dimen name="SP_5XL_size">32sp</dimen>
+    <dimen name="SP_S_size">12sp</dimen>
+    <dimen name="SP_XS_size">10sp</dimen>
+    <dimen name="SP_XXS_size">8sp</dimen>
+
+    <dimen name="DP_N_size">14dp</dimen>
+    <dimen name="DP_L_size">16dp</dimen>
+    <dimen name="DP_XL_size">18dp</dimen>
+    <dimen name="DP_XXL_size">22dp</dimen>
+    <dimen name="DP_S_size">12dp</dimen>
+    <dimen name="DP_XS_size">10dp</dimen>
+    <dimen name="actionBarSize">50dp</dimen>
+
+</resources>
