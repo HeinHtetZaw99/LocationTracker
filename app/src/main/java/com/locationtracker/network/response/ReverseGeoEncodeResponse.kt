@@ -4,16 +4,16 @@ import retrofit2.http.Field
 
 data class ReverseGeoEncodeResponse(
 	@Field("osm_type")
-	val osmType: String? = null,
+	var osmType: String? = null,
 	@Field("osm_id")
-	val osmId: Long = 0,
-	val licence: String? = null,
-	val boundingbox: List<String?>? = null,
-	val address: Address? = null,
-	val lon: String? = null,
+	var osmId: Long = 0,
+	var licence: String? = null,
+	var boundingbox: List<String?>? = null,
+	var address: Address? = null,
+	var lon: String? = null,
 	@Field("display_name")
-	val displayName: String? = null,
+	var displayName: String? = null,
 	@Field("place_id")
-	val placeId: Long = 0,
-	val lat: String? = null
+	var placeId: Long = 0,
+	var lat: String? = null
 )

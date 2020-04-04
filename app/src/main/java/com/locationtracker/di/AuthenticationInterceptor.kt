@@ -13,7 +13,6 @@ class AuthenticationInterceptor() : Interceptor {
 
     private var customName : String? = null
 
-
     fun setCustom(customName : String? , customTag : String? , customToken : String?) {
         this.customToken = customToken
         this.customTag = customTag

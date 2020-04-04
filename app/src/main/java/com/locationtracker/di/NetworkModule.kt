@@ -6,10 +6,7 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.locationtracker.BuildConfig
-import com.locationtracker.LocationDataSource
-import com.locationtracker.LocationDataSourceImpl
 import com.readystatesoftware.chuck.ChuckInterceptor
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

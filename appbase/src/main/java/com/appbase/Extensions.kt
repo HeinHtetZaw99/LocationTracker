@@ -1,14 +1,12 @@
 package com.appbase
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
-import android.text.TextUtils
+import android.os.Environment
 import android.util.Log
-import android.util.Patterns
 import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -41,6 +39,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.textfield.TextInputLayout
 import timber.log.Timber
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileWriter
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -82,12 +84,13 @@ fun showLogE(throwable: Throwable) {
 //        Timber.e(throwable)
 }
 
-fun showLogE(text : String , throwable: Throwable) {
+fun showLogE(text: String, throwable: Throwable) {
     if (BuildConfig.DEBUG)
 //        Timber.e(throwable)
-        Log.e("APP_TAG" ,
+        Log.e(
+            "APP_TAG",
             "-------------------------------------\n" +
-                    "$text"+
+                    "$text" +
                     "@ ${throwable.stackTrace} \n" + throwable.javaClass.name + "\t\t\t:\t\t\t" + throwable.message.toString()
                     + "\n-------------------------------------"
                     + "\n------------ Stack Trace ------------" +
@@ -385,24 +388,60 @@ fun getTime(): String {
     return SimpleDateFormat("HH:mm a").format(Calendar.getInstance().time)
 }
 
+@SuppressLint("SimpleDateFormat")
+fun getDate(): String {
+    return SimpleDateFormat("dd MM yyyy").format(Calendar.getInstance().time)
+}
+
 fun getDp(context: Context, sizeInDp: Int): Int {
     return (sizeInDp * context.resources.displayMetrics.density + 0.5f).toInt()
 }
 
-inline fun <E> SparseArray<E>.getKeyByValue(value : E) : Int{
+inline fun <E> SparseArray<E>.getKeyByValue(value: E): Int {
     return this.keyAt(this.indexOfValue(value))
 }
 
-fun Toolbar.addBackNavButton(activity: AppCompatActivity, @DrawableRes backIcon : Int ) {
+fun Toolbar.addBackNavButton(activity: AppCompatActivity, @DrawableRes backIcon: Int) {
     activity.setSupportActionBar(this)
     activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    activity. supportActionBar?.setDisplayShowHomeEnabled(true)
+    activity.supportActionBar?.setDisplayShowHomeEnabled(true)
     activity.supportActionBar?.title = ""
     this.navigationIcon = ContextCompat.getDrawable(activity, backIcon)
     this.setNavigationOnClickListener(View.OnClickListener {
         //What to do on back clicked
         activity.onBackPressed()
     })
+}
+
+fun writeFileToDisk(
+    path: String,
+    fileName: String,
+    fileToWrite: String
+
+) {
+    val dir =
+        File(Environment.getExternalStorageDirectory().absolutePath + File.separator + path)
+    if (!dir.exists())
+        dir.mkdirs()
+    val file = File(dir, fileName)
+
+    try {
+        val fr = FileWriter(file, true)
+        fr.write(fileToWrite)
+        fr.close()
+        Log.d("FILE_WRITE", "File writing done")
+    } catch (e: FileNotFoundException) {
+        e.printStackTrace()
+
+        Log.e(
+            "FILE_WRITE",
+            "******* File not found. Did you add a WRITE_EXTERNAL_STORAGE permission to the manifest?"
+        )
+    } catch (e: IOException) {
+        e.printStackTrace()
+
+        Log.e("FILE_WRITE", e.stackTrace.toString())
+    }
 }
 
 //todo add tab-support for handleNavigationTransactions

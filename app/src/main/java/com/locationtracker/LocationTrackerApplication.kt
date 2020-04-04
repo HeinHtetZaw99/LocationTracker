@@ -2,30 +2,31 @@ package com.locationtracker
 
 import android.app.Activity
 import android.app.Application
+import androidx.work.Configuration
+import androidx.work.WorkManager
+import androidx.work.Worker
+import androidx.work.WorkerFactory
 import com.appbase.components.LoggingTree
 import com.appbase.di.AppInjector
 import com.appbase.showLogE
 import com.locationtracker.di.AppComponent
 import com.locationtracker.di.DaggerAppComponent
+
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class LocationTrackerApplication : Application() , HasActivityInjector{
+class LocationTrackerApplication : Application(), HasActivityInjector  {
 
     @Inject
     lateinit var dispatchingAndroidActivityInjector:
             DispatchingAndroidInjector<Activity>
 
-//    @Inject
-//    lateinit var dispatchingAndroidFragmentInjector:
-//            DispatchingAndroidInjector<android.app.Fragment>
-
     private var appComponent: AppComponent? = null
 
-    private fun getAppComponent() : AppComponent? {
+    private fun getAppComponent(): AppComponent? {
         return appComponent ?: createAppComponent()
     }
 
@@ -37,6 +38,9 @@ class LocationTrackerApplication : Application() , HasActivityInjector{
         appComponent = getAppComponent()
         appComponent!!.inject(this)
         AppInjector.initAutoInjection(this)
+
+
+        WorkManager.initialize(this, Configuration.Builder().setWorkerFactory(appComponent!!.factory()).build())
         Timber.plant(LoggingTree())
     }
 
@@ -50,4 +54,6 @@ class LocationTrackerApplication : Application() , HasActivityInjector{
         showLogE("AppComponent has been slain! c(x_x)၁")
         appComponent = null
     }
+
+
 }

@@ -1,5 +1,6 @@
-package com.network.exception
+package com.locationtracker.network.exception
 
+import com.locationtracker.network.exception.NetworkException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException

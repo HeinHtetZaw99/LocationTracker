@@ -1,10 +1,10 @@
 package com.locationtracker.di
 
 
-import com.locationtracker.LocationDataSource
-import com.locationtracker.LocationDataSourceImpl
-import com.locationtracker.LocationRepository
-import com.locationtracker.LocationRepositoryImpl
+import com.locationtracker.sources.LocationDataSource
+import com.locationtracker.sources.LocationDataSourceImpl
+import com.locationtracker.repository.LocationRepository
+import com.locationtracker.repository.LocationRepositoryImpl
 import dagger.Binds
 import dagger.Module
 
@@ -14,7 +14,7 @@ abstract class RepositoryModule {
       abstract fun getLocationRepository(locationRepositoryImpl: LocationRepositoryImpl): LocationRepository
 
       @Binds
-      abstract fun getLocationDataSource(locationDataSourceImpl:  LocationDataSourceImpl): LocationDataSource
+      abstract fun getLocationDataSource(locationDataSourceImpl: LocationDataSourceImpl): LocationDataSource
 
 
 }

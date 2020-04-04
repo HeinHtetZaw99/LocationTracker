@@ -35,6 +35,15 @@ object CommonLibs {
     const val dotPageIndicator = "com.romandanylyk:pageindicatorview:1.0.3"
     const val imageEditor = "com.theartofdev.edmodo:android-image-cropper:2.8.+"
     const val xmlToJson = "com.github.smart-fun:XmlToJson:1.1.1"
+
+}
+
+object Worker {
+    private const val work_version = "2.0.0"
+    const val worker = "android.arch.work:work-runtime:$work_version"
+    const val ktx = "androidx.work:work-runtime-ktx:$work_version"
+    const val rxjava2Support = "androidx.work:work-rxjava2:$work_version"
+
 }
 
 //region AndroidX
@@ -315,7 +324,14 @@ object Retrofit {
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.4.0"
     const val okhttp = "com.squareup.okhttp3:okhttp:4.4.0"
     const val xmlConverter = "com.squareup.retrofit2:converter-simplexml:2.5.0"
+    const val worker = "android.arch.work:work-runtime:1.0.0"
 
+
+    private const val dagger_assist_version = "0.5.2"
+    const val assistedDaggerAnnotation =
+        "com.squareup.inject:assisted-inject-annotations-dagger2:$dagger_assist_version"
+    const val assistedDaggerAnnotationProcessor =
+        "com.squareup.inject:assisted-inject-processor-dagger2:$dagger_assist_version"
 }
 
 object SqlDelight {
@@ -349,7 +365,7 @@ object ExoPlayer {
 }
 
 object WorkManager {
-    private const val work_version = "2.2.0"
+    private const val work_version = "2.4.0-alpha02"
 
     // (Java only)
     const val runtime = "androidx.work:work-runtime:$work_version"

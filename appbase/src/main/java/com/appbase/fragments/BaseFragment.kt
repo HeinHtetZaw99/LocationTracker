@@ -46,7 +46,11 @@ abstract class BaseFragment : Fragment() {
 
 
     abstract fun onNetworkError()
+
+    /** do your loading here only */
     abstract fun loadData()
+
+    /** do your UI logics here only */
     abstract fun initViews(view  : View)
 
 }

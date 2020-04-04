@@ -1,4 +1,4 @@
-package com.network.exception
+package com.locationtracker.network.exception
 
 import okhttp3.ResponseBody
 import java.io.IOException

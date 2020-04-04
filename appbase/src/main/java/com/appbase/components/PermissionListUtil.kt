@@ -13,11 +13,14 @@ import com.appbase.nonintersect
 
 @SuppressLint("LogNotTimber")
 /*Created By Daniel McCoy at 23rd March 2020*/
-class PermissionListUtil(private val PERMISSION_ASKER : Int){
+class PermissionListUtil(private var PERMISSION_ASKER : Int){
 
     private val tag = "PERMISSIONUTILS"
     private val IS_FIRST_TIME_ASKING_PERMISSIONS = "SP_Is_First_Time_Asking_Permissions"
 
+    fun with(permissionCode : Int ){
+       this.PERMISSION_ASKER = permissionCode
+    }
     /*
     * Check if version is marshmallow and above.
     * Used in deciding to ask runtime permission

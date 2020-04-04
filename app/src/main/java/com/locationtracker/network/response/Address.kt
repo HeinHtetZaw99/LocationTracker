@@ -3,13 +3,13 @@ package com.locationtracker.network.response
 import retrofit2.http.Field
 
 data class Address(
-	val country: String? = null,
+	var country: String? = null,
 	@Field("county_code")
-	val countryCode: String? = null,
-	val road: String? = null,
-	val city: String? = null,
-	val county: String? = null,
-	val postcode: String? = null,
-	val suburb: String? = null,
-	val state: String? = null
+	var countryCode: String? = null,
+	var road: String? = null,
+	var city: String? = null,
+	var county: String? = null,
+	var postcode: String? = null,
+	var suburb: String? = null,
+	var state: String? = null
 )

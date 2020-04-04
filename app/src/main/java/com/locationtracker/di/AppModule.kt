@@ -4,13 +4,22 @@ import android.content.Context
 import androidx.room.Room
 import com.appbase.components.SharePrefUtils
 import com.appbase.di.BaseAppModule
-import com.locationtracker.AppDatabase
+import com.locationtracker.di.worker.WorkerAssistedInjectModule
+import com.locationtracker.di.worker.WorkerBindingModule
+
+import com.locationtracker.sources.cache.AppDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Module(includes = [BaseAppModule::class, ActivityModule::class, ViewModelModule::class, AppModule.Provider::class, RepositoryModule::class ,NetworkModule::class])
+@Module(
+    includes = [
+        BaseAppModule::class, ActivityModule::class,
+        ViewModelModule::class, AppModule.Provider::class,
+        RepositoryModule::class, NetworkModule::class
+    ]
+)
 abstract class AppModule {
 
     @Module
@@ -29,8 +38,12 @@ abstract class AppModule {
         @Provides
         @JvmStatic
         @Singleton
-        fun getDataBase(context : Context) : AppDatabase {
-            return Room.databaseBuilder(context.applicationContext , AppDatabase::class.java , "app_offline_data_base.db")
+        fun getDataBase(context: Context): AppDatabase {
+            return Room.databaseBuilder(
+                context.applicationContext,
+                AppDatabase::class.java,
+                "app_offline_data_base.db"
+            )
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build()

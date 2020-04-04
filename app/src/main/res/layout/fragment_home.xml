@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <Button
+        android:id="@+id/offlineLocationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_5xlarge"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/margin_small"
+        android:text="Get Location Offline"
+        android:textColor="@color/white"
+       />
+
+    <Button
+        android:id="@+id/onlineLocationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/offlineLocationBtn"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/margin_small"
+        android:text="Get Location Online"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_5xlarge"
+        android:textColor="@color/white"
+   />
+
+    <TextView
+        android:id="@+id/locationTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/onlineLocationBtn"
+        android:text="Reverse Geoencode data"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_5xlarge"
+   />
+
+    <TextView
+        android:id="@+id/offlineLatLngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_5xlarge"
+        android:text="Offline Data : "
+        android:layout_below="@id/locationTv"
+ />
+
+    <TextView
+        android:id="@+id/onlineLatLngTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Online Data : "
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/offlineLatLngTv"
+        android:layout_marginTop="@dimen/margin_5xlarge"
+ />
+
+</RelativeLayout>

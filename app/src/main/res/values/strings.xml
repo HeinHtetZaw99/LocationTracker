@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">LocationTracker</string>
     <string name="error_in_getting_locatin_data">တည်နေရာဒေတာမရယူနိုင်ပါ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bottom_nav_home">မူလ</string>
+    <string name="bottom_nav_history">မှတ်တမ်း</string>
 </resources>

@@ -2,6 +2,8 @@ package com.locationtracker.di
 
 import android.app.Application
 import com.locationtracker.LocationTrackerApplication
+import com.locationtracker.di.worker.WorkerAssistedInjectModule
+import com.locationtracker.di.worker.WorkerBindingModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -11,7 +13,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [AppModule::class,
-        AndroidInjectionModule::class,
+        AndroidInjectionModule::class, WorkerBindingModule::class,
+        WorkerAssistedInjectModule::class,
         AndroidSupportInjectionModule::class]
 )
 interface AppComponent {
@@ -23,6 +26,8 @@ interface AppComponent {
 
         fun build(): AppComponent
     }
+
+    fun factory(): AppWorkerFactory
 
     fun inject(application: LocationTrackerApplication)
 }

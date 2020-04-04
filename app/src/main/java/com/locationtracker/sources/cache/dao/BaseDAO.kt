@@ -1,4 +1,4 @@
-package com.locationtracker.cache.dao
+package com.locationtracker.sources.cache.dao
 
 
 import androidx.room.*

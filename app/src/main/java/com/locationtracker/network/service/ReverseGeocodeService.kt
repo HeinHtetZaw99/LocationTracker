@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface ReverseGeocodeService {
     @GET("/reverse")
-    fun getReverseGeocode(
+    fun getReverseGeocodeObservable(
         @Query("lat") lat: String,
         @Query("lon") lon: String,
         @Query("format") format : String
