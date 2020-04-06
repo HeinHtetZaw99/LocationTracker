@@ -27,7 +27,7 @@ object DummyContent {
         // Add some sample items.
         for (i in 1..COUNT) {
             addItem(DummyItem(i.toString(),
-                "Insein Road, Sanchaung Tsp, Yangon, Yangon Division",
+                "Insein Road, Sanchaung Township, Yangon, Yangon Division",
                 "12:00 PM - 02:00 PM"))
         }
     }

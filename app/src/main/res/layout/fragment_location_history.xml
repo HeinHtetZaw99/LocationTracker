@@ -20,7 +20,8 @@
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:src="@drawable/ic_pin"
-                android:layout_margin="@dimen/text_margin"/>
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="@dimen/text_margin"/>
 
             <TextView
                 android:id="@+id/address"
@@ -36,11 +37,11 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
                 android:src="@drawable/ic_clock"
-                android:layout_marginHorizontal="@dimen/text_margin"
-                android:layout_marginBottom="@dimen/text_margin"/>
+                android:layout_marginTop="4dp"
+                android:layout_marginHorizontal="@dimen/text_margin"/>
 
             <TextView
                 android:id="@+id/time_interval"
