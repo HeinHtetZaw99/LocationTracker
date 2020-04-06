@@ -13,24 +13,28 @@ import com.appbase.buildFragmentList
 import com.appbase.components.SingleEventLiveData
 import com.appbase.fragments.BaseFragment
 import com.appbase.handleNavigationTransactions
+import com.appbase.showLogE
 import com.locationtracker.R
 import com.locationtracker.background.LocationTrackerWorker
 import com.locationtracker.fragments.HistoryFragment
 import com.locationtracker.fragments.HomeFragment
+import com.locationtracker.fragments.LocationHistoryFragment
+import com.locationtracker.fragments.dummy.DummyContent
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import java.time.Duration
 
 
-class MainActivity : BaseActivity<MainViewModel>() {
+class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnListFragmentInteractionListener {
 
     private val homeFragment = HomeFragment()
     private val historyFragment = HistoryFragment()
+    private val locationHistoryFragment = LocationHistoryFragment()
     private var activeFragment: BaseFragment = homeFragment
     private var lastVisitedFragment: Int = R.id.nav_home
     private var fragmentList = SparseArray<BaseFragment>().apply {
         put(R.id.nav_home, homeFragment)
-        put(R.id.nav_history, historyFragment)
+        put(R.id.nav_history, locationHistoryFragment)
     }
 
 
@@ -122,5 +126,9 @@ class MainActivity : BaseActivity<MainViewModel>() {
     }*/
 
     fun getHomeViewModel() = viewModel
+
+    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
+        showLogE(item.toString())
+    }
 
 }

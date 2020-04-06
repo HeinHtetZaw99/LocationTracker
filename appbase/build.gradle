@@ -90,8 +90,8 @@ dependencies {
 //    implementation VdoPlayer.vdoPlayer
     implementation Lottie.lottie
 
-    debugCompile Chunk.debug
-    releaseCompile Chunk.release
+    debugApi Chunk.debug
+    releaseApi Chunk.release
 
     implementation CommonLibs.timber
 

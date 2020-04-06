@@ -2,6 +2,7 @@ package com.locationtracker.viewmodels
 
 import android.location.Location
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.appbase.components.interfaces.GenericErrorMessageFactory
 import com.appbase.models.vos.ReturnResult
 import com.appbase.showLogD
@@ -11,7 +12,9 @@ import com.locationtracker.repository.LocationRepository
 import com.locationtracker.sources.cache.data.LocationEntity
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
 import com.pv.viewmodels.BaseViewModel
+import io.reactivex.Observable
 import io.reactivex.rxkotlin.addTo
+import java.util.*
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
@@ -21,6 +24,11 @@ class MainViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val locationStatusLD: MutableLiveData<ReturnResult> by lazy { MutableLiveData<ReturnResult>() }
+
+    fun getAllLocationData(): Observable<List<LocationEntity>> {
+        return locationRepository.getAllLocationData()
+    }
+
     fun getGeoEncodeData(location: Location?) {
         if (location == null)
             locationStatusLD.postValue(ReturnResult.ErrorResult(R.string.error_in_getting_locatin_data))
