@@ -68,6 +68,7 @@ class LocationHistoryFragment() : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
+        //test data
         val allLoc = viewModel.getAllLocationData()
         Log.e("<<LOC>>", "SHOWING ALL LOC")
         val res = allLoc.subscribe { a -> Log.e("<<LOC>>", a.toString()) }
@@ -124,11 +125,8 @@ class LocationHistoryFragment() : BaseFragment() {
     }
 
     companion object {
-
-        // TODO: Customize parameter argument names
         const val ARG_COLUMN_COUNT = "column-count"
 
-        // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
             LocationHistoryFragment().apply {
