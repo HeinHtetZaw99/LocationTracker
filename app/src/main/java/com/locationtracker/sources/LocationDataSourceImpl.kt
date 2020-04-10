@@ -16,9 +16,10 @@ class LocationDataSourceImpl @Inject constructor(
     private val dataBase: AppDatabase
 ) : LocationDataSource {
 
+
     override fun getLocationListByDate(date: String): List<LocationEntity> {
         return dataBase.getLocationDao().getLocationListByDate(date)
-    }
+
 
     override fun addLocation(data: LocationEntity) {
         dataBase.getLocationDao().insert(data)

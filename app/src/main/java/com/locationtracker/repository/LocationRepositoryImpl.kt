@@ -16,6 +16,10 @@ class LocationRepositoryImpl @Inject constructor(
 
 ) :
     LocationRepository {
+    override fun getAllLocationData(): Observable<List<LocationEntity>> {
+        return Observable.fromCallable { locationDataSource.getAllLocationData() }
+    }
+
     override fun getLocationListByDate(timeStamp: String): Observable<List<LocationEntity>> {
         return Observable.fromCallable { locationDataSource.getLocationListByDate(timeStamp) }
     }
