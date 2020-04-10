@@ -35,6 +35,9 @@ class LocationEntity {
     }
 
 
+    fun getAddress() : String {
+        return "$city, $road, $suburb, $county, $state ,$postCode'"
+    }
 
     companion object {
         fun toCSV(list: List<LocationEntity>): String {

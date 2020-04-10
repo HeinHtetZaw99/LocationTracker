@@ -11,5 +11,5 @@ interface LocationRepository {
     fun addLocationRepository(data: LocationEntity) : Completable
     fun getReverseGeoEncodeData(lat : String , lng : String) : Observable<ReverseGeoEncodeResponse>
     fun saveLatLngOnly(latitude: String, longitude: String, time: String, date: String) : Completable
-    fun getAllLocationData() : Observable<List<LocationEntity>>
+
 }

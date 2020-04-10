@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.appbase.adapters.BaseRecyclerAdapter
+import com.appbase.viewholders.BaseViewHolder
 import com.locationtracker.R
 
 
 import com.locationtracker.fragments.LocationHistoryFragment.OnListFragmentInteractionListener
-import com.locationtracker.fragments.dummy.DummyContent.DummyItem
+
+import com.locationtracker.sources.cache.data.LocationEntity
 
 import kotlinx.android.synthetic.main.fragment_location_history.view.*
 
@@ -19,42 +22,23 @@ import kotlinx.android.synthetic.main.fragment_location_history.view.*
  * TODO: Replace the implementation with code for your data type.
  */
 class MyLocationHistoryRecyclerViewAdapter(
-    private val mValues: List<DummyItem>,
     private val mListener: OnListFragmentInteractionListener?
-) : RecyclerView.Adapter<MyLocationHistoryRecyclerViewAdapter.ViewHolder>() {
-
-    private val mOnClickListener: View.OnClickListener
-
-    init {
-        mOnClickListener = View.OnClickListener { v ->
-            val item = v.tag as DummyItem
-            // Notify the active callbacks interface (the activity, if the fragment is attached to
-            // one) that an item has been selected.
-            mListener?.onListFragmentInteraction(item)
-        }
-    }
+) : BaseRecyclerAdapter<LocationEntity,MyLocationHistoryRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_location_history, parent, false)
-        return ViewHolder(view)
+            .inflate(R.layout.cardview_history, parent, false)
+        return ViewHolder(view,mListener!!)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mValues[position]
-        holder.mAddressView.text = item.address
-        holder.mTimeIntervalView.text = item.timeInterval
 
-        with(holder.mView) {
-            tag = item
-            setOnClickListener(mOnClickListener)
-        }
-    }
-
-    override fun getItemCount(): Int = mValues.size
-
-    inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
+    inner class ViewHolder(val mView: View , private val listener: OnListFragmentInteractionListener) : BaseViewHolder<LocationEntity>(mView) {
         val mAddressView: TextView = mView.address
         val mTimeIntervalView: TextView = mView.time_interval
+        override fun setData(data: LocationEntity) {
+            mAddressView.text = data.getAddress()
+            mTimeIntervalView.text = data.time
+            mView.setOnClickListener { listener.onListFragmentInteraction(adapterPosition) }
+        }
     }
 }

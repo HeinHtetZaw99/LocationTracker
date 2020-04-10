@@ -2,11 +2,12 @@
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
+    android:id="@+id/historyRv"
+    android:background="@color/white"
     android:name="com.locationtracker.fragments.LocationHistoryFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".fragments.LocationHistoryFragment"
-    tools:listitem="@layout/fragment_location_history" />
+    tools:listitem="@layout/cardview_history" />

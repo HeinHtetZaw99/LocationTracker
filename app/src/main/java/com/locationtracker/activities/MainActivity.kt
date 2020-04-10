@@ -24,9 +24,10 @@ import com.locationtracker.background.LocationTrackerBroadcastReceiver
 import com.locationtracker.fragments.HistoryFragment
 import com.locationtracker.fragments.HomeFragment
 import com.locationtracker.fragments.LocationHistoryFragment
-import com.locationtracker.fragments.dummy.DummyContent
+
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.FieldPosition
 
 
 class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnListFragmentInteractionListener {
@@ -140,8 +141,8 @@ class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnLi
 
     fun getHomeViewModel() = viewModel
 
-    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
-        showLogE(item.toString())
+    override fun onListFragmentInteraction(adapterPosition: Int) {
+        showLogE("Adapter Position $adapterPosition")
     }
 
 }
