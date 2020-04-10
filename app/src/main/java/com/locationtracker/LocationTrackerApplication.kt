@@ -2,6 +2,7 @@ package com.locationtracker
 
 import android.app.Activity
 import android.app.Application
+import android.content.BroadcastReceiver
 import androidx.work.Configuration
 import androidx.work.WorkManager
 import androidx.work.Worker
@@ -55,5 +56,8 @@ class LocationTrackerApplication : Application(), HasActivityInjector  {
         appComponent = null
     }
 
+    companion object{
+        val BroadcastReceiverCode = 234324243
+    }
 
 }

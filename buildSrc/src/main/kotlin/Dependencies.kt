@@ -49,6 +49,7 @@ object Worker {
 //region AndroidX
 object AndroidXAnnotations {
     const val annotations = "androidx.annotation:annotation:1.0.1"
+    const val jobIntentService = "com.android.support:support-compat:26.0.0-beta2"
 }
 
 object AndroidXAppCompat {
@@ -420,4 +421,9 @@ object ZXing {
     const val core = "com.google.zxing:core:3.3.0"
     const val parent = "com.google.zxing:zxing-parent:3.4.0"
     const val embedded = "com.journeyapps:zxing-android-embedded:4.1.0"
+}
+
+object OSMDroid{
+    private const val version = "6.1.6"
+    const val core = "org.osmdroid:osmdroid-android:$version"
 }

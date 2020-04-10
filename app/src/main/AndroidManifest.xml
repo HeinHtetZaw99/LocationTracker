@@ -3,18 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.locationtracker">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name=".LocationTrackerApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".LocationTrackerApplication"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.MapActivity">
+
+        </activity>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,12 +28,26 @@
             </intent-filter>
         </activity>
 
+        <receiver
+            android:name=".background.LocationTrackerBroadcastReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.facebook.orca" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".background.workaround.AlarmReceiver">
+
+        </receiver>
+
         <provider
             android:name="androidx.work.impl.WorkManagerInitializer"
             android:authorities="${applicationId}.workmanager-init"
             android:exported="false"
-            tools:node="remove"/>
-        <service android:name=".background.BackgroundService" android:enabled="true"
+            tools:node="remove" />
+
+        <service
+            android:name=".background.BackgroundService"
+            android:enabled="true"
             android:exported="true" />
     </application>
 

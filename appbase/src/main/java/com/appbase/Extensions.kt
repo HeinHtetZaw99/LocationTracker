@@ -416,8 +416,8 @@ fun Toolbar.addBackNavButton(activity: AppCompatActivity, @DrawableRes backIcon:
 fun writeFileToDisk(
     path: String,
     fileName: String,
-    fileToWrite: String
-
+    fileToWrite: String,
+    override: Boolean
 ) {
     val dir =
         File(Environment.getExternalStorageDirectory().absolutePath + File.separator + path)
@@ -425,22 +425,23 @@ fun writeFileToDisk(
         dir.mkdirs()
     val file = File(dir, fileName)
 
+    var fr: FileWriter? = null
     try {
-        val fr = FileWriter(file, true)
+        fr = FileWriter(file, !override)
         fr.write(fileToWrite)
-        fr.close()
+
         Log.d("FILE_WRITE", "File writing done")
     } catch (e: FileNotFoundException) {
         e.printStackTrace()
-
         Log.e(
             "FILE_WRITE",
             "******* File not found. Did you add a WRITE_EXTERNAL_STORAGE permission to the manifest?"
         )
     } catch (e: IOException) {
         e.printStackTrace()
-
         Log.e("FILE_WRITE", e.stackTrace.toString())
+    } finally {
+        fr?.close()
     }
 }
 

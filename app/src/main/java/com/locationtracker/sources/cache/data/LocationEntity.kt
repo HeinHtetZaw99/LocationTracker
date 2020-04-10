@@ -12,29 +12,41 @@ import androidx.room.PrimaryKey
 class LocationEntity {
     @PrimaryKey
     @NonNull
-    var timeStamp : String =""
-    var time : String = ""
+    var timeStamp: String = ""
+    var time: String = ""
     var latitude: String = ""
     var longitude: String = ""
-    var address : String = ""
-    var city : String = ""
-    var road : String =""
-    var suburb : String =""
-    var county : String =""
-    var state : String = ""
-    var postCode : String = ""
-    var country : String = ""
-    var dateTime : String = ""
-    var retrievedBy : String = ""
+    var city: String = ""
+    var road: String = ""
+    var suburb: String = ""
+    var county: String = ""
+    var state: String = ""
+    var postCode: String = ""
+    var country: String = ""
+    var dateTime: String = ""
+    var retrievedBy: String = ""
+
     override fun toString(): String {
-        return "LocationEntity(timeStamp='$timeStamp', latitude='$latitude', longitude='$longitude', address='$address', city='$city', road='$road', suburb='$suburb', county='$county', state='$state', postCode='$postCode', country='$country', dateTime='$dateTime', retrievedBy='$retrievedBy')"
+        return "LocationEntity(timeStamp='$timeStamp', latitude='$latitude', longitude='$longitude', city='$city', road='$road', suburb='$suburb', county='$county', state='$state', postCode='$postCode', country='$country', dateTime='$dateTime', retrievedBy='$retrievedBy')"
     }
 
-    fun toTableString() : String {
+    fun toTableString(): String {
         return "\n[$timeStamp\t\t|$latitude\t\t|$longitude\t\t|$city\t\t|$road\t\t|$suburb\t\t|$state\t\t|$postCode\t\t|$country\t\t|$dateTime\t\t|$time\t\t|$retrievedBy]\n"
     }
 
 
 
+    companion object {
+        fun toCSV(list: List<LocationEntity>): String {
+            val sb = StringBuilder()
+            list.forEach {
+                sb.append(toCSVLine(it))
+            }
+            return sb.toString()
+        }
 
+        private fun toCSVLine(data: LocationEntity): String {
+            return "\"${data.timeStamp}\",\"${data.time}\",\"${data.latitude}\",\"${data.longitude}\",\"${data.city}\",\"${data.road}\", \"${data.suburb}\",\"${data.county}\",\"${data.state}\",\"${data.postCode}\",\"${data.country}\",\"${data.dateTime}\"\n"
+        }
+    }
 }
