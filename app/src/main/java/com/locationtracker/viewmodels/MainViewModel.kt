@@ -24,10 +24,37 @@ class MainViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val locationStatusLD: MutableLiveData<ReturnResult> by lazy { MutableLiveData<ReturnResult>() }
+    val locationListLD: MutableLiveData<List<LocationEntity>> by lazy { MutableLiveData<List<LocationEntity>>() }
 
-    fun getAllLocationData(): Observable<List<LocationEntity>> {
-        return locationRepository.getAllLocationData()
+    fun getLocationHistory() {
+        locationRepository.getAllLocationData().handle()
+            .subscribe({
+                locationListLD.postValue(it)
+            }, {
+                showLogE("Error in getGeoEncodeData()", it)
+                locationStatusLD.postValue(
+                    genericErrorMessageFactory.getError(
+                        it,
+                        R.string.error_empty_locatin_data_list
+                    )
+                )
+            }).addTo(compositeDisposable)
     }
+
+    fun getLocationHistoryByDate(date: String) {
+        locationRepository.getLocationListByDate(date).handle()
+            .subscribe({
+                locationListLD.postValue(it)
+            }, {
+                showLogE("Error in getGeoEncodeData()", it)
+                locationStatusLD.postValue(
+                    genericErrorMessageFactory.getError(
+                        it,
+                        R.string.error_empty_locatin_data_list
+                    )
+                )
+            }).addTo(compositeDisposable)
+
 
     fun getGeoEncodeData(location: Location?) {
         if (location == null)
@@ -37,7 +64,8 @@ class MainViewModel @Inject constructor(
                 location.latitude.toString(),
                 location.longitude.toString()
             )
-                .handle().subscribe({
+                .handle()
+                .subscribe({
                     val data = locationEntityMapper.map(it).apply {
                         retrievedBy = "User"
                         latitude = location.latitude.toString()

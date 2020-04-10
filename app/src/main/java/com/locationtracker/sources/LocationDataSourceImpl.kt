@@ -1,17 +1,12 @@
 package com.locationtracker.sources
 
 import com.appbase.showLogD
-import com.appbase.showLogE
-import com.google.gson.Gson
 import com.locationtracker.network.response.ReverseGeoEncodeResponse
 import com.locationtracker.network.service.ReverseGeocodeService
 import com.locationtracker.sources.cache.AppDatabase
 import com.locationtracker.sources.cache.data.LocationEntity
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
-import fr.arnaudguyon.xmltojsonlib.XmlToJson
 import io.reactivex.Observable
-import org.json.JSONException
-import org.json.JSONObject
 import javax.inject.Inject
 
 
@@ -21,13 +16,10 @@ class LocationDataSourceImpl @Inject constructor(
     private val dataBase: AppDatabase
 ) : LocationDataSource {
 
-    override fun getAllLocationData(): List<LocationEntity> {
-        return dataBase.getLocationDao().getAllLocationData();
-    }
 
-    override fun getLocationListByDate(timeStamp: String): List<LocationEntity> {
-        return emptyList()
-    }
+    override fun getLocationListByDate(date: String): List<LocationEntity> {
+        return dataBase.getLocationDao().getLocationListByDate(date)
+
 
     override fun addLocation(data: LocationEntity) {
         dataBase.getLocationDao().insert(data)
@@ -47,6 +39,14 @@ class LocationDataSourceImpl @Inject constructor(
         lng: String
     ): Observable<ReverseGeoEncodeResponse> {
         return reverseGeocodeService.getReverseGeocodeObservable(lat, lng, "json")
+    }
+
+    override fun addPartialLocation(data: LocationEntity) {
+        dataBase.getLocationDao().insert(data)
+    }
+
+    override fun getAllLocationList(): List<LocationEntity> {
+        return dataBase.getLocationDao().getAllLocationData()
     }
 
 }

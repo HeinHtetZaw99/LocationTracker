@@ -1,6 +1,7 @@
 package com.locationtracker.di
 
 import com.locationtracker.activities.MainActivity
+import com.locationtracker.activities.MapActivity
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -19,5 +20,6 @@ abstract class ActivityModule {
     @ContributesAndroidInjector
     abstract fun mainActivity(): MainActivity
 
-
+    @ContributesAndroidInjector
+    abstract fun mapActivity(): MapActivity
 }

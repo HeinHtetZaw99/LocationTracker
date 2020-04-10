@@ -88,6 +88,9 @@ dependencies {
     implementation ReactiveX.rxKotlin
     implementation ReactiveX.rxandroid
     implementation ReactiveX.rxjava
+    implementation AndroidXAnnotations.jobIntentService
+
+    implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
 
 
     implementation Retrofit.rxJavaAdapter
@@ -124,6 +127,7 @@ dependencies {
     implementation Worker.worker
     implementation Worker.rxjava2Support
     implementation Worker.ktx
+    implementation OSMDroid.core
     compileOnly Retrofit.assistedDaggerAnnotation
     kapt Retrofit.assistedDaggerAnnotationProcessor
 }

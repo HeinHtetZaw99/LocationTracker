@@ -19,7 +19,6 @@ class LocationEntityMapper @Inject constructor() :
             time = getTime()
             latitude = data.lat ?: ""
             longitude = data.lon ?: ""
-            address = data.address.toString()
             city = data.address?.city ?: ""
             road = data.address?.road ?: ""
             suburb = data.address?.suburb ?: ""

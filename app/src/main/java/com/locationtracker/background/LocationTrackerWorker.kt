@@ -1,10 +1,13 @@
 package com.locationtracker.background
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.work.Worker
 import androidx.work.WorkerParameters
@@ -23,7 +26,6 @@ class LocationTrackerWorker @AssistedInject constructor(
     @Assisted private val context: Context,
     @Assisted private val params: WorkerParameters,
     private val locationRepository: LocationRepository
-    /*   private val reverseGeocodeService: ReverseGeocodeService*/
 ) : Worker(context, params), Locator.Listener {
 
     private var locationManager: LocationManager =
@@ -46,16 +48,18 @@ class LocationTrackerWorker @AssistedInject constructor(
 
         Log.d(TAG, "Online Location From Worker : $latitude , $longitude")
         processLocationData(latitude = latitude.toString(), longitude = longitude.toString())
-        //todo remove this when released
-        Toast.makeText(context,"Location Tracker Running From Background",Toast.LENGTH_SHORT).show()
         showLogE("Location founded : ")
         locationManager.removeUpdates(locator)
+
+        showLogD("Starting alarm from worker onLocationFound")
+        startAlert()
     }
 
     override fun onLocationNotFound() {
         showLogE("Location not founded ")
         locationManager.removeUpdates(locator)
-
+        showLogD("Starting alarm from worker onLocationNotFound")
+        startAlert()
     }
 
     //todo refactor this method
@@ -74,9 +78,10 @@ class LocationTrackerWorker @AssistedInject constructor(
             }
 
             val log = "\n\n[${getTime()}-${getDate()}-($latitude,$longitude)-by Worker]"
-            writeFileToDisk("Android/locationData/", "log.txt", log)
+            writeFileToDisk("Android/locationData/", "log.txt", log, false)
         }, {
             Log.e(TAG, "Reverse Geocoding from worker failed : ${it.message}")
+            locationRepository.saveLatLngOnly(latitude, longitude, getTime(), getDate())
             //this scenerio may due to network failure and the user is in a new place , so saved it with timeStamp , time , date and the rest of the fields blank
             //todo add the logic in here
         }).addTo(compositeDisposable = compositeDisposable)
@@ -86,4 +91,28 @@ class LocationTrackerWorker @AssistedInject constructor(
     @AssistedInject.Factory
     interface Factory : ChildWorkerFactory
 
+    private fun startAlert() {
+      /*  val timerInterval = 3 * 60 * 1000
+        val broadCastRequestCode = 234324243
+
+        val pendingIntent = PendingIntent.getBroadcast(
+            applicationContext,
+            broadCastRequestCode,
+            Intent(context, LocationTrackerBroadcastReceiver::class.java),
+            0
+        )
+        val alarmManager =
+            context.getSystemService(AppCompatActivity.ALARM_SERVICE) as AlarmManager?
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            alarmManager!!.setExactAndAllowWhileIdle(
+                AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
+                        + timerInterval, pendingIntent
+            )
+        } else {
+            alarmManager!![AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
+                    + timerInterval] = pendingIntent
+        }*/
+
+    }
 }

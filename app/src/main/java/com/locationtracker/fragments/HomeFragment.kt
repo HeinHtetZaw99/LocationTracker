@@ -1,23 +1,28 @@
 package com.locationtracker.fragments
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
+import android.provider.Settings
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
+import com.appbase.*
+import com.appbase.components.Connectivity
 import com.appbase.components.Locator
 import com.appbase.components.PermissionListUtil
 import com.appbase.fragments.BaseFragment
 import com.appbase.models.vos.ReturnResult
-import com.appbase.showLogD
-import com.appbase.showLogE
-import com.appbase.showShortToast
-import com.appbase.writeFileToDisk
 import com.locationtracker.R
 import com.locationtracker.activities.MainActivity
+import com.locationtracker.sources.cache.data.LocationEntity.Companion.toCSV
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
+
 
 class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListener,
     Locator.Listener {
@@ -34,9 +39,6 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
     private var permissionListUtil = PermissionListUtil(ALL_APP_PERMISSION)
 
-    private var ONLINE = "online"
-    private var OFFLINE = "offline"
-    private var locationMode: String = ONLINE
 
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
@@ -57,36 +59,58 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
     override fun initViews(view: View) {
 
-        onlineLocationBtn.setOnClickListener {
-            locationMode = ONLINE
-            permissionListUtil.checkAndAskPermissions(
-                parentActivity,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                this
-            )
+        locationEnabledView.setVisible(true)
+        locationDisabledView.setVisible(false)
+
+        allowAccessLocationBtn.setOnClickListener {
+            parentActivity.showShortToast("Please enable the location permission in the settings")
+            parentActivity.goToAppSettings()
         }
 
-        offlineLocationBtn.setOnClickListener {
-            locationMode = OFFLINE
-            permissionListUtil.checkAndAskPermissions(
-                parentActivity,
-                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                this
-            )
-        }
+        permissionListUtil.checkAndAskPermissions(
+            parentActivity,
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ),
+            this
+        )
 
         viewModel.locationStatusLD.observe(this, androidx.lifecycle.Observer {
             if (it is ReturnResult.PositiveResult) {
-                locationTv.text = parentActivity.getErrorContentMsg(it)
-                writeFileToDisk(
-                    "Android/locationData/",
-                    "location.txt",
-                    parentActivity.getErrorContentMsg(it)
-                )
+                currentLocationTv.text = parentActivity.getErrorContentMsg(it)
+                if (isWriteStoragePermissionGranted()) {
+                    writeFileToDisk(
+                        "Android/locationData/",
+                        "location.txt",
+                        parentActivity.getErrorContentMsg(it)
+                        , false
+                    )
+                } else {
+                    showLogD("Permission is not granted. so no log is written")
+                }
             } else
                 parentActivity.showSnackBar(view, it)
         })
 
+        viewModel.locationListLD.observe(this, Observer {
+            writeFileToDisk(
+                "Android/locationData/",
+                "location_data_csv.txt",
+                toCSV(it),
+                true
+            )
+            parentActivity.showShortToast("Exporting as CSV")
+
+        })
+
+        convertToCSVBtn.setOnClickListener {
+            permissionListUtil.checkAndAskPermissions(
+                parentActivity,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                this
+            )
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -100,19 +124,14 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
             trackLocation()
         } else
             showLogD("PERMISSION IS NOT GRANTED")
-
     }
 
 
     override fun onLocationFound(location: Location?) {
         latitude = location?.latitude ?: 0.0
         longitude = location?.longitude ?: 0.0
-        if (locationMode == ONLINE) {
-            onlineLatLngTv.text = "Online Location : $latitude , $longitude"
-            viewModel.getGeoEncodeData(location)
-        } else
-            offlineLatLngTv.text = "Offline Location : $latitude , $longitude"
-
+        currentLatLngTv.text = "Location : $latitude , $longitude"
+        viewModel.getGeoEncodeData(location!!)
         showLogE("Location founded : ")
 
         locationManager.removeUpdates(locator)
@@ -127,7 +146,7 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
 
     private fun trackLocation() {
-        if (locationMode == ONLINE)
+        if (Connectivity.isConnected(parentActivity))
             locator.getLocation(Locator.Method.NETWORK, this)
         else
             locator.getLocation(Locator.Method.GPS, this)
@@ -139,23 +158,79 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
     }
 
     override fun onPermissionPreviouslyDenied(permission: String) {
+
         permissionListUtil.requestPermission(parentActivity, permission)
     }
 
     override fun onPermissionDisabled(permission: String) {
-        parentActivity.goToAppSettings()
+        when (permission) {
+            Manifest.permission.ACCESS_FINE_LOCATION -> {
+                //showing layout which is saying user to enabling location
+                locationEnabledView.setVisible(false)
+                locationDisabledView.setVisible(true)
+            }
+            Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
+                //showing layout which is saying user to enabling location
+            }
+        }
+
     }
 
     override fun onPermissionGranted(permission: String) {
-        trackLocation()
+        when (permission) {
+            Manifest.permission.ACCESS_FINE_LOCATION -> {
+                if (isLocationEnabled())
+                    trackLocation()
+                else
+                    showForceGPSEnableDialog()
+            }
+            Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
+                //showing layout which is saying user to enabling location
+                convertToCSV()
+            }
+        }
+
+    }
+
+    private fun convertToCSV() {
+        viewModel.getLocationHistory()
     }
 
     override fun onAllPermissionGranted() {
-        trackLocation()
+        if (isLocationEnabled())
+            trackLocation()
+        else
+            showForceGPSEnableDialog()
+
+        convertToCSV()
     }
 
     override fun onAllPermissionRequested() {
 
+    }
+
+    private fun isLocationEnabled(): Boolean =
+        locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+
+    private fun isWriteStoragePermissionGranted() =
+        ContextCompat.checkSelfPermission(
+            context!!,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) != PackageManager.PERMISSION_GRANTED
+
+    private fun showForceGPSEnableDialog() {
+        val alertDialog = AlertDialog.Builder(parentActivity)
+        alertDialog.setTitle("Enable Location")
+        alertDialog.setMessage("Your locations setting is not enabled. Please enabled it in settings menu.")
+        alertDialog.setPositiveButton("Location Settings") { dialog, which ->
+            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+            startActivity(intent)
+        }
+        alertDialog.setNegativeButton(
+            "Cancel"
+        ) { dialog, which -> dialog?.dismiss() }
+        val alert = alertDialog.create()
+        alert.show()
     }
 
 
