@@ -13,5 +13,5 @@ interface ReverseGeocodeService {
         @Query("lat") lat: String,
         @Query("lon") lon: String,
         @Query("format") format : String
-    ): Observable<ReverseGeoEncodeResponse>
+    ): Call<ReverseGeoEncodeResponse>
 }

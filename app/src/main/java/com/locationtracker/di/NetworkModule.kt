@@ -20,7 +20,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 
-@Module(includes = [NetworkModule.Providers::class , ServiceModule.Providers::class])
+@Module(includes = [NetworkModule.Providers::class , ServiceModule::class ,ServiceModule.Providers::class])
 abstract class NetworkModule {
 
     @Module
@@ -37,7 +37,6 @@ abstract class NetworkModule {
                         false -> HttpLoggingInterceptor.Level.NONE
                     }
                 }
-
 
                 addInterceptor(loggerInterceptor)
                     .addInterceptor(ChuckInterceptor(context))

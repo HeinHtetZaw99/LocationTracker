@@ -37,8 +37,8 @@ class LocationDataSourceImpl @Inject constructor(
     override fun getReverseGeoEncodeData(
         lat: String,
         lng: String
-    ): Observable<ReverseGeoEncodeResponse> {
-        return reverseGeocodeService.getReverseGeocodeObservable(lat, lng, "json")
+    ): ReverseGeoEncodeResponse {
+        return reverseGeocodeService.getReverseGeocodeObservable(lat, lng, "json").execute().body()!!
     }
 
     override fun addPartialLocation(data: LocationEntity) {

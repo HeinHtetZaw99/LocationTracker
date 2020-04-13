@@ -50,12 +50,12 @@ import javax.inject.Inject
 import kotlin.reflect.KClass
 
 /**Created by Daniel McCoy @ 25th Feb 2020*/
-abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSupportFragmentInjector{
+abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSupportFragmentInjector {
 
     @get:LayoutRes
     abstract val layoutResId: Int
 
-    abstract val rootLayout: View?
+    abstract val rootLayout: ViewGroup?
 
   /*  @Inject
     lateinit var sharePrefUtils: SharePrefUtils*/
@@ -417,7 +417,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
 
     // slide the view from below itself to the current position
-    fun slideUp(view: View, anchorGravity: Int) {
+    fun slideUp(view: View, anchorGravity: Int , rootLayout : ViewGroup) {
         showLogD("Slided Up")
         val transition: Transition = Slide(anchorGravity)
         transition.duration = 300
@@ -427,12 +427,12 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
     }
 
     // slide the view from its current position to below itself
-    fun slideDown(view: View, anchorGravity: Int) {
+    fun slideDown(view: View, anchorGravity: Int , rootLayout : ViewGroup) {
         showLogD("Slided Down")
         val transition: Transition = Slide(anchorGravity)
         transition.duration = 300
         transition.addTarget(view)
-        TransitionManager.beginDelayedTransition(rootLayout as ViewGroup, transition)
+        TransitionManager.beginDelayedTransition(rootLayout, transition)
         view.visibility = View.GONE
     }
 

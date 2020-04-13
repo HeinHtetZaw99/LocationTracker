@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.appbase.*
-import com.appbase.components.Connectivity
 import com.appbase.components.Locator
 import com.appbase.components.PermissionListUtil
 import com.appbase.fragments.BaseFragment
@@ -27,13 +26,14 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListener,
     Locator.Listener {
 
+    private val handler = android.os.Handler()
     private val locationManager: LocationManager by lazy {
         parentActivity.getSystemService(
             AppCompatActivity.LOCATION_SERVICE
         ) as LocationManager
     }
     private val locator: Locator by lazy { Locator(view!!.context, locationManager) }
-
+    private var exportAsCSV = false
     private val LOCATION_PERMISSION = 120
     private val ALL_APP_PERMISSION = 130
 
@@ -59,22 +59,22 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
     override fun initViews(view: View) {
 
+        permissionListUtil.checkAndAskPermissions(
+            parentActivity,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            this
+        )
+
         locationEnabledView.setVisible(true)
         locationDisabledView.setVisible(false)
+        writeStoragePermissionEnabledView.setVisible(true)
+        writeStoragePermissionDisabledView.setVisible(false)
 
         allowAccessLocationBtn.setOnClickListener {
             parentActivity.showShortToast("Please enable the location permission in the settings")
             parentActivity.goToAppSettings()
         }
 
-        permissionListUtil.checkAndAskPermissions(
-            parentActivity,
-            arrayOf(
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            ),
-            this
-        )
 
         viewModel.locationStatusLD.observe(this, androidx.lifecycle.Observer {
             if (it is ReturnResult.PositiveResult) {
@@ -94,17 +94,20 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         })
 
         viewModel.locationListLD.observe(this, Observer {
-            writeFileToDisk(
-                "Android/locationData/",
-                "location_data_csv.txt",
-                toCSV(it),
-                true
-            )
-            parentActivity.showShortToast("Exporting as CSV")
-
+            if (exportAsCSV) {
+                writeFileToDisk(
+                    "Android/locationData/",
+                    "location_data_csv.txt",
+                    toCSV(it),
+                    true
+                )
+                parentActivity.showShortToast("Exporting as CSV")
+                exportAsCSV = false
+            }
         })
 
         convertToCSVBtn.setOnClickListener {
+            exportAsCSV = true
             permissionListUtil.checkAndAskPermissions(
                 parentActivity,
                 arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
@@ -119,9 +122,13 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         grantResults: IntArray
     ) {
         showLogD("Permission callback called-------")
-        if (requestCode == LOCATION_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == ALL_APP_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             showLogD("PERMISSION IS GRANTED")
             trackLocation()
+        } else if (requestCode == ALL_APP_PERMISSION && grantResults.isNotEmpty() && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+            showLogD("PERMISSION IS GRANTED")
+            if (exportAsCSV)
+                convertToCSV()
         } else
             showLogD("PERMISSION IS NOT GRANTED")
     }
@@ -146,10 +153,7 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
 
     private fun trackLocation() {
-        if (Connectivity.isConnected(parentActivity))
-            locator.getLocation(Locator.Method.NETWORK, this)
-        else
-            locator.getLocation(Locator.Method.GPS, this)
+        parentActivity.startLocationTrackingService()
     }
 
 
@@ -171,6 +175,8 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
             }
             Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
                 //showing layout which is saying user to enabling location
+                writeStoragePermissionEnabledView.setVisible(false)
+                writeStoragePermissionDisabledView.setVisible(true)
             }
         }
 
@@ -216,6 +222,13 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         ContextCompat.checkSelfPermission(
             context!!,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) != PackageManager.PERMISSION_GRANTED
+
+
+    private fun isLocationPermissionGranted() =
+        ContextCompat.checkSelfPermission(
+            context!!,
+            Manifest.permission.ACCESS_FINE_LOCATION
         ) != PackageManager.PERMISSION_GRANTED
 
     private fun showForceGPSEnableDialog() {

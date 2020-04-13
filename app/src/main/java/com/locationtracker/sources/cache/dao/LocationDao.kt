@@ -13,7 +13,12 @@ interface LocationDao : BaseDAO<LocationEntity> {
     @Query("select * from location_history")
     fun getAllLocationData(): List<LocationEntity>
 
+/*
     @Query("select * from location_history where latitude=:lat and longitude=:lng")
+    fun getLocationByLatLng(lat: String, lng: String): List<LocationEntity>
+*/
+
+    @Query("select * from location_history where latitude like :lat || '%' and longitude like :lng || '%'")
     fun getLocationByLatLng(lat: String, lng: String): List<LocationEntity>
 
     @Query("select * from location_history where timeStamp =:timeStamp")

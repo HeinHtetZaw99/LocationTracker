@@ -7,6 +7,8 @@ import com.locationtracker.sources.cache.data.LocationEntity
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
 import io.reactivex.Completable
 import io.reactivex.Observable
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import java.util.*
 import javax.inject.Inject
 
@@ -14,9 +16,7 @@ class LocationRepositoryImpl @Inject constructor(
     private val locationDataSource: LocationDataSource,
     private val locationEntityMapper: LocationEntityMapper
 
-) :
-    LocationRepository {
-
+) : LocationRepository {
 
     override fun getLocationListByDate(timeStamp: String): Observable<List<LocationEntity>> {
         return Observable.fromCallable { locationDataSource.getLocationListByDate(timeStamp) }
@@ -30,11 +30,14 @@ class LocationRepositoryImpl @Inject constructor(
         lat: String,
         lng: String
     ): Observable<ReverseGeoEncodeResponse> {
-        val cachedGeoEncodedData = locationDataSource.getLocationDataByLatLong(lat, lng)
+        val cachedGeoEncodedData = locationDataSource.getLocationDataByLatLong(
+            formatTo3DecimalPlaces(lat.toDouble()),
+            formatTo3DecimalPlaces(lng.toDouble())
+        )
         showLogD("Cache Reversed Geo Location : $cachedGeoEncodedData")
         return if (cachedGeoEncodedData == null) {
             showLogD("Cache Reversed Geo Location is null so retrieved from server")
-            locationDataSource.getReverseGeoEncodeData(lat, lng)
+            Observable.fromCallable { locationDataSource.getReverseGeoEncodeData(lat, lng) }
         } else {
             showLogD("Cache Reversed Geo Location is returned instead")
             Observable.fromCallable { locationEntityMapper.reverseMap(cachedGeoEncodedData) }
@@ -48,7 +51,8 @@ class LocationRepositoryImpl @Inject constructor(
         date: String
     ): Completable {
         return Completable.fromCallable {
-            locationDataSource.addPartialLocation(LocationEntity().apply {
+            showLogD("partial location data saved : $latitude, $longitude , $time , $date")
+            locationDataSource.addLocation(LocationEntity().apply {
                 this.latitude = latitude
                 this.longitude = longitude
                 this.time = time
@@ -61,5 +65,10 @@ class LocationRepositoryImpl @Inject constructor(
     override fun getAllLocationData(): Observable<List<LocationEntity>> {
         return Observable.fromCallable { locationDataSource.getAllLocationList() }
     }
+
+    private fun formatTo3DecimalPlaces(data: Double): String {
+        return DecimalFormat("#.###").apply { roundingMode = RoundingMode.DOWN }.format(data)
+    }
+
 
 }

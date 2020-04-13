@@ -46,7 +46,7 @@
             tools:node="remove" />
 
         <service
-            android:name=".background.BackgroundService"
+            android:name=".background.LocationTrackerService"
             android:enabled="true"
             android:exported="true" />
     </application>

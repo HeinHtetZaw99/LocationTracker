@@ -2,28 +2,32 @@ package com.locationtracker
 
 import android.app.Activity
 import android.app.Application
-import android.content.BroadcastReceiver
+import android.app.Service
+import androidx.fragment.app.Fragment
 import androidx.work.Configuration
 import androidx.work.WorkManager
-import androidx.work.Worker
-import androidx.work.WorkerFactory
 import com.appbase.components.LoggingTree
 import com.appbase.di.AppInjector
 import com.appbase.showLogE
 import com.locationtracker.di.AppComponent
 import com.locationtracker.di.DaggerAppComponent
-
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.*
+import dagger.android.support.HasSupportFragmentInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class LocationTrackerApplication : Application(), HasActivityInjector  {
+class LocationTrackerApplication : Application(), HasActivityInjector  , HasSupportFragmentInjector, HasServiceInjector  {
 
     @Inject
     lateinit var dispatchingAndroidActivityInjector:
             DispatchingAndroidInjector<Activity>
+
+    @Inject
+    lateinit var dispatchingAndroidFragmentInjector:
+            DispatchingAndroidInjector<Fragment>
+
+    @Inject
+    lateinit var dispatchingServiceInjector: DispatchingAndroidInjector<Service>
 
     private var appComponent: AppComponent? = null
 
@@ -58,6 +62,16 @@ class LocationTrackerApplication : Application(), HasActivityInjector  {
 
     companion object{
         val BroadcastReceiverCode = 234324243
+    }
+
+    override fun serviceInjector(): AndroidInjector<Service> {
+        return dispatchingServiceInjector
+    }
+
+
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> {
+        return dispatchingAndroidFragmentInjector
     }
 
 }

@@ -37,7 +37,7 @@ class MyLocationHistoryRecyclerViewAdapter(
         val mTimeIntervalView: TextView = mView.time_interval
         override fun setData(data: LocationEntity) {
             mAddressView.text = data.getAddress()
-            mTimeIntervalView.text = data.time
+            mTimeIntervalView.text = data.startToEndTime
             mView.setOnClickListener { listener.onListFragmentInteraction(adapterPosition) }
         }
     }

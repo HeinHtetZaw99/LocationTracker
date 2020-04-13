@@ -2,6 +2,8 @@ package com.locationtracker.di
 
 import com.locationtracker.activities.MainActivity
 import com.locationtracker.activities.MapActivity
+import com.locationtracker.fragments.HistoryFragment
+import com.locationtracker.fragments.HomeFragment
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -22,4 +24,10 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract fun mapActivity(): MapActivity
+
+    @ContributesAndroidInjector
+    abstract fun historyFragment(): HistoryFragment
+
+    @ContributesAndroidInjector
+    abstract fun homeFragment(): HomeFragment
 }

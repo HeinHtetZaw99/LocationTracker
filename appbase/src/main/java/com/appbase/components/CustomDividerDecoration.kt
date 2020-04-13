@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import android.R
+import androidx.annotation.DrawableRes
 
 class CustomDividerDecoration : ItemDecoration {
     private var defaultMargin = 24
@@ -28,7 +29,7 @@ class CustomDividerDecoration : ItemDecoration {
     /**
      * Custom divider will be used
      */
-    constructor(context: Context, resId: Int) {
+    constructor(context: Context,@DrawableRes resId: Int) {
         divider = ContextCompat.getDrawable(context, resId)
         this.context = context
     }

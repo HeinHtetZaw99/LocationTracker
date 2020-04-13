@@ -1,5 +1,6 @@
 package com.appbase.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +9,26 @@ import androidx.fragment.app.Fragment
 import com.appbase.activities.BaseActivity
 import com.appbase.components.Connectivity
 import com.pv.viewmodels.BaseViewModel
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.AndroidSupportInjection
+import dagger.android.support.HasSupportFragmentInjector
+import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : Fragment() , HasSupportFragmentInjector   {
 
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
     abstract var fragmentLayout : Int
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
     }
 
     override fun onCreateView(
@@ -53,4 +66,7 @@ abstract class BaseFragment : Fragment() {
     /** do your UI logics here only */
     abstract fun initViews(view  : View)
 
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> {
+        return dispatchingAndroidInjector
+    }
 }

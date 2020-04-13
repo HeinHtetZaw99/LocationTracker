@@ -10,7 +10,7 @@ interface LocationDataSource {
 
     fun addLocation(data : LocationEntity)
     fun getLocationDataByLatLong(lat: String , long : String ) : LocationEntity?
-    fun getReverseGeoEncodeData(lat : String , lng : String) : Observable<ReverseGeoEncodeResponse>
+    fun getReverseGeoEncodeData(lat : String , lng : String) : ReverseGeoEncodeResponse
     fun addPartialLocation(data: LocationEntity)
     fun getAllLocationList() : List<LocationEntity>
 }

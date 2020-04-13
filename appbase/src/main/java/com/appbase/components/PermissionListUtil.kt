@@ -96,9 +96,7 @@ class PermissionListUtil(private var PERMISSION_ASKER : Int){
     private fun askPermissions(activity : Activity , permission : Array<String> , listener : PermissionListAskListener) {
         /** If permission denied previously
          * */
-        permission.forEach {
-            askPermission(activity , it , listener)
-        }
+        ActivityCompat.requestPermissions(activity, permission, PERMISSION_ASKER);
     }
 
 

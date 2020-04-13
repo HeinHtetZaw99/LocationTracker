@@ -8,38 +8,36 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.util.SparseArray
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import androidx.annotation.IdRes
 import com.appbase.*
 import com.appbase.activities.BaseActivity
 import com.appbase.fragments.BaseFragment
-
 import com.locationtracker.LocationTrackerApplication
-
-import com.appbase.handleNavigationTransactions
-import com.appbase.showLogE
-
 import com.locationtracker.R
 import com.locationtracker.background.LocationTrackerBroadcastReceiver
+import com.locationtracker.background.LocationTrackerService
 import com.locationtracker.fragments.HistoryFragment
 import com.locationtracker.fragments.HomeFragment
 import com.locationtracker.fragments.LocationHistoryFragment
-
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import java.text.FieldPosition
 
 
-class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnListFragmentInteractionListener {
+class MainActivity : BaseActivity<MainViewModel>(),
+    LocationHistoryFragment.OnListFragmentInteractionListener {
+
 
     private val homeFragment = HomeFragment()
+
     private val historyFragment = HistoryFragment()
-    private val locationHistoryFragment = LocationHistoryFragment()
     private var activeFragment: BaseFragment = homeFragment
     private var lastVisitedFragment: Int = R.id.nav_home
     private var fragmentList = SparseArray<BaseFragment>().apply {
         put(R.id.nav_home, homeFragment)
-        put(R.id.nav_history, locationHistoryFragment)
+        put(R.id.nav_history, historyFragment)
     }
 
 
@@ -51,7 +49,7 @@ class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnLi
 
     override val layoutResId: Int = R.layout.activity_main
 
-    override val rootLayout: View? by lazy { mainRootLayout }
+    override val rootLayout: ViewGroup? by lazy { mainRootLayout }
 
     override val viewModel: MainViewModel by contractedViewModels()
 
@@ -72,7 +70,8 @@ class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnLi
         val logHeader =
             "\n---------------------------------------------\nWorkManger Deployed @ ${getTime()} ${getDate()}\n---------------------------------------------\n"
         writeFileToDisk("Android/locationData/", "log.txt", logHeader, false)
-        initPeriodicWork()
+//        initPeriodicWork()
+        startLocationTrackingService()
 
         fragmentList.buildFragmentList(
             supportFragmentManager,
@@ -124,20 +123,36 @@ class MainActivity : BaseActivity<MainViewModel>(), LocationHistoryFragment.OnLi
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             alarmManager!!.setInexactRepeating(
                 AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                        + 100, 180000,pendingIntent
+                        + 100, 180000, pendingIntent
             )
         } else {
-     /*       alarmManager!![AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                    + 1000] = pendingIntent*/
-            alarmManager!!.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                    + 100,180000,pendingIntent)
+            /*       alarmManager!![AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
+                           + 1000] = pendingIntent*/
+            alarmManager!!.setRepeating(
+                AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
+                        + 100, 180000, pendingIntent
+            )
         }
+
+    }
+
+    fun startLocationTrackingService() {
+        val serviceIntent = Intent(this, LocationTrackerService::class.java)
+        startService(serviceIntent)
     }
 
     override fun logOut() {
 
     }
 
+    fun changeNavigationBarVisibility(visibility: Int) {
+//        bottomNavigationBar.visibility = visibility
+        if (visibility == View.GONE) {
+            slideDown(bottomNavigationBar, Gravity.BOTTOM, rootLayout!!)
+        } else {
+            slideUp(bottomNavigationBar, Gravity.BOTTOM, rootLayout!!)
+        }
+    }
 
     fun getHomeViewModel() = viewModel
 
