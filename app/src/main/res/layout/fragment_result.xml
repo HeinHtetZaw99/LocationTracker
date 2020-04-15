@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorMediumDangerHint"
+        android:padding="@dimen/margin_2xlarge"
+        tools:context=".fragments.selfexamine.ResultFragment">
+
+        <ImageView
+            android:id="@+id/avatarIv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_go_to_hospital"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.10"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            style="@style/BoldXL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You're experiencing normal flu symptoms"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatarIv"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <TextView
+            android:id="@+id/subTitleTv"
+            style="@style/MediumXL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="However , you should be stay home as much as possible to reduce the spreading of COVID-19 virus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTv"
+            app:layout_constraintVertical_bias="0.05" />
+
+        <TextView
+            android:id="@+id/goBackHomeBtn"
+            style="@style/PrimaryButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go Back To Home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subTitleTv"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/contactToDoctorsBtn"
+            style="@style/PrimaryDangerButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact To Doctors"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goBackHomeBtn"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

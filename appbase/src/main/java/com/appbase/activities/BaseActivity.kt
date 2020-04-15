@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.apbase.R
@@ -450,6 +451,21 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> = dispatchingAndroidInjector
 
+    /**adding animation to the fragment transition*/
+    fun FragmentTransaction.addAnimation(reversed: Boolean) =
+        if (reversed) {
+            this.setCustomAnimations(
+                R.anim.anim_enter_from_left,
+                R.anim.anim_exit_to_right,
+                R.anim.anim_exit_to_left,
+                R.anim.anim_enter_from_right
+            )
+        } else this.setCustomAnimations(
+            R.anim.anim_enter_from_right,
+            R.anim.anim_exit_to_left,
+            R.anim.anim_enter_from_left,
+            R.anim.anim_exit_to_right
+        )
 
 
 }

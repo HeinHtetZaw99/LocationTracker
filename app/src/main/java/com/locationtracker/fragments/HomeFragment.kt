@@ -18,6 +18,7 @@ import com.appbase.fragments.BaseFragment
 import com.appbase.models.vos.ReturnResult
 import com.locationtracker.R
 import com.locationtracker.activities.MainActivity
+import com.locationtracker.activities.SelfExaminationActivity
 import com.locationtracker.sources.cache.data.LocationEntity.Companion.toCSV
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -49,7 +50,7 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
     override val viewModel: MainViewModel by lazy { parentActivity.getHomeViewModel() }
 
-    override fun onNetworkError() {
+    override fun onError() {
 
     }
 
@@ -106,6 +107,10 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
             }
         })
 
+        checkSymptomsBtn.setOnClickListener {
+            startActivity(SelfExaminationActivity.newIntent(parentActivity))
+            parentActivity.finish()
+        }
         convertToCSVBtn.setOnClickListener {
             exportAsCSV = true
             permissionListUtil.checkAndAskPermissions(

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/QuestioniareStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_2xlarge">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/titleTv"
+        style="@style/QuestionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Is your current body temperature above 100.4 F or 38 C ? " />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        android:id="@+id/subTitleTv"
+        style="@style/QuestionSubTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTv"
+        android:text="Please choose one" />
+
+    <RadioGroup
+        android:id="@+id/temperatureSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTitleTv"
+        tools:layout_editor_absoluteX="24dp">
+
+        <RadioButton
+            android:id="@+id/yesBtn"
+            style="@style/CheckBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2xlarge"
+            android:text="Yes" />
+
+        <RadioButton
+            android:id="@+id/NoBtn"
+            style="@style/CheckBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2xlarge"
+            android:text="No" />
+
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

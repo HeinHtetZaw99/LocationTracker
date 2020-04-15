@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimary">#0072BB</color>
+    <color name="colorPrimaryLight">#31ADFD</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#FF6B46</color>
+
+
+    <color name="colorGoodHint">#360F78FF</color>
+    <color name="colorDangerHint">#3CFF0000</color>
+    <color name="colorMediumDangerHint">#4DFF6B46</color>
+
+    <color name="colorPrimarySupport">#7C92E9</color>
+    <color name="colorSecondaryLight">#FF6B46</color>
+    <color name="colorSecondaryDark">#EB5A36</color>
+    <color name="colorSupportLight">#F9F7FF</color>
+
+    <color name="secondDarkestGrey">#180E3F</color>
+    <color name="mtrl_textinput_default_box_stroke_color">@color/colorSupportLight</color>
+
+    <color name="colorPrimary30">#4D0F78FF</color>
+    <color name="black">#030203</color>
+    <color name="gray">#98979B</color>
+    <color name="error">#ff0000</color>
+    <color name="white">#fff</color>
+    <color name="positive">#234068</color>
+    <color name="neutral">#ABABAB</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="whiteGrey">#f3f3f3</color>
+    <color name="darkGrey">#6a6a6a</color>
 </resources>

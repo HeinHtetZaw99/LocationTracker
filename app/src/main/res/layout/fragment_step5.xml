@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/QuestioniareStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_2xlarge">
+
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/QuestionTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do you have any of these medical backgrounds ? "
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subTitleTv"
+        style="@style/QuestionSubTitleStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTv"
+        android:text="Please choose all those applied"
+        app:layout_constraintTop_toBottomOf="@id/titleTv" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/subTitleTv"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subTitleTv"
+        tools:layout_editor_absoluteX="24dp">
+
+        <RadioGroup
+            android:id="@+id/symptomSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <CheckBox
+                android:id="@+id/diabetesBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="ဆီးချိုရောဂါ" />
+
+            <CheckBox
+                android:id="@+id/weakenHeartBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="နှလုံးအားနည်းခြင်း" />
+
+            <CheckBox
+                android:id="@+id/lowImmunityBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="ကိုယ်ခံအားနည်းခြင်း" />
+
+            <CheckBox
+                android:id="@+id/obesityBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="အဝလွန်ခြင်း" />
+
+            <CheckBox
+                android:id="@+id/lungRelatedDiseaseBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="အဆုတ်ရောဂါအခံရှိခြင်း" />
+
+            <CheckBox
+                android:id="@+id/hypertensionBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="သွေးတိုးရောဂါ" />
+
+            <CheckBox
+                android:id="@+id/underChemotherapyBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="ကင်ဆာဆေးသွင်းနေရခြင်" />
+
+            <CheckBox
+                android:id="@+id/kidneyCleansingBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="ကျောက်ကပ်ဆေးနေရခြင်း" />
+
+            <CheckBox
+                android:id="@+id/pregnancyBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="ကိုယ်ဝန်ဆောင် မိခင်" />
+
+            <CheckBox
+                android:id="@+id/noSymptomsBtn"
+                style="@style/CheckBtnStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_xSmall"
+                android:minHeight="50dp"
+                android:text="မရှိပါ" />
+
+        </RadioGroup>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

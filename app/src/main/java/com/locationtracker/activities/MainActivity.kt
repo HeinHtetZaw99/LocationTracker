@@ -3,6 +3,7 @@ package com.locationtracker.activities
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -158,6 +159,10 @@ class MainActivity : BaseActivity<MainViewModel>(),
 
     override fun onListFragmentInteraction(adapterPosition: Int) {
         showLogE("Adapter Position $adapterPosition")
+    }
+
+    companion object{
+        fun newIntent(context : Context)= Intent(context , MainActivity::class.java)
     }
 
 }

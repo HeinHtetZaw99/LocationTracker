@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.appbase.activities.BaseActivity
 import com.appbase.components.Connectivity
 import com.pv.viewmodels.BaseViewModel
 import dagger.android.AndroidInjector
@@ -53,12 +52,12 @@ abstract class BaseFragment : Fragment() , HasSupportFragmentInjector   {
         if (Connectivity.isConnected(context!!)) {
             loadData()
         } else {
-            onNetworkError()
+            onError()
         }
     }
 
 
-    abstract fun onNetworkError()
+    abstract fun onError()
 
     /** do your loading here only */
     abstract fun loadData()

@@ -96,9 +96,7 @@ dependencies {
     implementation ReactiveX.rxandroid
     implementation ReactiveX.rxjava
     implementation AndroidXAnnotations.jobIntentService
-
     implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.3.4'
-
     implementation Retrofit.rxJavaAdapter
     implementation Retrofit.loggingInterceptor
     implementation Retrofit.okhttp

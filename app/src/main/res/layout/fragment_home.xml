@@ -176,4 +176,12 @@
     </androidx.cardview.widget.CardView>
 
 
+    <TextView
+        android:id="@+id/checkSymptomsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_2xlarge"
+        style="@style/PrimaryButtonStyle"
+        android:text="Check Symptoms"/>
+
 </LinearLayout>

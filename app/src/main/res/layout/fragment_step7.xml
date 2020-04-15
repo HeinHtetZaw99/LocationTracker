@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    style="@style/QuestioniareStyle"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_2xlarge">
+    <TextView
+        android:id="@+id/titleTv"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/QuestionTitleStyle"
+        android:text="သင်၏ကျေးရွာ ၊ ရပ်ကွက်တွင် COVID-19 ရောဂါရှိသူနေထိုင်မှုရှိပါသလား"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/subTitleTv"
+        android:layout_below="@id/titleTv"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        style="@style/QuestionSubTitleStyle"
+        android:text="Please choose one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup
+        android:id="@+id/groupSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTitleTv"
+        tools:layout_editor_absoluteX="24dp">
+
+        <RadioButton
+            android:id="@+id/yesBtn"
+            style="@style/CheckBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2xlarge"
+            android:text="ရှိ" />
+
+        <RadioButton
+            android:id="@+id/noBtn"
+            style="@style/CheckBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2xlarge"
+            android:text="မရှိ" />
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

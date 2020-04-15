@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/QuestioniareStyle"
+    android:padding="@dimen/margin_2xlarge"
+    >
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/QuestionTitleStyle"
+        android:text="Welcome to COVID-19 self examination questionaire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/subTitleTv"
+        android:layout_below="@id/titleTv"
+        style="@style/QuestionSubTitleStyle"
+        android:text="Please choose the most approriate answers to get the exact result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/disClaimerTitleStyle"
+        style="@style/DisclaimerStyle"
+        android:layout_above="@id/fact1"
+        android:text="Stop and call to 911 if you are experiencing :"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fact1"
+        style="@style/DisclaimerStyle"
+        android:textColor="@color/black"
+        android:layout_above="@id/fact2"
+        android:drawableStart="@drawable/ic_dot"
+        android:drawablePadding="@dimen/margin_small"
+        android:text="Severe, constant chest pain or pressure"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fact2"
+        style="@style/DisclaimerStyle"
+        android:textColor="@color/black"
+      android:layout_above="@id/fact3"
+        android:drawableStart="@drawable/ic_dot"
+        android:drawablePadding="@dimen/margin_small"
+        android:text="Severe, constant light headache"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fact3"
+        style="@style/DisclaimerStyle"
+        android:textColor="@color/black"
+        android:layout_above="@id/fact4"
+        android:drawableStart="@drawable/ic_dot"
+        android:drawablePadding="@dimen/margin_small"
+        android:text="Extreme difficulty in breathing"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fact4"
+        style="@style/DisclaimerStyle"
+        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:drawableStart="@drawable/ic_dot"
+        android:drawablePadding="@dimen/margin_small"
+        android:text="Serious disorientation or unresponsiveness"
+        />
+
+</RelativeLayout>

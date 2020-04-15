@@ -7,4 +7,8 @@
     <string name="bottom_nav_home">မူလ</string>
     <string name="bottom_nav_history">မှတ်တမ်း</string>
     <string name="error_empty_locatin_data_list">No Location Data To Display</string>
+
+    <string name="channel_name">Check Your Location</string>
+    <string name="channel_id">CHECK_YOUR_LOCATION_1001</string>
+    <string name="channel_description">channel for showing notification for foreground service</string>
 </resources>

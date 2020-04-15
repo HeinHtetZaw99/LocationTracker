@@ -13,6 +13,7 @@ import com.appbase.components.SmartRecyclerView
 import com.appbase.configure
 import com.appbase.fragments.BaseFragment
 import com.appbase.fragments.SelectDateFragment
+import com.appbase.models.vos.ReturnResult
 import com.appbase.showLogD
 import com.appbase.showLogE
 import com.locationtracker.LocationOverlayItemConverter
@@ -64,7 +65,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         initViews(view)
     }
 
-    override fun onNetworkError() {
+    override fun onError() {
 
     }
 
@@ -129,12 +130,16 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         viewModel.getLocationHistoryByDate(currentSelectedDate)
 
         viewModel.locationListLD.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-
-            showLogD("adding PolyLine for ${it.size} locations")
-            val convertedList = LocationEntity.convertForList(it)
-            showUserOnMap(convertedList)
             swipeRefreshLayout.isRefreshing = false
-            adapter.appendNewData(convertedList)
+            if (it.isNotEmpty()) {
+                showLogD("adding PolyLine for ${it.size} locations")
+                val convertedList = LocationEntity.convertForList(it)
+                showUserOnMap(convertedList)
+
+                adapter.appendNewData(convertedList)
+            } else {
+                parentActivity.showSnackBar(view, ReturnResult.ErrorResult("No location to show"))
+            }
         })
         loadData()
     }
@@ -177,7 +182,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         mapView.controller.setZoom(18.0)
 
         //replace with user home location
-        val startPoint = GeoPoint(16.8350692, 96.1283548) //setting Home here
+        val startPoint = GeoPoint(16.835, 96.128) //setting Home here as default
         mapView.controller.setCenter(startPoint)
         mapView.setHasTransientState(true)
 
@@ -196,6 +201,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
     }
 
     private fun addMarker(overLayItem: OverlayItem) {
+        mapView.controller.setCenter(overLayItem.point)
         //the overlay
         val mapViewPoint =
             ItemizedIconOverlay(
@@ -221,6 +227,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
     }
 
     private fun addPolyLine(geoPoints: List<GeoPoint>) {
+        mapView.controller.setCenter(geoPoints.first())
         showLogD("GEOPointList : $geoPoints")
         mapView.invalidate()
         val line = Polyline() //see note below!

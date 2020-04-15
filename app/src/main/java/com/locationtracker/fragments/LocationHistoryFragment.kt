@@ -9,10 +9,8 @@ import com.appbase.fragments.BaseFragment
 import com.locationtracker.R
 import com.locationtracker.activities.MainActivity
 
-import com.locationtracker.sources.cache.data.LocationEntity
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.fragment_location_history_list.view.*
-import java.text.FieldPosition
 
 /**
  * A fragment representing a list of Items.
@@ -37,7 +35,7 @@ class LocationHistoryFragment() : BaseFragment() {
         initViews(view)
     }
 
-    override fun onNetworkError() {
+    override fun onError() {
 
     }
 

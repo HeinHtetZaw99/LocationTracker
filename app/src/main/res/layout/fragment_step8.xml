@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_2xlarge"
+    style="@style/QuestioniareStyle">
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/QuestionTitleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="သင်သည် အလုပ်ခွင်သို့နေ့စဉ်စဥ်သွားရောက်ရပါသလား ?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/subTitleTv"
+        android:layout_below="@id/titleTv"
+        style="@style/QuestionSubTitleStyle"
+        android:text="Please choose one"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RadioGroup
+        android:id="@+id/groupSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTitleTv"
+        tools:layout_editor_absoluteX="24dp">
+
+        <RadioButton
+            android:id="@+id/goToWorkBtn"
+            style="@style/CheckBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2xlarge"
+            android:text="သွားရောက်ရပါသည်" />
+
+        <RadioButton
+            android:id="@+id/wfhBtn"
+            style="@style/CheckBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_2xlarge"
+            android:text="မိမိနေအိမ်မှနေ၍ အလုပ်လုပ်ပါသည်" />
+
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

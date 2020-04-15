@@ -1,10 +1,12 @@
 package com.locationtracker.background
 
-import android.app.Service
+import android.R
+import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.util.Log
@@ -13,17 +15,21 @@ import com.appbase.*
 import com.appbase.components.Connectivity
 import com.appbase.components.Locator
 import com.appbase.components.interfaces.GenericErrorMessageFactory
+import com.locationtracker.activities.MainActivity
 import com.locationtracker.repository.LocationRepository
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
+import java.util.*
 import javax.inject.Inject
+
 
 class LocationTrackerService() : Service(), Locator.Listener {
 
     private val handler = Handler()
 
+    private val CHANNEL_ID = "10100"
     private lateinit var context: Context
 
     @Inject
@@ -45,6 +51,23 @@ class LocationTrackerService() : Service(), Locator.Listener {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+
+
+        val input = intent.getStringExtra("inputExtra")
+//        createNotificationChannel()
+        val notificationIntent = MainActivity.newIntent(context)
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0, notificationIntent, 0
+        )
+     /*   val notification: Notification = NotificationBuilder(this, CHANNEL_ID)
+            .setContentTitle("Foreground Service")
+            .setContentText(input)
+            .setSmallIcon(R.drawable.ic_stat_name)
+            .setContentIntent(pendingIntent)
+            .build()
+        startForeground(1, notification)*/
+
 
         handler.postDelayed(Runnable {
 
@@ -129,5 +152,25 @@ class LocationTrackerService() : Service(), Locator.Listener {
         }).addTo(compositeDisposable = compositeDisposable)
     }
 
+   /* fun createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name: CharSequence = getString(R.string.channel_name)
+                val description = getString(R.string.channel_description)
+                val importance = NotificationManager.IMPORTANCE_DEFAULT
+                val channel =
+                    NotificationChannel(getString(R.string.notification_channel_id), name, importance)
+                channel.description = description
+                channel.setShowBadge(true)
+                // Register the channel with the system; you can't change the importance
+                // or other notification behaviors after this
+                val notificationManager = getSystemService(
+                    NotificationManager::class.java
+                )
+                Objects.requireNonNull(notificationManager)
+                    .createNotificationChannel(channel)
+            }
+        }*/
 
 }
