@@ -49,6 +49,11 @@
             android:name=".background.LocationTrackerService"
             android:enabled="true"
             android:exported="true" />
+
+        <service
+            android:name=".background.LostLocationService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -3,18 +3,18 @@
 
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <solid android:color="@color/colorAccent" />
+            <solid android:color="@color/colorSecondaryLight" />
             <size android:width="200dp" android:height="32dp" />
             <corners android:radius="@dimen/card_default_corner_radius" />
-            <stroke android:width="2dp" android:color="@color/colorAccent" />
+            <stroke android:width="2dp" android:color="@color/colorSecondaryLight" />
         </shape>
     </item>
     <item android:state_pressed="false">
         <shape android:shape="rectangle">
-            <solid android:color="@color/colorPrimary" />
+            <solid android:color="@color/colorPrimaryDark" />
             <size android:width="200dp" android:height="32dp" />
             <corners android:radius="@dimen/card_default_corner_radius" />
-            <stroke android:width="2dp" android:color="@color/colorPrimary" />
+            <stroke android:width="2dp" android:color="@color/colorPrimaryDark" />
         </shape>
     </item>
 </selector>

@@ -42,7 +42,7 @@ class ResultFragment : BaseStepFragment<SelfExaminationActivity>() {
 
     }
 
-    override fun initViews(view: View) {
+    fun reloadView(){
         when (parentActivity.data.getFinalizedResult()) {
             SelfExamineDataVO.FinalResult.COVID -> showCovidView()
             SelfExamineDataVO.FinalResult.SeasonalFlu
@@ -50,6 +50,9 @@ class ResultFragment : BaseStepFragment<SelfExaminationActivity>() {
             SelfExamineDataVO.FinalResult.HomeStay
             -> showHomeStayView()
         }
+    }
+    override fun initViews(view: View) {
+
 
     }
 

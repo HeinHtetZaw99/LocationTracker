@@ -1,11 +1,14 @@
 package com.locationtracker.activities
 
 import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Build
 import android.os.Bundle
 import android.util.SparseArray
@@ -18,20 +21,30 @@ import com.appbase.activities.BaseActivity
 import com.appbase.fragments.BaseFragment
 import com.locationtracker.LocationTrackerApplication
 import com.locationtracker.R
+import com.locationtracker.background.GeofenceIntentService
 import com.locationtracker.background.LocationTrackerBroadcastReceiver
 import com.locationtracker.background.LocationTrackerService
+import com.locationtracker.background.LostLocationService
 import com.locationtracker.fragments.HistoryFragment
 import com.locationtracker.fragments.HomeFragment
 import com.locationtracker.fragments.LocationHistoryFragment
 import com.locationtracker.viewmodels.MainViewModel
+import com.mapzen.android.lost.api.*
+import com.mapzen.android.lost.api.Geofence.NEVER_EXPIRE
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 
 class MainActivity : BaseActivity<MainViewModel>(),
-    LocationHistoryFragment.OnListFragmentInteractionListener {
+    LocationHistoryFragment.OnListFragmentInteractionListener, LostApiClient.ConnectionCallbacks {
 
 
     private val homeFragment = HomeFragment()
+
+    val lostApiClient: LostApiClient by lazy {
+        LostApiClient.Builder(this).addConnectionCallbacks(this).build()
+    }
+    var currentLocation: Location? = null
 
     private val historyFragment = HistoryFragment()
     private var activeFragment: BaseFragment = homeFragment
@@ -72,7 +85,7 @@ class MainActivity : BaseActivity<MainViewModel>(),
             "\n---------------------------------------------\nWorkManger Deployed @ ${getTime()} ${getDate()}\n---------------------------------------------\n"
         writeFileToDisk("Android/locationData/", "log.txt", logHeader, false)
 //        initPeriodicWork()
-        startLocationTrackingService()
+
 
         fragmentList.buildFragmentList(
             supportFragmentManager,
@@ -89,6 +102,12 @@ class MainActivity : BaseActivity<MainViewModel>(),
             PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
             PackageManager.DONT_KILL_APP
         )
+
+
+        lostApiClient.connect()
+
+        createNotificationChannel()
+
     }
 
     private fun makeFragmentTransaction(
@@ -161,8 +180,82 @@ class MainActivity : BaseActivity<MainViewModel>(),
         showLogE("Adapter Position $adapterPosition")
     }
 
-    companion object{
-        fun newIntent(context : Context)= Intent(context , MainActivity::class.java)
+    companion object {
+        fun newIntent(context: Context) = Intent(context, MainActivity::class.java)
+    }
+
+    override fun onConnected() {
+        showLogD("Lost Service is connected")
+        notifyUserToGetProtection("12345", 16.835154, 96.128817, 15f)
+        currentLocation =
+            LocationServices.FusedLocationApi.getLastLocation(
+                lostApiClient
+            )
+
+        historyFragment.showCurrentLocationOnMap(currentLocation)
+//        getLocationUpdatesInBackground(1234)
+    }
+
+    override fun onConnectionSuspended() {
+        showLogD("Lost service is in connectionSuspended state")
+    }
+
+    fun notifyUserToGetProtection(
+        requestId: String,
+        homeLatitude: Double,
+        homeLongitude: Double,
+        radius: Float
+    ) {
+        val geofence = Geofence.Builder()
+            .setRequestId(requestId)
+            .setCircularRegion(homeLatitude, homeLongitude, radius)
+            .setExpirationDuration(NEVER_EXPIRE)
+            .build()
+        val request = GeofencingRequest.Builder()
+            .addGeofence(geofence)
+            .build()
+        val serviceIntent =
+            Intent(applicationContext, GeofenceIntentService::class.java)
+        val pendingIntent = PendingIntent.getService(this, 0, serviceIntent, 0)
+        LocationServices.GeofencingApi.addGeofences(lostApiClient, request, pendingIntent);
+    }
+
+    fun createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name: CharSequence = getString(R.string.channel_name)
+            val description = getString(R.string.channel_description)
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel =
+                NotificationChannel(getString(R.string.notification_channel_id), name, importance)
+            channel.description = description
+            channel.setShowBadge(true)
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            val notificationManager = getSystemService(
+                NotificationManager::class.java
+            )
+            Objects.requireNonNull(notificationManager)
+                .createNotificationChannel(channel)
+        }
+    }
+
+    fun getLocationUpdatesInBackground(requestCode: Int) {
+        val request = LocationRequest.create()
+            .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY)
+            .setInterval(180000)
+
+        val intent =  Intent(this , LostLocationService::class.java);
+        val pendingIntent = PendingIntent.getService(
+            this, requestCode, intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        );
+        LocationServices.FusedLocationApi.requestLocationUpdates(
+            lostApiClient,
+            request,
+            pendingIntent
+        );
     }
 
 }

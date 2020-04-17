@@ -109,7 +109,6 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
         checkSymptomsBtn.setOnClickListener {
             startActivity(SelfExaminationActivity.newIntent(parentActivity))
-            parentActivity.finish()
         }
         convertToCSVBtn.setOnClickListener {
             exportAsCSV = true
@@ -158,7 +157,8 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
 
     private fun trackLocation() {
-        parentActivity.startLocationTrackingService()
+        //TODO uncomment me again
+//        parentActivity.startLocationTrackingService()
     }
 
 

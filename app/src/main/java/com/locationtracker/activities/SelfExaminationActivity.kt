@@ -73,11 +73,11 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
     }
 
     fun goToNext() {
-        currentFragment.saveData()
-        currentFragmentIndex++
-        if (currentFragmentIndex < fragmentList.size())
+        if (currentFragmentIndex < fragmentList.size()) {
+            currentFragment.saveData()
+            currentFragmentIndex++
             showFragment(fragmentList.get(currentFragmentIndex), false)
-        else {
+        } else {
             showShortToast(" ${data.getFinalizedResult()}")
             showLogD("final result : ${data.getFinalizedResult()}")
             //todo end of the fragment list. so may be it's time to call network calls ?
@@ -91,11 +91,11 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
     }
 
     fun goToPrevious() {
-        currentFragment.saveData()
-        currentFragmentIndex--
-        if (currentFragmentIndex > 0)
+        if (currentFragmentIndex > 0) {
+            currentFragment.saveData()
+            currentFragmentIndex--
             showFragment(fragmentList.get(currentFragmentIndex), true)
-        else {
+        } else {
 //            showShortToast("Next!")
             //todo end of the fragment list. so may be it's time to call network calls ?
         }
@@ -145,11 +145,13 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         currentFragment = fragment
         currentFragmentIndex = fragmentList.getKeyByValue(fragment)
 
-        if(currentFragment is ResultFragment)
+        if (currentFragment is ResultFragment) {
             hideNavigationBtns()
+            (currentFragment as ResultFragment).reloadView()
+        }
     }
 
-    companion object{
-        fun newIntent(context: Context) = Intent(context , SelfExaminationActivity::class.java)
+    companion object {
+        fun newIntent(context: Context) = Intent(context, SelfExaminationActivity::class.java)
     }
 }

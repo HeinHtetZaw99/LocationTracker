@@ -1,5 +1,7 @@
 package com.locationtracker.activities
 
+import com.appbase.showLogD
+
 class SelfExamineDataVO() {
      var ageRangeSelection: Int = -1
      var havingTempAbove38CSelection: Int = -1
@@ -141,14 +143,36 @@ covid
                 fluPercentage += 0.33
             }
         }
+        showLogD(generateReport())
+        showLogD("covidPercentage = $covidPercentage && fluPercentage = $fluPercentage")
 
         return when {
             covidPercentage > fluPercentage -> FinalResult.COVID
-            fluPercentage < 0.6 -> FinalResult.SeasonalFlu
+            fluPercentage > 0.6 -> FinalResult.SeasonalFlu
             else -> FinalResult.HomeStay
         }
     }
 
+
+    fun generateReport() : String{
+        return " ------------Report ------------\n" +
+                "age range : ${getAgeRange()} \n" +
+                " hasFever : ${havingFever()} \n " +
+                " hasDryCough : ${hasDryCough()} \n " +
+                " hasTroubleInBreathing : ${hasTroubleInBreathing()} \n" +
+                " symptoms : \n" +
+                " ${symptomSelection.forEach { 
+                    getSymptom(it) +"\n"
+                }} \n" +
+                " medical background : \n " +
+                " ${medicalBackgroundSelection.forEach {
+                    getMedicalBackground(it) +"\n"
+                }} \n" +
+                " wentToCOVIDOutBreakPlaces : ${hadGoneToCOVIDOutbreakPlaces()} \n" +
+                " haveAnyCovidPatientsAround : ${hasCovidPatientAround()} \n" +
+                " workType : ${getWorkType()} \n" +
+                "-------------------------------------------"
+    }
 
     sealed class FinalResult {
         object COVID : FinalResult()

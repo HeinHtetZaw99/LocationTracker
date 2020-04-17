@@ -11,4 +11,5 @@
     <string name="channel_name">Check Your Location</string>
     <string name="channel_id">CHECK_YOUR_LOCATION_1001</string>
     <string name="channel_description">channel for showing notification for foreground service</string>
+    <string name="notification_channel_id">123456789</string>
 </resources>

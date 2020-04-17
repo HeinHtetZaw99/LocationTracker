@@ -427,3 +427,7 @@ object OSMDroid{
     private const val version = "6.1.6"
     const val core = "org.osmdroid:osmdroid-android:$version"
 }
+
+object Lost{
+    const val core = "com.mapzen.android:lost:3.0.2"
+}

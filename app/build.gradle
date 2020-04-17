@@ -134,4 +134,6 @@ dependencies {
     implementation OSMDroid.core
     compileOnly Retrofit.assistedDaggerAnnotation
     kapt Retrofit.assistedDaggerAnnotationProcessor
+
+    implementation Lost.core
 }

@@ -2,6 +2,7 @@ package com.locationtracker.fragments
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.location.Location
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -48,12 +49,11 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
     private val historyRV: SmartRecyclerView by lazy { historyRv as SmartRecyclerView }
     private val emptyView: EmptyLoadingViewPod by lazy { emptyViewPod as EmptyLoadingViewPod }
 
-    //    private val seeMapFloatBtn: ExtendedFloatingActionButton by lazy { seeMapBtn as ExtendedFloatingActionButton }
     private lateinit var adapter: MyLocationHistoryRecyclerViewAdapter
     override val viewModel: MainViewModel by lazy { parentActivity.getHomeViewModel() }
     private val parentActivity: MainActivity by lazy { activity as MainActivity }
     private var currentSelectedDate: String = ""
-    private val handler = Handler()
+
     private val datePicker: SelectDateFragment by lazy {
         SelectDateFragment(this).apply {
             isCancelable = true
@@ -73,12 +73,6 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         viewModel.getLocationHistoryByDate(currentSelectedDate)
     }
 
-    override fun onResume() {
-        super.onResume()
-//        seeMapFloatBtn.shrink()
-    }
-
-
     override fun initViews(view: View) {
 
         adapter = MyLocationHistoryRecyclerViewAdapter(this)
@@ -94,19 +88,16 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
             }
 
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-
                 when (newState) {
                     RecyclerView.SCROLL_STATE_IDLE -> {
                         parentActivity.changeNavigationBarVisibility(
                             View.VISIBLE
                         )
-//                        parentActivity.slideUp(seeMapFloatBtn, Gravity.END, historyRootLayout)
                     }
                     RecyclerView.SCROLL_STATE_DRAGGING -> {
                         parentActivity.changeNavigationBarVisibility(
                             View.GONE
                         )
-//                        parentActivity.slideDown(seeMapFloatBtn, Gravity.END, historyRootLayout)
                     }
                     RecyclerView.SCROLL_STATE_SETTLING -> println("Scroll Settling")
                 }
@@ -139,6 +130,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
                 adapter.appendNewData(convertedList)
             } else {
                 parentActivity.showSnackBar(view, ReturnResult.ErrorResult("No location to show"))
+                adapter.appendNewData(emptyList())
             }
         })
         loadData()
@@ -194,8 +186,9 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         mapView.invalidate()
         if (locationList.isEmpty())
             showLogE("No Points to locate on map")
-        if (locationList.size == 1)
-            addMarker(overLayMapper.map(locationList.first()))
+        if (locationList.size == 1) {
+//            addMarker(overLayMapper.map(locationList.first()))
+        }
         else
             addPolyLine(geoPointListMapper.map(locationList))
     }
@@ -234,6 +227,15 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         line.outlinePaint.color = ContextCompat.getColor(context!!, R.color.colorPrimary)
         line.setPoints(geoPoints)
         mapView.overlayManager.add(line)
+    }
+
+    fun showCurrentLocationOnMap(currentLocation: Location?) {
+        if (currentLocation != null) {
+            val lat =currentLocation.latitude
+            val lng = currentLocation.longitude
+            addMarker(OverlayItem("Home", "You are here", GeoPoint(lat, lng)))
+        }
+
     }
 
 }

@@ -1,12 +1,10 @@
 package com.locationtracker.background
 
-import android.R
-import android.app.*
+import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.location.Location
 import android.location.LocationManager
-import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.util.Log
@@ -15,13 +13,11 @@ import com.appbase.*
 import com.appbase.components.Connectivity
 import com.appbase.components.Locator
 import com.appbase.components.interfaces.GenericErrorMessageFactory
-import com.locationtracker.activities.MainActivity
 import com.locationtracker.repository.LocationRepository
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
-import java.util.*
 import javax.inject.Inject
 
 
@@ -34,6 +30,7 @@ class LocationTrackerService() : Service(), Locator.Listener {
 
     @Inject
     lateinit var locationRepository: LocationRepository
+
     @Inject
     lateinit var genericErrorMessageFactory: GenericErrorMessageFactory
 
@@ -53,21 +50,23 @@ class LocationTrackerService() : Service(), Locator.Listener {
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
 
 
-        val input = intent.getStringExtra("inputExtra")
+/*        val input = intent.getStringExtra("inputExtra")
 //        createNotificationChannel()
         val notificationIntent = MainActivity.newIntent(context)
         val pendingIntent = PendingIntent.getActivity(
             this,
             0, notificationIntent, 0
-        )
-     /*   val notification: Notification = NotificationBuilder(this, CHANNEL_ID)
-            .setContentTitle("Foreground Service")
-            .setContentText(input)
-            .setSmallIcon(R.drawable.ic_stat_name)
-            .setContentIntent(pendingIntent)
-            .build()
-        startForeground(1, notification)*/
+        )*/
+        /*   val notification: Notification = NotificationBuilder(this, CHANNEL_ID)
+               .setContentTitle("Foreground Service")
+               .setContentText(input)
+               .setSmallIcon(R.drawable.ic_stat_name)
+               .setContentIntent(pendingIntent)
+               .build()
+           startForeground(1, notification)*/
 
+//        val notification = NotificationHelper(context).createNotification("", "", null)
+//        startForeground(12345, notification)
 
         handler.postDelayed(Runnable {
 
@@ -78,14 +77,14 @@ class LocationTrackerService() : Service(), Locator.Listener {
                 Log.d(TAG, "Location Tracked via GPS")
                 locator.getLocation(Locator.Method.GPS, this)
             }
-            onTaskRemoved(intent)
+
         }, 120000)
 
         return START_STICKY
     }
 
     override fun onBind(intent: Intent): IBinder? {
-        throw UnsupportedOperationException("Not yet implemented")
+        return null
     }
 
     override fun onTaskRemoved(rootIntent: Intent) {
@@ -144,7 +143,12 @@ class LocationTrackerService() : Service(), Locator.Listener {
             val log = "\n\n[${getTime()}-${getDate()}-($latitude,$longitude)-by SERVICE]"
             writeFileToDisk("Android/locationData/", "log.txt", log, false)
         }, {
-            Log.e(TAG, "Reverse Geocoding from Service failed : ${genericErrorMessageFactory.getErrorMessage(it)}")
+            Log.e(
+                TAG,
+                "Reverse Geocoding from Service failed : ${genericErrorMessageFactory.getErrorMessage(
+                    it
+                )}"
+            )
             locationRepository.saveLatLngOnly(latitude, longitude, getTime(), getDate()).subscribe {
                 showLogD("saved partial data to db from worker")
             }
@@ -152,25 +156,5 @@ class LocationTrackerService() : Service(), Locator.Listener {
         }).addTo(compositeDisposable = compositeDisposable)
     }
 
-   /* fun createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name: CharSequence = getString(R.string.channel_name)
-                val description = getString(R.string.channel_description)
-                val importance = NotificationManager.IMPORTANCE_DEFAULT
-                val channel =
-                    NotificationChannel(getString(R.string.notification_channel_id), name, importance)
-                channel.description = description
-                channel.setShowBadge(true)
-                // Register the channel with the system; you can't change the importance
-                // or other notification behaviors after this
-                val notificationManager = getSystemService(
-                    NotificationManager::class.java
-                )
-                Objects.requireNonNull(notificationManager)
-                    .createNotificationChannel(channel)
-            }
-        }*/
 
 }

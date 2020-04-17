@@ -8,9 +8,12 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.location.Geocoder
+import android.location.Location
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.NetworkOnMainThreadException
 import android.provider.Settings
 import android.transition.Slide
 import android.transition.Transition
@@ -31,7 +34,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.apbase.R
 import com.appbase.components.Connectivity
 import com.appbase.components.EmptyLoadingViewPod
-import com.appbase.components.SharePrefUtils
+import com.appbase.components.SingleEventLiveData
 import com.appbase.components.interfaces.GenericErrorMessageFactory
 import com.appbase.components.show
 import com.appbase.models.vos.ReturnResult
@@ -45,7 +48,7 @@ import com.pv.viewmodels.BaseViewModel
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
-import io.socket.client.Socket
+import java.io.IOException
 import java.util.*
 import javax.inject.Inject
 import kotlin.reflect.KClass
@@ -466,6 +469,46 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
             R.anim.anim_enter_from_left,
             R.anim.anim_exit_to_right
         )
+
+    open fun getCurrentUserHomeTown(
+        location: Location?,
+        context: Context,
+        currentAddressLD: SingleEventLiveData<String?>
+    ) {
+        if (Geocoder.isPresent()) {
+            if (location != null) {
+                val latitude = location.latitude
+                val longitude = location.longitude
+                val geoCoder = Geocoder(context, Locale.US) //it is Geocoder
+                val builder = StringBuilder()
+                try {
+                    val address =
+                        geoCoder.getFromLocation(latitude, longitude, 3)
+                    if (address.size > 0) {
+                        val addressData = address[0]
+                        builder.append(addressData.locality).append("\n")
+                        builder.append(addressData.countryName)
+                        currentAddressLD.postValue(builder.toString())
+                        showLogD("Final Address : $builder")
+                    } else currentAddressLD.postValue("")
+                } catch (e: java.lang.NullPointerException) {
+                    showLogD("Exception in getting Location" + e.message)
+                    currentAddressLD.postValue("")
+                } catch (e: NetworkOnMainThreadException) {
+                    showLogD("Network on Main Thread Exception occurred")
+                    currentAddressLD.postValue("")
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            } else {
+                showLogD("Location not available")
+                currentAddressLD.postValue("")
+            }
+        } else {
+            currentAddressLD.postValue("")
+            showLogD("Geo coder is not available")
+        }
+    }
 
 
 }

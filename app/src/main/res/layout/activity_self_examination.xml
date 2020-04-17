@@ -23,7 +23,8 @@
         android:layout_marginBottom="@dimen/margin_2xlarge"
         android:layout_marginTop="@dimen/margin_2xSmall"
         android:layout_marginStart="@dimen/margin_2xlarge"
-        style="@style/PrimaryButtonStyle"
+        android:drawableStart="@drawable/ic_chevron_left"
+        style="@style/TertiaryTransparentButtonStyle"
         />
 
     <TextView
@@ -33,9 +34,10 @@
         android:layout_marginTop="@dimen/margin_2xSmall"
         android:layout_marginEnd="@dimen/margin_2xlarge"
         android:text="Next"
+        android:drawableEnd="@drawable/ic_chevron_right"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/nextBtn"
-        style="@style/PrimaryButtonStyle"
+        style="@style/TertiaryTransparentButtonStyle"
         />
 </RelativeLayout>

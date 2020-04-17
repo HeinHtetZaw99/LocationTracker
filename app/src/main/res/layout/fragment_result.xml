@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorMediumDangerHint"
         android:padding="@dimen/margin_2xlarge"
         tools:context=".fragments.selfexamine.ResultFragment">
@@ -40,7 +42,7 @@
             style="@style/MediumXL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="However , you should be stay home as much as possible to reduce the spreading of COVID-19 virus"
+            android:text="However , you should stay home as much as possible to reduce the spreading of COVID-19 virus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleTv"
             app:layout_constraintVertical_bias="0.05" />
@@ -68,4 +70,4 @@
             app:layout_constraintVertical_bias="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
