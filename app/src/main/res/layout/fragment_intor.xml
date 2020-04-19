@@ -8,8 +8,9 @@
     >
     <TextView
         android:id="@+id/titleTv"
+        android:padding ="@dimen/margin_2xSmall"
         style="@style/QuestionTitleStyle"
-        android:text="Welcome to COVID-19 self examination questionaire"
+        android:text="ရောဂါကိုကိုယ်တိုင်စမ်းသပ်ရန် မေးခွန်းများဖြေဆိုပေးပါ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -17,7 +18,8 @@
         android:id="@+id/subTitleTv"
         android:layout_below="@id/titleTv"
         style="@style/QuestionSubTitleStyle"
-        android:text="Please choose the most approriate answers to get the exact result"
+        android:padding ="@dimen/margin_2xSmall"
+        android:text="တိကျသောအဖြေရရှိရန် ကျေးဇူးပြု၍ မိမိနှင့်အသင့်တော်ဆုံးအဖြေများကိုသာရွေးပေးပါ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -26,8 +28,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/disClaimerTitleStyle"
         style="@style/DisclaimerStyle"
+        android:padding ="@dimen/margin_2xSmall"
         android:layout_above="@id/fact1"
-        android:text="Stop and call to 911 if you are experiencing :"
+        android:text="အကယ်၍ အောက်ပါလက္ခဏာများ‌ဖြစ်ပွားနေပါက ဖြေဆိုခြင်းမပြုပဲ အရေးပေါ်ကျန်းမာရေးဌာနကိုသာ ဆက်သွယ်ပေးပါ :"
         />
 
     <TextView
@@ -38,8 +41,9 @@
         android:textColor="@color/black"
         android:layout_above="@id/fact2"
         android:drawableStart="@drawable/ic_dot"
+        android:padding ="@dimen/margin_2xSmall"
         android:drawablePadding="@dimen/margin_small"
-        android:text="Severe, constant chest pain or pressure"
+        android:text="အချိန်ကြာမြင့်စွာပြင်းပြင်းထန်ထန်ရင်ဘတ်အောင့်ခြင်း"
         />
     <TextView
         android:layout_width="match_parent"
@@ -48,32 +52,24 @@
         style="@style/DisclaimerStyle"
         android:textColor="@color/black"
       android:layout_above="@id/fact3"
+        android:padding ="@dimen/margin_2xSmall"
         android:drawableStart="@drawable/ic_dot"
         android:drawablePadding="@dimen/margin_small"
-        android:text="Severe, constant light headache"
+        android:text="အချိန်ကြာမြင့်စွာပြင်းပြင်းထန်ထန်ခေါင်းကိုက်ခြင်း"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fact3"
-        style="@style/DisclaimerStyle"
-        android:textColor="@color/black"
-        android:layout_above="@id/fact4"
-        android:drawableStart="@drawable/ic_dot"
-        android:drawablePadding="@dimen/margin_small"
-        android:text="Extreme difficulty in breathing"
-        />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fact4"
+        android:padding ="@dimen/margin_2xSmall"
         style="@style/DisclaimerStyle"
         android:textColor="@color/black"
         android:layout_alignParentBottom="true"
         android:drawableStart="@drawable/ic_dot"
         android:drawablePadding="@dimen/margin_small"
-        android:text="Serious disorientation or unresponsiveness"
+        android:text="အသက်ရှုရန်ခက်ခဲခြင်"
         />
+
+
 
 </RelativeLayout>

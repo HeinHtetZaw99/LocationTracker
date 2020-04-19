@@ -74,7 +74,11 @@ fun showLogE(text: String) {
 
 fun showLogE(customTag: String, text: String) {
     if (BuildConfig.DEBUG)
-        Timber.tag(customTag).e(text)
+        Log.e(
+            "APP_TAG",
+            "-------------------------------------\n" +
+                    "$text"
+        )
 }
 
 
@@ -326,22 +330,22 @@ fun SparseArray<BaseFragment>.buildFragmentList(
     @IdRes container: Int,
     @IdRes defaultFragmentId: Int
 ) {
-    showLogD("List : $this")
+    ("List : $this")
     this.forEach { key, fragment ->
         if (fragment.isAdded) {
-            showLogD("Fragment $fragment is already added")
+            ("Fragment $fragment is already added")
             return@forEach; //or return false/true, based on where you are calling from
         } else {
             if (key == defaultFragmentId) {
                 fragmentManager.beginTransaction()
                     .add(container, fragment, key.toString())
                     .commitAllowingStateLoss()
-                showLogD("Fragment $fragment is added as default")
+                ("Fragment $fragment is added as default")
             } else {
                 fragmentManager.beginTransaction()
                     .add(container, fragment).hide(fragment)
                     .commitAllowingStateLoss()
-                showLogD("Fragment $fragment is added")
+                ("Fragment $fragment is added")
             }
         }
     }
@@ -385,7 +389,7 @@ fun TextView.changeTextAppearance(context: Context?, resId: Int) {
 
 @SuppressLint("SimpleDateFormat")
 fun getTime(): String {
-    return SimpleDateFormat("HH:mm a").format(Calendar.getInstance().time)
+    return SimpleDateFormat("hh:mm a").format(Calendar.getInstance().time)
 }
 
 @SuppressLint("SimpleDateFormat")
@@ -432,19 +436,16 @@ fun writeFileToDisk(
 
         Log.d("FILE_WRITE", "File writing done")
     } catch (e: FileNotFoundException) {
-        e.printStackTrace()
         Log.e(
             "FILE_WRITE",
             "******* File not found. Did you add a WRITE_EXTERNAL_STORAGE permission to the manifest?"
         )
     } catch (e: IOException) {
-        e.printStackTrace()
         Log.e("FILE_WRITE", e.stackTrace.toString())
     } finally {
         fr?.close()
     }
 }
-
 
 
 //todo add tab-support for handleNavigationTransactions

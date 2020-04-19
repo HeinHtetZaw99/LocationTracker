@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.util.forEach
 import com.appbase.activities.BaseActivity
 import com.appbase.getKeyByValue
+import com.appbase.setVisible
 import com.appbase.showLogD
 import com.appbase.showShortToast
 import com.locationtracker.R
@@ -137,6 +138,8 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         fragment: BaseStepFragment<SelfExaminationActivity>,
         reversed: Boolean
     ) {
+        if (previousBtn.visibility == GONE)
+            previousBtn.setVisible(false)
         supportFragmentManager.beginTransaction()
             .addAnimation(reversed)
             .hide(currentFragment)
@@ -148,6 +151,9 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         if (currentFragment is ResultFragment) {
             hideNavigationBtns()
             (currentFragment as ResultFragment).reloadView()
+        }
+        if (currentFragment is IntroFragment) {
+            previousBtn.setVisible(false)
         }
     }
 

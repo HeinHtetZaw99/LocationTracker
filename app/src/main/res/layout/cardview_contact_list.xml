@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="contact"
+            type="com.locationtracker.sources.cache.data.ContactVO" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@drawable/ripple_cardview_color_primary_default"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatarIv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:background="@drawable/ic_contact_avatar"
+            android:src="@drawable/ic_account" />
+
+        <TextView
+            android:id="@+id/nameTv"
+            style="@style/BoldL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/avatarIv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{contact.getDisplayName()}"
+            android:textColor="@color/black"
+            tools:text="ဦးစံလွင်" />
+
+        <TextView
+            android:id="@+id/occupationTv"
+            style="@style/RegularS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{contact.getOccupation()}"
+            android:textColor="@color/black"
+            tools:text="ကျန်းမာရေးမှူး-၁ , မြို့နယ်ပြည်သူ့ကျန်းမာရေးဦးစီးဌာန \nကျန်းမာရေး (သို့) အရေးပေါ် အကူအညီ" />
+
+
+        <TextView
+            android:id="@+id/placeTv"
+            style="@style/MediumN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/occupationTv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{contact.getLocation()}"
+            android:textColor="@color/black"
+            tools:text="ချီဖွေ , ကချင်ပြည်နယ်" />
+
+        <TextView
+            android:id="@+id/phoneNumberTv"
+            style="@style/BoldL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/placeTv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{contact.getPhoneNumber()}"
+            android:textColor="@color/black"
+            tools:text="09 401581673" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            android:layout_alignStart="@id/phoneNumberTv"
+            android:layout_alignEnd="@id/phoneNumberTv"
+            android:layout_below="@id/phoneNumberTv"
+            />
+
+    </RelativeLayout>
+</layout>

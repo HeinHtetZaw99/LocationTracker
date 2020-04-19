@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="settings"
+            type="com.locationtracker.sources.cache.data.SettingsVO" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/settingsBtn"
+            style="@style/RegularN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_cardview_color_primary_default"
+            android:text="@{settings.settingsName}"
+            xmlns:tools="http://schemas.android.com/tools"
+            tools:text="Settings Text"
+            android:paddingTop="@dimen/margin_small"
+            android:paddingBottom="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_3xlarge"
+            android:layout_marginEnd="@dimen/margin_3xlarge"
+            android:textColor="@color/black"
+            />
+        <View
+            android:layout_below="@id/settingsBtn"
+            android:layout_width="match_parent"
+            android:background="@color/darkGrey"
+            android:alpha="0.2"
+          android:layout_alignStart="@id/settingsBtn"
+            android:layout_alignEnd="@id/settingsBtn"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
+</layout>

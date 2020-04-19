@@ -1,7 +1,5 @@
 package com.locationtracker.activities
 
-import android.app.AlarmManager
-import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.ComponentName
@@ -9,30 +7,34 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
-import android.os.Build
 import android.os.Bundle
 import android.util.SparseArray
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.IdRes
+import androidx.core.content.ContextCompat
 import com.appbase.*
 import com.appbase.activities.BaseActivity
 import com.appbase.fragments.BaseFragment
-import com.locationtracker.LocationTrackerApplication
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.locationtracker.R
 import com.locationtracker.background.GeofenceIntentService
 import com.locationtracker.background.LocationTrackerBroadcastReceiver
-import com.locationtracker.background.LocationTrackerService
 import com.locationtracker.background.LostLocationService
 import com.locationtracker.fragments.HistoryFragment
 import com.locationtracker.fragments.HomeFragment
 import com.locationtracker.fragments.LocationHistoryFragment
+import com.locationtracker.sources.cache.data.ContactVO
 import com.locationtracker.viewmodels.MainViewModel
 import com.mapzen.android.lost.api.*
 import com.mapzen.android.lost.api.Geofence.NEVER_EXPIRE
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
+import org.json.JSONException
+import org.osmdroid.config.Configuration
+import java.io.File
+import java.io.IOException
 
 
 class MainActivity : BaseActivity<MainViewModel>(),
@@ -57,6 +59,12 @@ class MainActivity : BaseActivity<MainViewModel>(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val osmConf = Configuration.getInstance()
+        val basePath = File(cacheDir.absolutePath, "osmdroid")
+        osmConf.osmdroidBasePath = basePath
+        val tileCache = File(osmConf.osmdroidBasePath.absolutePath, "tile")
+        osmConf.osmdroidTileCache = tileCache
+
         setContentView(R.layout.activity_main)
         initUI()
     }
@@ -103,10 +111,15 @@ class MainActivity : BaseActivity<MainViewModel>(),
             PackageManager.DONT_KILL_APP
         )
 
+        createNotificationChannel(
+            getString(R.string.channel_description),
+            getString(R.string.channel_name),
+            NotificationManager.IMPORTANCE_DEFAULT
+        )
+        if (isLocationPermissionGranted())
+            lostApiClient.connect()
 
-        lostApiClient.connect()
-
-        createNotificationChannel()
+        readContactListFromJson()
 
     }
 
@@ -120,44 +133,10 @@ class MainActivity : BaseActivity<MainViewModel>(),
         activeFragment = currentFragment
     }
 
-    private fun initPeriodicWork() {
-        /*    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                WorkManager.getInstance(this).enqueueUniqueWork(
-                    "Main",
-                    ExistingWorkPolicy.REPLACE,
-                    OneTimeWorkRequestBuilder<LocationTrackerWorker>().build()
-                )
-            } else {
-                //todo haven't done yet
-            }
-    */
-        val pendingIntent = PendingIntent.getBroadcast(
-            applicationContext,
-            LocationTrackerApplication.BroadcastReceiverCode,
-            Intent(this, LocationTrackerBroadcastReceiver::class.java),
-            0
-        )
-        val alarmManager =
-            getSystemService(ALARM_SERVICE) as AlarmManager?
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            alarmManager!!.setInexactRepeating(
-                AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                        + 100, 180000, pendingIntent
-            )
-        } else {
-            /*       alarmManager!![AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                           + 1000] = pendingIntent*/
-            alarmManager!!.setRepeating(
-                AlarmManager.RTC_WAKEUP, System.currentTimeMillis()
-                        + 100, 180000, pendingIntent
-            )
-        }
-
-    }
 
     fun startLocationTrackingService() {
-        val serviceIntent = Intent(this, LocationTrackerService::class.java)
+        showLogD("Location Tracking Activated")
+        val serviceIntent = Intent(this, LostLocationService::class.java)
         startService(serviceIntent)
     }
 
@@ -185,15 +164,19 @@ class MainActivity : BaseActivity<MainViewModel>(),
     }
 
     override fun onConnected() {
-        showLogD("Lost Service is connected")
-        notifyUserToGetProtection("12345", 16.835154, 96.128817, 15f)
-        currentLocation =
-            LocationServices.FusedLocationApi.getLastLocation(
-                lostApiClient
-            )
+        try {
+            showLogD("Lost Service is connected")
 
-        historyFragment.showCurrentLocationOnMap(currentLocation)
+            currentLocation =
+                LocationServices.FusedLocationApi.getLastLocation(
+                    lostApiClient
+                )
+
+            historyFragment.showCurrentLocationOnMap(currentLocation)
 //        getLocationUpdatesInBackground(1234)
+        }catch (e : SecurityException){
+            showLogE("Error in onConnect :",e)
+        }
     }
 
     override fun onConnectionSuspended() {
@@ -220,33 +203,13 @@ class MainActivity : BaseActivity<MainViewModel>(),
         LocationServices.GeofencingApi.addGeofences(lostApiClient, request, pendingIntent);
     }
 
-    fun createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name: CharSequence = getString(R.string.channel_name)
-            val description = getString(R.string.channel_description)
-            val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val channel =
-                NotificationChannel(getString(R.string.notification_channel_id), name, importance)
-            channel.description = description
-            channel.setShowBadge(true)
-            // Register the channel with the system; you can't change the importance
-            // or other notification behaviors after this
-            val notificationManager = getSystemService(
-                NotificationManager::class.java
-            )
-            Objects.requireNonNull(notificationManager)
-                .createNotificationChannel(channel)
-        }
-    }
 
     fun getLocationUpdatesInBackground(requestCode: Int) {
         val request = LocationRequest.create()
             .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY)
             .setInterval(180000)
 
-        val intent =  Intent(this , LostLocationService::class.java);
+        val intent = Intent(this, LostLocationService::class.java);
         val pendingIntent = PendingIntent.getService(
             this, requestCode, intent,
             PendingIntent.FLAG_UPDATE_CURRENT
@@ -257,5 +220,34 @@ class MainActivity : BaseActivity<MainViewModel>(),
             pendingIntent
         );
     }
+
+    fun readContactListFromJson() {
+
+        try {
+            val inStream = resources.assets.open("contact_list.json")
+            val size = inStream.available()
+            val buffer = ByteArray(size)
+            inStream.read(buffer)
+            inStream.close()
+            val listType = object : TypeToken<List<ContactVO>>() {}.type
+            val contactListString = String(buffer)
+            val contactList = Gson().fromJson<List<ContactVO>>(contactListString, listType)
+            showLogD("contactList ${contactList.size}")
+            viewModel.saveContactListToDB(contactList)
+
+        } catch (e: IOException) {
+            showLogE("error in parsing json ", e)
+        } catch (e: JSONException) {
+            showLogE("error in parsing json ", e)
+        }
+
+    }
+
+
+    private fun isLocationPermissionGranted() =
+        ContextCompat.checkSelfPermission(
+            this,
+            android.Manifest.permission.ACCESS_FINE_LOCATION
+        ) != PackageManager.PERMISSION_GRANTED
 
 }

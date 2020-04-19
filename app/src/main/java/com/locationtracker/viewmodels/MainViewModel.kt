@@ -2,13 +2,17 @@ package com.locationtracker.viewmodels
 
 import android.location.Location
 import androidx.lifecycle.MutableLiveData
+import com.appbase.components.SingleEventLiveData
 import com.appbase.components.interfaces.GenericErrorMessageFactory
 import com.appbase.models.vos.ReturnResult
 import com.appbase.showLogD
 import com.appbase.showLogE
 import com.locationtracker.R
+import com.locationtracker.repository.ContactListRepository
 import com.locationtracker.repository.LocationRepository
+import com.locationtracker.sources.cache.data.ContactVO
 import com.locationtracker.sources.cache.data.LocationEntity
+import com.locationtracker.sources.cache.data.SettingsVO
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
 import com.pv.viewmodels.BaseViewModel
 import io.reactivex.rxkotlin.addTo
@@ -17,11 +21,16 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val locationRepository: LocationRepository,
     private val genericErrorMessageFactory: GenericErrorMessageFactory,
+    private val contactListRepository: ContactListRepository,
     private val locationEntityMapper: LocationEntityMapper
 ) : BaseViewModel() {
 
-    val locationStatusLD: MutableLiveData<ReturnResult> by lazy { MutableLiveData<ReturnResult>() }
+    val locationStatusLD: SingleEventLiveData<ReturnResult> by lazy { SingleEventLiveData<ReturnResult>() }
+    val locationHistoryStatusLD: SingleEventLiveData<ReturnResult> by lazy { SingleEventLiveData<ReturnResult>() }
     val locationListLD: MutableLiveData<List<LocationEntity>> by lazy { MutableLiveData<List<LocationEntity>>() }
+
+    val contactListLD: MutableLiveData<List<ContactVO>> by lazy { MutableLiveData<List<ContactVO>>() }
+    val settingsListLD: MutableLiveData<List<SettingsVO>> by lazy { MutableLiveData<List<SettingsVO>>() }
 
     fun getLocationHistory() {
         locationRepository.getAllLocationData().handle()
@@ -44,7 +53,7 @@ class MainViewModel @Inject constructor(
                 locationListLD.postValue(it)
             }, {
                 showLogE("Error in getGeoEncodeData()", it)
-                locationStatusLD.postValue(
+                locationHistoryStatusLD.postValue(
                     genericErrorMessageFactory.getError(
                         it,
                         R.string.error_empty_locatin_data_list
@@ -90,6 +99,31 @@ class MainViewModel @Inject constructor(
             }).addTo(compositeDisposable)
     }
 
+
+    fun saveContactListToDB(contactList: List<ContactVO>) {
+        contactListRepository.saveContactList(contactList).subscribe {
+            showLogD("contactList : ${contactList.size} saved")
+        }.addTo(compositeDisposable)
+    }
+
+    fun getRegionContactList(regionCode: String) {
+        contactListRepository.getContactListByRegion(regionCode)
+            .handle().subscribe({
+                contactListLD.postValue(it)
+            }, {
+                showLogE("Error in saving contact List to local db ", it)
+            }).addTo(compositeDisposable)
+    }
+
+    fun getSettingsList() {
+        contactListRepository.getSettingsList().handle()
+            .subscribe({
+                settingsListLD.postValue(it)
+            }, {
+                showLogE("Error in getting settingsList from  local db ", it)
+            })
+            .addTo(compositeDisposable)
+    }
 
 
 }

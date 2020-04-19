@@ -8,21 +8,21 @@
     android:padding="@dimen/margin_2xlarge">
 
     <TextView
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/titleTv"
         style="@style/QuestionTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Is your current body temperature above 100.4 F or 38 C ? " />
+        android:text="လက်ရှိ‌ကိုယ်အပူချိန်မှာ 100.4 F သို့မဟုတ် 38 C နှင့်အထက်ရှိပါသလား?"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        app:layout_constraintTop_toBottomOf="@id/titleTv"
         android:id="@+id/subTitleTv"
         style="@style/QuestionSubTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTv"
-        android:text="Please choose one" />
+        android:text="ကျေးဇူးပြု၍ တစ်ခုရွေးပေးပါ"
+        app:layout_constraintTop_toBottomOf="@id/titleTv" />
 
     <RadioGroup
         android:id="@+id/temperatureSelector"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="Yes" />
+            android:text="ရှိ" />
 
         <RadioButton
             android:id="@+id/NoBtn"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="No" />
+            android:text="မရှိ" />
 
 
     </RadioGroup>

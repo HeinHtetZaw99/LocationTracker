@@ -63,7 +63,6 @@ class LocationHistoryFragment() : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getLocationHistory()
     }
 
 

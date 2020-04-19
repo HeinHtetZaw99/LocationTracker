@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@id/titleTv"
         android:layout_below="@id/titleTv"
         style="@style/QuestionSubTitleStyle"
-        android:text="Please choose one"
+        android:text="ကျေးဇူးပြု၍ တစ်ခုရွေးပေးပါ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

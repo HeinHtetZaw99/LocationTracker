@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_backdrop"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="90dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+    <View
+        android:id="@+id/stopperView"
+        android:layout_width="80dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/margin_xSmall"
+        android:layout_centerHorizontal="true"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SemiBoldL"
+        android:padding="@dimen/margin_3xSmall"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="ဖုန်းခေါ်ရန် နံပါတ်ရွေးပါ"
+        android:layout_below="@id/stopperView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/settingsRv"
+        android:layout_marginTop="@dimen/margin_xSmall"
+        android:layout_below="@id/titleTv"
+        tools:itemCount="8"
+        tools:listitem="@layout/cardview_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

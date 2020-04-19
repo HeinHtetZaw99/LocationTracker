@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ContactListActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ToolBarTitleStyle"
+            android:text="ဆက်သွယ်ရန်"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/sectorSelector"
+        style="@style/SemiBoldN"
+        android:layout_below="@id/toolBar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:background="@drawable/background_primary_button"
+        android:drawableEnd="@drawable/ic_arrow_drop_down_white_24dp"
+        android:gravity="center"
+        android:text="Kachin State"
+        android:textColor="@color/white" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_below="@id/sectorSelector"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/contactRv"
+          tools:listitem="@layout/cardview_contact_list"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

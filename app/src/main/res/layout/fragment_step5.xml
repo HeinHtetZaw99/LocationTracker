@@ -12,7 +12,7 @@
         style="@style/QuestionTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do you have any of these medical backgrounds ? "
+        android:text="သင့်တွင် ဖော်ပြပါကျန်းမာရေးပြဿနာများရှိပါသလား"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTv"
-        android:text="Please choose all those applied"
+        android:text="မိမိနှင့်ကိုက်ညီသောအချက်များကိုရွေးပေးပါ"
         app:layout_constraintTop_toBottomOf="@id/titleTv" />
 
     <androidx.core.widget.NestedScrollView

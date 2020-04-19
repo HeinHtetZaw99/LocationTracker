@@ -17,6 +17,7 @@ import com.appbase.components.PermissionListUtil
 import com.appbase.fragments.BaseFragment
 import com.appbase.models.vos.ReturnResult
 import com.locationtracker.R
+import com.locationtracker.activities.ContactListActivity
 import com.locationtracker.activities.MainActivity
 import com.locationtracker.activities.SelfExaminationActivity
 import com.locationtracker.sources.cache.data.LocationEntity.Companion.toCSV
@@ -118,6 +119,9 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
                 this
             )
         }
+        goToContacts.setOnClickListener {
+            startActivity(ContactListActivity.newIntent(parentActivity))
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -127,14 +131,14 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
     ) {
         showLogD("Permission callback called-------")
         if (requestCode == ALL_APP_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            showLogD("PERMISSION IS GRANTED")
+            showLogD ("PERMISSION IS GRANTED")
             trackLocation()
         } else if (requestCode == ALL_APP_PERMISSION && grantResults.isNotEmpty() && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
             showLogD("PERMISSION IS GRANTED")
             if (exportAsCSV)
                 convertToCSV()
         } else
-            showLogD("PERMISSION IS NOT GRANTED")
+            showLogD ("PERMISSION IS NOT GRANTED")
     }
 
 
@@ -157,8 +161,7 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
 
     private fun trackLocation() {
-        //TODO uncomment me again
-//        parentActivity.startLocationTrackingService()
+        parentActivity.startLocationTrackingService()
     }
 
 
@@ -167,7 +170,6 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
     }
 
     override fun onPermissionPreviouslyDenied(permission: String) {
-
         permissionListUtil.requestPermission(parentActivity, permission)
     }
 
@@ -208,11 +210,12 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
     }
 
     override fun onAllPermissionGranted() {
-        if (isLocationEnabled())
+  /*      if (isLocationEnabled())
             trackLocation()
         else
-            showForceGPSEnableDialog()
+            showForceGPSEnableDialog()*/
 
+        trackLocation()
         convertToCSV()
     }
 
@@ -230,11 +233,6 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         ) != PackageManager.PERMISSION_GRANTED
 
 
-    private fun isLocationPermissionGranted() =
-        ContextCompat.checkSelfPermission(
-            context!!,
-            Manifest.permission.ACCESS_FINE_LOCATION
-        ) != PackageManager.PERMISSION_GRANTED
 
     private fun showForceGPSEnableDialog() {
         val alertDialog = AlertDialog.Builder(parentActivity)

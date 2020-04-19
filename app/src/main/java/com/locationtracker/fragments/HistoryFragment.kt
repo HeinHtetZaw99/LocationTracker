@@ -123,15 +123,21 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         viewModel.locationListLD.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             swipeRefreshLayout.isRefreshing = false
             if (it.isNotEmpty()) {
-                showLogD("adding PolyLine for ${it.size} locations")
+                ("adding PolyLine for ${it.size} locations")
                 val convertedList = LocationEntity.convertForList(it)
                 showUserOnMap(convertedList)
-
                 adapter.appendNewData(convertedList)
             } else {
                 parentActivity.showSnackBar(view, ReturnResult.ErrorResult("No location to show"))
                 adapter.appendNewData(emptyList())
             }
+        })
+
+
+        viewModel.locationHistoryStatusLD.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            swipeRefreshLayout.isRefreshing = false
+            parentActivity.showSnackBar(view, it)
+            adapter.appendNewData(emptyList())
         })
         loadData()
     }
@@ -152,9 +158,9 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         @SuppressLint("SimpleDateFormat")
         currentSelectedDate = SimpleDateFormat("dd MM yyyy", Locale.ENGLISH).format(calendar.time)
         dateSelector.text = currentSelectedDate
-
-        viewModel.getLocationHistoryByDate(currentSelectedDate)
         swipeRefreshLayout.isRefreshing = true
+        viewModel.getLocationHistoryByDate(currentSelectedDate)
+
     }
 
 
@@ -213,7 +219,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         mapViewPoint.setDrawFocusedItem(true)
 /*
         mapViewPoint.setOnFocusChangeListener { overlay, newFocus ->
-            showLogD("MapViewPoints focus changed")
+            ("MapViewPoints focus changed")
             mapViewPoint.focus = null //removing focus is necessary , otherwise u can't focus it again
         }*/
         mapView.overlays.add(mapViewPoint)
@@ -234,8 +240,8 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
             val lat =currentLocation.latitude
             val lng = currentLocation.longitude
             addMarker(OverlayItem("Home", "You are here", GeoPoint(lat, lng)))
+            mapView.controller.setCenter( GeoPoint(lat, lng)) //setting home
         }
-
     }
 
 }

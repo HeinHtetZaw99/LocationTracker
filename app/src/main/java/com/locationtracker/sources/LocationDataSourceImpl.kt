@@ -1,5 +1,6 @@
 package com.locationtracker.sources
 
+import androidx.lifecycle.LiveData
 import com.appbase.showLogD
 import com.locationtracker.network.response.ReverseGeoEncodeResponse
 import com.locationtracker.network.service.ReverseGeocodeService
@@ -27,7 +28,7 @@ class LocationDataSourceImpl @Inject constructor(
 
     override fun getLocationDataByLatLong(lat: String, long: String): LocationEntity? {
         val dataList = dataBase.getLocationDao().getLocationByLatLng(lat, long)
-        showLogD("dataList from getLocationDataByLatLong($lat ,$long) : $dataList ")
+        showLogD("dataList from getLocationDataByLatLong($lat ,$long) : ${dataList.size} ")
         return if (dataList.isEmpty())
             null
         else

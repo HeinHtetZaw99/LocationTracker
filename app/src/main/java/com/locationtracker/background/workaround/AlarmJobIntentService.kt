@@ -12,7 +12,7 @@ class AlarmJobIntentService : JobIntentService() {
     override fun onHandleWork(intent: Intent) {
         /* your code here */
         /* reset the alarm */
-        showLogD("setAlarmCtx", "started Bottom")
+        showLogD ("setAlarmCtx", "started Bottom")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //            AlarmReceiver.setAlarm(false)
         }

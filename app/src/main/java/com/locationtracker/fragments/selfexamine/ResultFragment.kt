@@ -67,7 +67,7 @@ class ResultFragment : BaseStepFragment<SelfExaminationActivity>() {
         titleTv.text = "You are having some seasonal flu symptoms"
         subTitleTv.text =
             "Just stay at home and get rest. And please don't go outside unless it is totally necessary. \n If you ever thought you would need to see the doctors , please don't hesitate to contact to the local clinics"
-        contactToDoctorsBtn.setOnClickListener { callPhone("0150005") }
+        contactToDoctorsBtn.setOnClickListener { parentActivity.callToPhone("0150005") }
         goBackHomeBtn.setOnClickListener {
             startActivity(MainActivity.newIntent(parentActivity))
             parentActivity.finish()
@@ -85,10 +85,10 @@ class ResultFragment : BaseStepFragment<SelfExaminationActivity>() {
             )
         )
         avatarIv.show(R.drawable.ic_stay_home)
-        titleTv.text = "You are totally fine!"
+        titleTv.text = "သင့်တွင်မည်သည့်တုပ်ကွေးလက္ခဏာများမရှိပါ"
         subTitleTv.text =
-            "But please don't go outside unless it is totally necessary. Take some vacation with your beloved family"
-        contactToDoctorsBtn.setOnClickListener { callPhone("2019") }
+            "သို့သော်ငြားလဲ ကျေးဇူးပြု၍မလိုအပ်ပဲ အပြင်ထွက်ခြင်းကိုရှောင်ရှားပေးပါ။ သင်ချစ်ရသောမိသားစုများနှင့် အိမ်ထဲတွင်အနားယူပါ။"
+        contactToDoctorsBtn.setOnClickListener { parentActivity.callToPhone("2019") }
         goBackHomeBtn.setOnClickListener {
             startActivity(MainActivity.newIntent(parentActivity))
             parentActivity.finish()
@@ -106,10 +106,10 @@ class ResultFragment : BaseStepFragment<SelfExaminationActivity>() {
             )
         )
         avatarIv.show(R.drawable.ic_go_to_hospital)
-        titleTv.text = "We assume you are having similar symptoms of COVID-19"
+        titleTv.text = "သင့်တွင်COVID-19 နှင့်အလားတူသောလက္ခဏာများဖြစ်ပွားနေသည်ဟု သံသယရှိမိပါသည်"
         subTitleTv.text =
-            "Stay calm and contact to authorities to get medical attention. Please do not go outside for now."
-        contactToDoctorsBtn.setOnClickListener { callPhone("2019") }
+            "ခြောက်ခြားတုန်လှုပ်ခြင်းမပြုပဲ အာဏာပိုင်များနှင့် ဆေးဝန်ထမ်းများ၏ကုသမှုကိုခံယူပေးပါ။ ကျေးဇူးပြု၍လောလောဆယ် အပြင်မထွက်ပဲ အခြားသူများနှင့်ခပ်ခွာခွာနေပေးပါ။"
+        contactToDoctorsBtn.setOnClickListener { parentActivity.callToPhone("2019") }
         goBackHomeBtn.setOnClickListener {
             startActivity(MainActivity.newIntent(parentActivity))
             parentActivity.finish()
@@ -119,10 +119,6 @@ class ResultFragment : BaseStepFragment<SelfExaminationActivity>() {
         goBackHomeBtn.setVisible(true)
     }
 
-    private fun callPhone(number: String) {
-        val intent = Intent(Intent.ACTION_DIAL)
-        intent.data = Uri.parse("tel:$number")
-        startActivity(intent)
-    }
+
 
 }

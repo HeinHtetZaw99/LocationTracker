@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/titleTv"
         style="@style/QuestionTitleStyle"
-        android:text="How old are you?"
+        android:text="အသက်ဘယ်လောက်ရှိပြီလဲ"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -17,7 +17,7 @@
         android:id="@+id/subTitleTv"
         android:layout_below="@id/titleTv"
         style="@style/QuestionSubTitleStyle"
-        android:text="Please choose one"
+        android:text="ကျေးဇူးပြု၍ တစ်ခုရွေးပေးပါ"
         app:layout_constraintTop_toBottomOf="@id/titleTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="Under 18" />
+            android:text="18နှစ်အောက်" />
 
         <RadioButton
             android:id="@+id/choiceTwo"
@@ -45,14 +45,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="Between 18 and 60" />
+            android:text="18နှစ်နှင့်60နှစ်ကြား" />
 
         <RadioButton
             android:id="@+id/choiceThree"
             style="@style/CheckBtnStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="60 and Older" />
+            android:text="60နှစ်နှင့်အထက်" />
 
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

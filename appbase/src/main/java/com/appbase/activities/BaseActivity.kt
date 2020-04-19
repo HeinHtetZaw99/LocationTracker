@@ -14,6 +14,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.NetworkOnMainThreadException
+import android.os.StrictMode
 import android.provider.Settings
 import android.transition.Slide
 import android.transition.Transition
@@ -91,7 +92,11 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
+        val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
 //        changeLanguage(sharePrefUtils.load(SharePrefUtils.KEYS.CURRENT_LANGUAGE) ?: "en")
         setContentView(layoutResId)
 
@@ -101,7 +106,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
     override fun onResume() {
         super.onResume()
 //        val languageTobeLoaded = sharePrefUtils.load(SharePrefUtils.KEYS.CURRENT_LANGUAGE) ?: "en"
-//        showLogD("Language to be loaded : $languageTobeLoaded")
+//        ("Language to be loaded : $languageTobeLoaded")
 //        changeLanguage(languageTobeLoaded)
         rootLayout?.setOnClickListener { hideSoftKeyboard(this) }
 
@@ -422,7 +427,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
     // slide the view from below itself to the current position
     fun slideUp(view: View, anchorGravity: Int , rootLayout : ViewGroup) {
-        showLogD("Slided Up")
         val transition: Transition = Slide(anchorGravity)
         transition.duration = 300
         transition.addTarget(view)
@@ -432,7 +436,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
     // slide the view from its current position to below itself
     fun slideDown(view: View, anchorGravity: Int , rootLayout : ViewGroup) {
-        showLogD("Slided Down")
         val transition: Transition = Slide(anchorGravity)
         transition.duration = 300
         transition.addTarget(view)
@@ -489,10 +492,10 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
                         builder.append(addressData.locality).append("\n")
                         builder.append(addressData.countryName)
                         currentAddressLD.postValue(builder.toString())
-                        showLogD("Final Address : $builder")
+                        showLogD ("Final Address : $builder")
                     } else currentAddressLD.postValue("")
                 } catch (e: java.lang.NullPointerException) {
-                    showLogD("Exception in getting Location" + e.message)
+                    ("Exception in getting Location" + e.message)
                     currentAddressLD.postValue("")
                 } catch (e: NetworkOnMainThreadException) {
                     showLogD("Network on Main Thread Exception occurred")
@@ -510,5 +513,10 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
         }
     }
 
+    fun callToPhone(number: String) {
+        val intent = Intent(Intent.ACTION_DIAL)
+        intent.data = Uri.parse("tel:$number")
+        startActivity(intent)
+    }
 
 }

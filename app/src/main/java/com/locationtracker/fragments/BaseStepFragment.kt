@@ -17,7 +17,7 @@ abstract class BaseStepFragment<ParentActivity : BaseActivity<*>> : BaseFragment
     abstract fun verify()
 
     fun showErrorMessage(){
-        parentActivity.showSnackBar(view!!, ReturnResult.ErrorResult("Please select any of the options"))
+        parentActivity.showSnackBar(view!!, ReturnResult.ErrorResult("ကျေးဇူးပြု၍ တစ်ခုရွေးပေးပါ"))
     }
 
 }

@@ -1,5 +1,6 @@
 package com.locationtracker.di
 
+import com.locationtracker.activities.ContactListActivity
 import com.locationtracker.activities.MainActivity
 import com.locationtracker.activities.MapActivity
 import com.locationtracker.activities.SelfExaminationActivity
@@ -26,6 +27,9 @@ abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract fun mapActivity(): MapActivity
+
+    @ContributesAndroidInjector
+    abstract fun contactListActivity(): ContactListActivity
 
     @ContributesAndroidInjector
     abstract fun selfExaminationActivity(): SelfExaminationActivity

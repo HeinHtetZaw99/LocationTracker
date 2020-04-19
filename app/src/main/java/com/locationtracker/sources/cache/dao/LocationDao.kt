@@ -1,5 +1,6 @@
 package com.locationtracker.sources.cache.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import com.locationtracker.sources.cache.data.LocationEntity

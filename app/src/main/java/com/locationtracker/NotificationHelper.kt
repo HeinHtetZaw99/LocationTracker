@@ -16,8 +16,10 @@ import com.locationtracker.activities.MainActivity
 
 
 class NotificationHelper(private val mContext: Context) {
+
     private val mNotificationManager: NotificationManager? by lazy {
         mContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager }
+
     private var mBuilder: NotificationCompat.Builder? = null
 
     /**
@@ -41,7 +43,7 @@ class NotificationHelper(private val mContext: Context) {
         )
         mBuilder = NotificationCompat.Builder(
             mContext,
-            mContext.getString(R.string.notification_channel_id)
+            NOTIFICATION_CHANNEL_ID
         )
         mBuilder!!.setSmallIcon(R.drawable.ic_app_logo)
         mBuilder!!.setContentTitle(notiTitle)
@@ -90,8 +92,28 @@ class NotificationHelper(private val mContext: Context) {
         mNotificationManager!!.notify(0 /* Request Code */, notification)
     }
 
+    /**  Create the NotificationChannel, but only on API 26+ because
+    the NotificationChannel class is new and not in the support library
+    Create the NotificationChannel, but only on API 26+ because
+    the NotificationChannel class is new and not in the support library*/
+    fun createNotificationChannel(
+        channelName: String,
+        channelDescription: String,
+        importance: Int
+    ) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel =
+                NotificationChannel(NOTIFICATION_CHANNEL_ID, channelDescription, importance)
+            channel.setShowBadge(true)
+            /*  Register the channel with the system; you can't change the importance
+            or other notification behaviors after this */
+            mNotificationManager!!.createNotificationChannel(channel)
+        }
+    }
+
+
     companion object {
-        private const val NOTIFICATION_CHANNEL_ID = "10001"
+        private const val NOTIFICATION_CHANNEL_ID = "com.locationtracker"
     }
 
 

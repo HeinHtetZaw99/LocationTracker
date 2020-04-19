@@ -12,7 +12,7 @@
         style="@style/QuestionTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Are you having any of these symptoms ? " />
+        android:text="လက်ရှိတွင်အောက်ဖော်ပြပါလက္ခဏာများဖြစ်ပွားနေပါသလား" />
 
     <TextView
         android:id="@+id/subTitleTv"
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTv"
-        android:text="Please choose all those applied" />
+        android:text="မိမိနှင့်ကိုက်ညီသောအချက်များကိုရွေးပေးပါ" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

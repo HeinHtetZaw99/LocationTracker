@@ -184,4 +184,13 @@
         style="@style/PrimaryButtonStyle"
         android:text="Check Symptoms"/>
 
+
+    <TextView
+        android:id="@+id/goToContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_2xlarge"
+        style="@style/PrimaryButtonStyle"
+        android:text="View Contacts"/>
+
 </LinearLayout>
