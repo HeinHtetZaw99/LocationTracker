@@ -10,6 +10,7 @@ import com.appbase.showLogE
 import com.locationtracker.R
 import com.locationtracker.repository.ContactListRepository
 import com.locationtracker.repository.LocationRepository
+import com.locationtracker.sources.cache.data.BannerVO
 import com.locationtracker.sources.cache.data.ContactVO
 import com.locationtracker.sources.cache.data.LocationEntity
 import com.locationtracker.sources.cache.data.SettingsVO
@@ -25,6 +26,15 @@ class MainViewModel @Inject constructor(
     private val locationEntityMapper: LocationEntityMapper
 ) : BaseViewModel() {
 
+    private val bannerList = ArrayList<BannerVO>().apply {
+        add(BannerVO("အိမ်တွင်သာနေထိုင်ပါ"))
+        add(BannerVO("အခြားသူများနှင့်အနဲဆုံး ၆ပေအကွာနေပါ"))
+        add(BannerVO("လက်ကိုဆပ်ပြာဖြင့်သေချာစွာမကြာခဏဆေးကြောပါ"))
+        add(BannerVO("နှာစေးချောင်းဆိုးသည့်အခါ လက်ကိုင်ပဝါဖြင့်သေချာအုပ်ပါ"))
+        add(BannerVO("ဖျားနာလျှင် face mask တပ်ထားပါ"))
+        add(BannerVO("ဖျားနာလျှင် နီးစပ်ရာဆေးခန်းကိုဆက်သွယ်ပါ"))
+
+    }
     val locationStatusLD: SingleEventLiveData<ReturnResult> by lazy { SingleEventLiveData<ReturnResult>() }
     val locationHistoryStatusLD: SingleEventLiveData<ReturnResult> by lazy { SingleEventLiveData<ReturnResult>() }
     val locationListLD: MutableLiveData<List<LocationEntity>> by lazy { MutableLiveData<List<LocationEntity>>() }
@@ -124,6 +134,8 @@ class MainViewModel @Inject constructor(
             })
             .addTo(compositeDisposable)
     }
+
+    fun loadBannerList() = bannerList
 
 
 }

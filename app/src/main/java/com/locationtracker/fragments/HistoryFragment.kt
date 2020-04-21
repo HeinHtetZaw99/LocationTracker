@@ -17,6 +17,12 @@ import com.appbase.fragments.SelectDateFragment
 import com.appbase.models.vos.ReturnResult
 import com.appbase.showLogD
 import com.appbase.showLogE
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.locationtracker.LocationOverlayItemConverter
 import com.locationtracker.R
 import com.locationtracker.activities.MainActivity
@@ -37,7 +43,7 @@ import javax.inject.Inject
 
 
 class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentInteractionListener,
-    DatePickerDialog.OnDateSetListener {
+    DatePickerDialog.OnDateSetListener , OnMapReadyCallback {
     override var fragmentLayout: Int = R.layout.fragment_history
 
     @Inject
@@ -48,7 +54,7 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
 
     private val historyRV: SmartRecyclerView by lazy { historyRv as SmartRecyclerView }
     private val emptyView: EmptyLoadingViewPod by lazy { emptyViewPod as EmptyLoadingViewPod }
-
+    private lateinit var mMap: GoogleMap
     private lateinit var adapter: MyLocationHistoryRecyclerViewAdapter
     override val viewModel: MainViewModel by lazy { parentActivity.getHomeViewModel() }
     private val parentActivity: MainActivity by lazy { activity as MainActivity }
@@ -160,88 +166,54 @@ class HistoryFragment : BaseFragment(), LocationHistoryFragment.OnListFragmentIn
         dateSelector.text = currentSelectedDate
         swipeRefreshLayout.isRefreshing = true
         viewModel.getLocationHistoryByDate(currentSelectedDate)
-
     }
 
 
     private fun initMap() {
-        mapView.setBuiltInZoomControls(true);
-        mapView.setMultiTouchControls(true);
-        val myTile: OnlineTileSourceBase = XYTileSource(
-            "cartodb",
-            1,
-            20,
-            256,
-            ".png",
-            arrayOf("https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/"),
-            "© OpenStreetMap contributors"
-        )
-        mapView.setTileSource(myTile);
-        mapView.controller.setZoom(18.0)
-
-        //replace with user home location
-        val startPoint = GeoPoint(16.835, 96.128) //setting Home here as default
-        mapView.controller.setCenter(startPoint)
-        mapView.setHasTransientState(true)
-
-
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        val mapFragment = childFragmentManager
+            .findFragmentById(R.id.mapView) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
 
     private fun showUserOnMap(locationList: List<LocationEntity>) {
-        mapView.overlays.clear();
-        mapView.invalidate()
-        if (locationList.isEmpty())
-            showLogE("No Points to locate on map")
-        if (locationList.size == 1) {
-//            addMarker(overLayMapper.map(locationList.first()))
-        }
-        else
-            addPolyLine(geoPointListMapper.map(locationList))
+
     }
 
     private fun addMarker(overLayItem: OverlayItem) {
-        mapView.controller.setCenter(overLayItem.point)
-        //the overlay
-        val mapViewPoint =
-            ItemizedIconOverlay(
-                arrayListOf(overLayItem).toList(),
-                ContextCompat.getDrawable(context!!, R.drawable.ic_location_small),
-                object : ItemizedIconOverlay.OnItemGestureListener<OverlayItem?> {
-                    override fun onItemSingleTapUp(index: Int, item: OverlayItem?): Boolean {
-                        return true
-                    }
 
-                    override fun onItemLongPress(index: Int, item: OverlayItem?): Boolean {
-                        return false
-                    }
-                }, context
-            )
-        mapViewPoint.setDrawFocusedItem(true)
-/*
-        mapViewPoint.setOnFocusChangeListener { overlay, newFocus ->
-            ("MapViewPoints focus changed")
-            mapViewPoint.focus = null //removing focus is necessary , otherwise u can't focus it again
-        }*/
-        mapView.overlays.add(mapViewPoint)
     }
 
     private fun addPolyLine(geoPoints: List<GeoPoint>) {
-        mapView.controller.setCenter(geoPoints.first())
-        showLogD("GEOPointList : $geoPoints")
-        mapView.invalidate()
-        val line = Polyline() //see note below!
-        line.outlinePaint.color = ContextCompat.getColor(context!!, R.color.colorPrimary)
-        line.setPoints(geoPoints)
-        mapView.overlayManager.add(line)
+
     }
 
     fun showCurrentLocationOnMap(currentLocation: Location?) {
         if (currentLocation != null) {
             val lat =currentLocation.latitude
             val lng = currentLocation.longitude
-            addMarker(OverlayItem("Home", "You are here", GeoPoint(lat, lng)))
-            mapView.controller.setCenter( GeoPoint(lat, lng)) //setting home
+            val currentGPSPosition = LatLng(currentLocation.latitude, currentLocation.longitude)
+              mMap.addMarker(MarkerOptions().position(currentGPSPosition).title("Marker in Yangon"))
+            mMap.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    currentGPSPosition, 17.0f
+                )
+            )
         }
     }
 
+    override fun onMapReady(googleMap: GoogleMap) {
+        showLogD("onMapReady Called")
+        mMap = googleMap
+        // Add a marker in Sydney and move the camera
+        val yangon = LatLng(16.9143, 96.1527)
+
+      /*  mMap.addMarker(MarkerOptions().position(yangon).title("Marker in Yangon"))*/
+
+        mMap.animateCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                yangon, 10.0f
+            )
+        )
+    }
 }

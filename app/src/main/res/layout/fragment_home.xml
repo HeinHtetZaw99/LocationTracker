@@ -1,196 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainRootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:paddingBottom="?actionBarSize"
     tools:context=".activities.MainActivity">
 
-   <androidx.cardview.widget.CardView
-       android:id="@+id/locationEnabledView"
-       android:layout_width="match_parent"
-       app:cardCornerRadius="@dimen/margin_small"
-       android:layout_marginTop="@dimen/margin_small"
-       android:layout_marginStart="@dimen/margin_2xlarge"
-       android:layout_marginEnd="@dimen/margin_2xlarge"
-       android:layout_height="wrap_content"
-       >
-       <RelativeLayout
-           android:layout_width="match_parent"
-
-           android:layout_height="wrap_content">
-       <TextView
-           android:id="@+id/currentLatLngTv"
-           style="@style/BoldS"
-           android:textColor="@color/gray"
-           android:layout_gravity="center"
-           android:layout_marginStart="@dimen/margin_small"
-           android:layout_marginEnd="@dimen/margin_small"
-           android:layout_marginTop="@dimen/margin_small"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"/>
-           <TextView
-               android:id="@+id/currentLocationTv"
-               style="@style/BoldS"
-               android:textColor="@color/black"
-               android:layout_gravity="center"
-               android:text="Not Available"
-               android:layout_below="@id/currentLatLngTv"
-               android:layout_margin="@dimen/margin_small"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"/>
-
-       </RelativeLayout>
-   </androidx.cardview.widget.CardView>
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/locationDisabledView"
+    <LinearLayout
         android:layout_width="match_parent"
-        app:cardCornerRadius="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginStart="@dimen/margin_2xlarge"
-        android:layout_marginEnd="@dimen/margin_2xlarge"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="match_parent"
+        android:background="@color/colorSupportLight"
+        android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_backdrop_up">
+
+            <TextView
+                android:id="@+id/mainTitleTv"
+                android:layout_width="match_parent"
+                style="@style/BoldXL"
+                android:text="COVID 19 ကိုသင်ကစ၍ကာကွယ်ပါ"
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_3xSmall"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/adViewPager"
+                android:layout_width="200dp"
+                android:layout_below="@id/mainTitleTv"
+                android:layout_height="140dp"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_large" />
+
+            <com.rd.PageIndicatorView
+                android:id="@+id/dotIndicator"
+                android:layout_width="wrap_content"
+                android:layout_alignEnd="@id/adViewPager"
+                android:layout_marginEnd="@dimen/margin_5xlarge"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/adViewPager"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/margin_default"
+                app:piv_animationType="worm"
+                app:piv_dynamicCount="true"
+                app:piv_interactiveAnimation="true"
+                app:piv_radius="2dp"
+                android:layout_marginBottom="@dimen/margin_2xlarge"
+                app:piv_selectedColor="@color/colorPrimaryDark"
+                app:piv_unselectedColor="@color/colorAccent"
+                app:piv_viewPager="@id/adViewPager" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_banner_iv"
+                android:layout_toEndOf="@id/adViewPager"
+                android:layout_alignTop="@id/adViewPager"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:layout_alignParentEnd="true"
+                />
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/locationDisabledView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            app:cardCornerRadius="@dimen/margin_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/disabledTitleTv"
+                    style="@style/SemiBoldN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_2xlarge"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:text="Please Allow Location Access to record your current location"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/allowAccessLocationBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/disabledTitleTv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_2xlarge"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_xSmall"
+                    android:text="Allow Location Access"
+                    android:textAppearance="@style/BoldS"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/writeStoragePermissionDisabledView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/locationDisabledView"
+            android:layout_marginStart="@dimen/margin_2xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            app:cardCornerRadius="@dimen/margin_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/writeStorageTitleTv"
+                    style="@style/SemiBoldN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_2xlarge"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:text="Please Allow Write Storage Access to export data as CSV format"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/allowStoragePermissionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/writeStorageTitleTv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_2xlarge"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_xSmall"
+                    android:text="Allow Write Storage Access"
+                    android:textAppearance="@style/BoldS"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/checkSymptomsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            android:layout_marginBottom="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/margin_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_cardview_color_primary_default">
+
+                <ImageView
+                    android:id="@+id/checkSymptomsIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:src="@drawable/ic_check_symptoms" />
+
+                <TextView
+                    style="@style/BoldN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/checkSymptomsIv"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:gravity="center"
+                    android:text="ရောဂါစစ်"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/goToContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            android:layout_marginBottom="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/margin_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_cardview_color_primary_default">
+
+                <ImageView
+                    android:id="@+id/contactIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_view_contact" />
+
+                <TextView
+                    style="@style/BoldN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactIv"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:gravity="center"
+                    android:text="ဆက်သွယ်ရန်"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/convertToCSVBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/locationDisabledView"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_xSmall"
+                android:layout_marginBottom="@dimen/margin_3xSmall"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/margin_small">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_cardview_color_primary_default">
+
+                    <ImageView
+                        android:id="@+id/exportCSVIv"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_exportcsv" />
+
+                    <TextView
+                        style="@style/BoldN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/exportCSVIv"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        android:gravity="center"
+                        android:minLines="2"
+                        android:padding="@dimen/margin_3xSmall"
+                        android:text="CSVအနေနဲ့သိမ်းမည်"
+                        android:textAppearance="@style/BoldS" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/aboutUsBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/locationDisabledView"
+                android:layout_marginStart="@dimen/margin_xSmall"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:layout_marginBottom="@dimen/margin_3xSmall"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/margin_small">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_cardview_color_primary_default">
+
+                    <ImageView
+                        android:id="@+id/aboutUsIv"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:src="@drawable/ic_about_us" />
+
+                    <TextView
+                        style="@style/BoldN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/aboutUsIv"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginBottom="@dimen/margin_small"
+                        android:gravity="center"
+                        android:minLines="2"
+                        android:padding="@dimen/margin_3xSmall"
+                        android:text="@string/txt_about_application"
+                        android:textAppearance="@style/BoldS" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/disabledTitleTv"
-            style="@style/SemiBoldN"
-            android:text="Please Allow Location Access to record your current location"
-            android:textColor="@color/black"
+            android:id="@+id/versionNumberTv"
+            style="@style/BoldS"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/margin_2xlarge"
-            android:layout_marginStart="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:gravity="center"
+            android:padding="@dimen/margin_small"
+            android:text="@string/version_number" />
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/allowAccessLocationBtn"
-                android:textAppearance="@style/BoldS"
-                android:text="Allow Location Access"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/white"
-                android:padding="@dimen/margin_xSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/disabledTitleTv"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_2xlarge"
-/>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/writeStoragePermissionDisabledView"
-        android:layout_width="match_parent"
-        app:cardCornerRadius="@dimen/margin_small"
-        android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginStart="@dimen/margin_2xlarge"
-        android:layout_marginEnd="@dimen/margin_2xlarge"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/locationDisabledView"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/writeStorageTitleTv"
-                style="@style/SemiBoldN"
-                android:text="Please Allow Write Storage Access to export data as CSV format"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/margin_2xlarge"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/allowStoragePermissionBtn"
-                android:textAppearance="@style/BoldS"
-                android:text="Allow Write Storage Access"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/white"
-                android:padding="@dimen/margin_xSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/writeStorageTitleTv"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_2xlarge"
-                />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/writeStoragePermissionEnabledView"
-        android:layout_width="match_parent"
-        app:cardCornerRadius="@dimen/margin_small"
-        android:layout_below="@id/locationDisabledView"
-        android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginStart="@dimen/margin_2xlarge"
-        android:layout_marginEnd="@dimen/margin_2xlarge"
-        android:layout_height="wrap_content"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/writeStorageEnableTitleTv"
-                style="@style/SemiBoldN"
-                android:text="Please Allow Storage Access to export your location history data to your device"
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/margin_2xlarge"
-                android:layout_marginStart="@dimen/margin_small"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/convertToCSVBtn"
-                android:textAppearance="@style/BoldS"
-                android:text="Export as CSV"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/white"
-                android:padding="@dimen/margin_xSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/writeStorageEnableTitleTv"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_2xlarge"
-                />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-
-    <TextView
-        android:id="@+id/checkSymptomsBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_2xlarge"
-        style="@style/PrimaryButtonStyle"
-        android:text="Check Symptoms"/>
-
-
-    <TextView
-        android:id="@+id/goToContacts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_2xlarge"
-        style="@style/PrimaryButtonStyle"
-        android:text="View Contacts"/>
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

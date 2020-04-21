@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_backdrop"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="90dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+    <View
+        android:id="@+id/stopperView"
+        android:layout_width="80dp"
+        android:layout_height="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_xSmall"
+        android:background="@drawable/background_sheet_stopper_button" />
+
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/SemiBoldL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopperView"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="@string/txt_about_application"
+        android:textColor="@color/black" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titleTv">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/aboutPlaceCheckTitle"
+                style="@style/BoldL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:text="@string/title_txt_place_check_about"
+                android:textColor="@color/black"
+                tools:listitem="@layout/cardview_settings" />
+
+            <TextView
+                android:id="@+id/aboutPlaceCheckDetails"
+                style="@style/MediumN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutPlaceCheckTitle"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingTop="@dimen/margin_3xSmall"
+                android:paddingBottom="@dimen/margin_3xSmall"
+                android:text="@string/details_txt_place_check_about"
+                android:textColor="@color/darkGrey" />
+
+            <TextView
+                android:id="@+id/aboutSymptomCheckTitle"
+                style="@style/BoldL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutPlaceCheckDetails"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:text="@string/title_txt_symptom_check_about"
+                android:textColor="@color/black"
+                tools:listitem="@layout/cardview_settings" />
+
+            <TextView
+                android:id="@+id/aboutSymptomCheckDetails"
+                style="@style/MediumN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutSymptomCheckTitle"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingTop="@dimen/margin_3xSmall"
+                android:paddingBottom="@dimen/margin_3xSmall"
+                android:text="@string/details_txt_symptom_check_about"
+                android:textColor="@color/darkGrey" />
+
+            <TextView
+                android:id="@+id/aboutContactTitle"
+                style="@style/BoldL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutSymptomCheckDetails"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:text="@string/title_txt_contact_about"
+                android:textColor="@color/black"
+                tools:listitem="@layout/cardview_settings" />
+
+            <TextView
+                android:id="@+id/aboutContactDetails"
+                style="@style/MediumN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutContactTitle"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingTop="@dimen/margin_3xSmall"
+                android:paddingBottom="@dimen/margin_3xSmall"
+                android:text="@string/details_txt_contact_about"
+                android:textColor="@color/darkGrey" />
+
+            <TextView
+                android:id="@+id/aboutAuthorsTv"
+                style="@style/BoldS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutContactDetails"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_xSmall"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingTop="@dimen/margin_3xSmall"
+                android:paddingBottom="@dimen/margin_3xSmall"
+                android:text="@string/txt_about_app_content"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/closeBtn"
+                style="@style/PrimaryButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aboutAuthorsTv"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:text="ပိတ်မည်"
+     />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

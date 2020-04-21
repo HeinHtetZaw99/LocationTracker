@@ -121,6 +121,7 @@ class MainActivity : BaseActivity<MainViewModel>(),
 
         readContactListFromJson()
 
+
     }
 
     private fun makeFragmentTransaction(
@@ -135,6 +136,7 @@ class MainActivity : BaseActivity<MainViewModel>(),
 
 
     fun startLocationTrackingService() {
+        lostApiClient.connect()
         showLogD("Location Tracking Activated")
         val serviceIntent = Intent(this, LostLocationService::class.java)
         startService(serviceIntent)
@@ -174,8 +176,8 @@ class MainActivity : BaseActivity<MainViewModel>(),
 
             historyFragment.showCurrentLocationOnMap(currentLocation)
 //        getLocationUpdatesInBackground(1234)
-        }catch (e : SecurityException){
-            showLogE("Error in onConnect :",e)
+        } catch (e: SecurityException) {
+            showLogE("Error in onConnect :", e)
         }
     }
 

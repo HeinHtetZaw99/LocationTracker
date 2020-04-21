@@ -11,10 +11,13 @@
     <View
         android:id="@+id/stopperView"
         android:layout_width="80dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="@dimen/margin_xSmall"
+        android:layout_height="6dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/gray"/>
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_xSmall"
+        android:background="@drawable/background_sheet_stopper_button" />
 
 
     <androidx.recyclerview.widget.RecyclerView

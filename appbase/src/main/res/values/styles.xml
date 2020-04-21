@@ -19,6 +19,12 @@
         <item name="android:textSize">@dimen/SP_XXL_size</item>
     </style>
 
+    <style name="BoldXXXL">
+        <item name="android:fontFamily">@font/font_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/SP_XXXL_size</item>
+    </style>
+
     <style name="BoldXS">
         <item name="android:fontFamily">@font/font_bold</item>
         <item name="android:textStyle">bold</item>

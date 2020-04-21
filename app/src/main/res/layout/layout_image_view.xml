@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_marginStart="@dimen/margin_large"
+    android:layout_marginEnd="@dimen/margin_large"
+    android:background="@color/colorPrimary"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp">
+
+
+    <TextView
+        android:id="@+id/adFactTv"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/margin_xSmall"
+        android:textColor="@color/white"
+        style="@style/RegularL"
+        tools:text="data" />
+</RelativeLayout>

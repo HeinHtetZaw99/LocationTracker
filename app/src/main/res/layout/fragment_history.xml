@@ -10,7 +10,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp">
+        android:layout_height="400dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapseActionView"
@@ -21,12 +21,13 @@
             app:contentScrim="@color/white"
             app:layout_scrollFlags="scroll">
 
-            <org.osmdroid.views.MapView
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:id="@+id/mapView"
-                tilesource="Mapnik"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                tools:context=".activities.MapsActivity" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -42,16 +43,15 @@
             android:layout_height="match_parent">
 
             <TextView
+                style="@style/SemiBoldN"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_2xSmall"
+                android:layout_alignBaseline="@id/dateSelector"
                 android:layout_marginEnd="@dimen/margin_2xlarge"
                 android:layout_toEndOf="@id/dateSelector"
                 android:gravity="center"
-                android:layout_alignBaseline="@id/dateSelector"
-                android:text="နေ့အတွက် တည်နေရာ ရာဇ၀င်များ"
-                style="@style/SemiBoldN"
-                />
+                android:padding="@dimen/margin_2xSmall"
+                android:text="နေ့အတွက် တည်နေရာ ရာဇ၀င်များ" />
 
             <TextView
                 android:id="@+id/dateSelector"

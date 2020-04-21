@@ -26,6 +26,7 @@
     <dimen name="SP_L_size">16sp</dimen>
     <dimen name="SP_XL_size">18sp</dimen>
     <dimen name="SP_XXL_size">20sp</dimen>
+    <dimen name="SP_XXXL_size">24sp</dimen>
     <dimen name="SP_5XL_size">32sp</dimen>
     <dimen name="SP_S_size">12sp</dimen>
     <dimen name="SP_XS_size">10sp</dimen>

@@ -67,7 +67,7 @@
         android:layout_alignParentBottom="true"
         android:drawableStart="@drawable/ic_dot"
         android:drawablePadding="@dimen/margin_small"
-        android:text="အသက်ရှုရန်ခက်ခဲခြင်"
+        android:text="အသက်ရှုရန်ခက်ခဲခြင်း"
         />
 
 

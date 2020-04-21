@@ -97,8 +97,7 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
             currentFragmentIndex--
             showFragment(fragmentList.get(currentFragmentIndex), true)
         } else {
-//            showShortToast("Next!")
-            //todo end of the fragment list. so may be it's time to call network calls ?
+            super.onBackPressed()
         }
     }
 
@@ -138,8 +137,6 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         fragment: BaseStepFragment<SelfExaminationActivity>,
         reversed: Boolean
     ) {
-        if (previousBtn.visibility == GONE)
-            previousBtn.setVisible(false)
         supportFragmentManager.beginTransaction()
             .addAnimation(reversed)
             .hide(currentFragment)
@@ -154,7 +151,8 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         }
         if (currentFragment is IntroFragment) {
             previousBtn.setVisible(false)
-        }
+        }else
+            previousBtn.setVisible(true)
     }
 
     companion object {

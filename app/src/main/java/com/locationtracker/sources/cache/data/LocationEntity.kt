@@ -40,8 +40,9 @@ class LocationEntity {
 
 
     fun getAddress(): String {
-        val address = "$road, $suburb, $county, $state ,$city"
-        return if (address.replace(",", "").trim().isEmpty()) "Not Available" else address
+       /* val address = "$road, $suburb, $county, $state ,$city"
+        return if (address.replace(",", "").trim().isEmpty()) "Not Available" else address*/
+        return "$latitude ,$longitude"
     }
 
     companion object {

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "920673145375",
+    "firebase_url": "https://beaming-pillar-274710.firebaseio.com",
+    "project_id": "beaming-pillar-274710",
+    "storage_bucket": "beaming-pillar-274710.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920673145375:android:782151863c033545093b2a",
+        "android_client_info": {
+          "package_name": "com.locationtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920673145375-5jtiolttli7t7toicdbbdpgieu1h2bgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.locationtracker",
+            "certificate_hash": "df7b7343741ea9b98fcbe2e28cc1f9ba461a455b"
+          }
+        },
+        {
+          "client_id": "920673145375-bfugvoeqkalt97v40egt7nvr1vgb6usc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo5Ye37naGZB5-OrXIvqvQkDahAiRCwhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920673145375-bfugvoeqkalt97v40egt7nvr1vgb6usc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
