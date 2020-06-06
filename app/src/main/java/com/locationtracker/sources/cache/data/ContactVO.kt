@@ -6,9 +6,10 @@ import com.appbase.isNotEmptyString
 import com.appbase.showLogE
 import com.google.gson.annotations.SerializedName
 import java.lang.Exception
+import java.lang.StringBuilder
 
 @Entity(tableName = "contact_list")
-class ContactVO {
+class ContactVO : BaseContactVO {
     @SerializedName("State_Region")
     var stateRegion: String = ""
 
@@ -48,14 +49,29 @@ class ContactVO {
 
 
     fun getOccupation(): String {
+        val sb = StringBuilder()
+        if (description.isNotEmptyString())
+            sb.append(description)
+
+        if (organization.isNotEmptyString()) {
+            sb.append(",")
+            sb.append(organization)
+        }
+
+        if (sector.isNotEmptyString()) {
+            sb.append(",")
+            sb.append(sector)
+        }
         return if (description.isNotEmptyString())
-            "$description , $organization \n$sector"
+            sb.toString()
         else {
             if (person.isNotEmptyString())
                 " $organization \n$sector"
             else
                 sector
         }
+
+
     }
 
     fun getLocation() = "$township , $stateRegion"

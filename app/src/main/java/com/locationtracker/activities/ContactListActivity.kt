@@ -16,6 +16,7 @@ import com.locationtracker.SettingsDelegate
 import com.locationtracker.adapters.ContactAdapter
 import com.locationtracker.adapters.SettingsAdapter
 import com.locationtracker.delegates.ContactDelegate
+import com.locationtracker.sources.ListType
 import com.locationtracker.sources.cache.data.SettingsVO
 import com.locationtracker.viewholder.SettingsViewHolder
 import com.locationtracker.viewmodels.MainViewModel
@@ -25,6 +26,7 @@ import kotlinx.android.synthetic.main.layout_settings_sheet.view.*
 
 class ContactListActivity : BaseActivity<MainViewModel>(), SettingsDelegate, ContactDelegate {
 
+    private var currentListType: ListType = ListType.ContactList
     private val settingList = ArrayList<SettingsVO>()
     private val settingsSheet: BottomSheetDialog by lazy {
         BottomSheetDialog(
@@ -56,7 +58,7 @@ class ContactListActivity : BaseActivity<MainViewModel>(), SettingsDelegate, Con
 
 
     override fun loadData() {
-        viewModel.getSettingsList()
+        viewModel.getSettingsList(currentListType)
     }
 
     override fun onNetworkError() {
@@ -72,6 +74,14 @@ class ContactListActivity : BaseActivity<MainViewModel>(), SettingsDelegate, Con
         swipeRefreshLayout.isRefreshing = true
         contactRv.configure(this, contactAdapter)
 
+
+        if (intent.getStringExtra(listType) == CONTACT_LIST) {
+            toolBarTitleTv.text = "ဆက်သွယ်ရန်"
+            currentListType = ListType.ContactList
+        } else {
+            toolBarTitleTv.text = "အခမဲ့ဆေးပေးခန်းများ"
+            currentListType = ListType.FOCClinics
+        }
         toolBar.addBackNavButton(this, R.drawable.ic_chevron_white)
 
         viewModel.settingsListLD.observe(this, Observer {
@@ -80,7 +90,10 @@ class ContactListActivity : BaseActivity<MainViewModel>(), SettingsDelegate, Con
             createSettingsList(settingList)
             if (settingList.isNotEmpty()) {
                 sectorSelector.text = settingList.first().settingsName
-                viewModel.getRegionContactList(settingList.first().settingsID)
+                if (currentListType is ListType.ContactList)
+                    viewModel.getRegionContactList(settingList.first().settingsID)
+                else
+                    viewModel.getRegionClinicsList(settingList.first().settingsID)
             }
         })
 
@@ -102,7 +115,7 @@ class ContactListActivity : BaseActivity<MainViewModel>(), SettingsDelegate, Con
     private fun createSettingsList(list: List<SettingsVO>) {
         val dialogView: View =
             layoutInflater.inflate(R.layout.layout_settings_sheet, null)
-        val adapter = SettingsAdapter(this, this ,SettingsViewHolder.SettingType.Region(0))
+        val adapter = SettingsAdapter(this, this, SettingsViewHolder.SettingType.Region(0))
         dialogView.settingsRv.configure(this, adapter)
         adapter.appendNewData(list)
         settingsSheet.setContentView(dialogView)
@@ -113,31 +126,59 @@ class ContactListActivity : BaseActivity<MainViewModel>(), SettingsDelegate, Con
             is SettingsViewHolder.SettingType.Region -> {
                 if (settingList.isNotEmpty()) {
                     sectorSelector.text = settingList[data.adapterPosition].settingsName
-                    viewModel.getRegionContactList(settingList[data.adapterPosition].settingsID)
+                    if (currentListType is ListType.ContactList)
+                        viewModel.getRegionContactList(settingList[data.adapterPosition].settingsID)
+                    else
+                        viewModel.getRegionClinicsList(settingList[data.adapterPosition].settingsID)
                     swipeRefreshLayout.isRefreshing = true
                 }
                 settingsSheet.dismiss()
             }
             is SettingsViewHolder.SettingType.Phone -> {
-                callToPhone(data.phone)
+                callToPhone(convertToEngPhoneNumber(data.phone))
                 phoneNumberSheet.dismiss()
             }
         }
     }
 
     companion object {
-        fun newIntent(context: Context) = Intent(context, ContactListActivity::class.java)
+        const val CONTACT_LIST = "CONTACTS"
+        const val CLINICS_LIST = "CLINICS"
+        private const val listType = "LIST_TYPE"
+        fun newIntent(context: Context, type: String) =
+            Intent(context, ContactListActivity::class.java).apply {
+                putExtra(listType, type)
+            }
     }
 
     override fun callPhone(phoneNumberList: List<SettingsVO>) {
         showPhoneNumberList(phoneNumberList)
     }
 
+    /*the phone numbers in the original data set comes up with myanmar, so this is used to convert it to the english phone number*/
+    //todo refactor this method with regex
+    private fun convertToEngPhoneNumber(mmPhoneNumber: String): String {
+        showLogD("NumberConversion","$mmPhoneNumber is before ")
+        var numberToBeConverted = mmPhoneNumber
+        numberToBeConverted = numberToBeConverted.replace("-","")
+        numberToBeConverted = numberToBeConverted.replace("၁","1")
+        numberToBeConverted = numberToBeConverted.replace("၂","2")
+        numberToBeConverted = numberToBeConverted.replace("၃","3")
+        numberToBeConverted = numberToBeConverted.replace("၄","4")
+        numberToBeConverted = numberToBeConverted.replace("၅","5")
+        numberToBeConverted = numberToBeConverted.replace("၆","6")
+        numberToBeConverted = numberToBeConverted.replace("၇","7")
+        numberToBeConverted = numberToBeConverted.replace("၈","8")
+        numberToBeConverted = numberToBeConverted.replace("၉","9")
+        numberToBeConverted = numberToBeConverted.replace("၀","0")
+        showLogD("NumberConversion","$numberToBeConverted is after ")
+        return numberToBeConverted
+    }
 
     private fun showPhoneNumberList(list: List<SettingsVO>) {
         val dialogView: View =
             layoutInflater.inflate(R.layout.layout_settings_sheet_phone, null)
-        val adapter = SettingsAdapter(this, this,SettingsViewHolder.SettingType.Phone(""))
+        val adapter = SettingsAdapter(this, this, SettingsViewHolder.SettingType.Phone(""))
         dialogView.settingsRv.configure(this, adapter)
         adapter.appendNewData(list)
         phoneNumberSheet.setContentView(dialogView)

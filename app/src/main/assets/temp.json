@@ -1,0 +1,3217 @@
+[
+{
+   "Field_ID": "1",
+   "Person": "ဒေါက်တာကျော်စွာမြင့်",
+   "Description": "ပြည်နယ်ကျန်းမာရေးဦးစီးမှူး",
+   "Township": "ဘားအံ",
+   "Contact_Primary": "၀၅၈-၂၁၂၃၆",
+   "Contact_Secondary": "၀၉-၇၇၉၁၁၂၄၇၂",
+   "Fax": "၀၅၈-၂၁၂၃၆",
+   "Email": "kayinshd@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "ပြည်နယ်ကျန်းမာ",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "2",
+   "Person": "​ဒေါက်တာခိုင်စန္ဒာအောင်",
+   "Description": "ဒု-ပြည်နယ် ကျန်းမာရေးဦးစီးမှူး(ရန)",
+   "Township": "ဘားအံ",
+   "Contact_Primary": "၀၅၈-၂၁၂၃၆",
+   "Contact_Secondary": "၀၉-၄၄၅၁၉၂၈၁၆",
+   "Fax": "၀၅၈-၂၁၂၃၆",
+   "Email": "k.sandarmay13@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "ပြည်နယ်ကျန်းမာ",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "3",
+   "Person": "​ဒေါက်တာနိုင်နိုင်ထွန်း",
+   "Description": "ဒု-ပြည်နယ် ကျန်းမာရေးဦးစီးမှူး(စီမံ)",
+   "Township": "ဘားအံ",
+   "Contact_Primary": "၀၅၈-၂၁၂၃၆",
+   "Contact_Secondary": "၀၉-၅၆၆၁၅၂၇",
+   "Fax": "၀၅၈-၂၁၂၃၆",
+   "Email": "drnaingnaingtun777@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "ပြည်နယ်ကျန်းမာ",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "4",
+   "Person": "‌ဒေါက်တာချမ်းမြေ့ရဲနိုင်",
+   "Description": "အဖွဲ့ခေါင်းဆောင်ဆရာဝန် (EPI/SDCU)",
+   "Township": "ဘားအံ",
+   "Contact_Primary": "၀၅၈-၂၃၄၉၆",
+   "Contact_Secondary": "၀၉-၅၀၉၅၆၅၈ ၀၉-၇၆၅၀၉၅၆၅၈ ၀၉-၉၅၅၀၉၅၆၅၈",
+   "Fax": "၀၅၈-၂၃၄၉၆",
+   "Email": "chitmaungmaung29292@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "ပြည်နယ်ကျန်းမာ",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "5",
+   "Person": "ဒေါ်စုမွန်ဖြိုး",
+   "Description": "လက်ထောက်ကျန်းမာရေးမှူး (SDCU)",
+   "Township": "ဘားအံ",
+   "Contact_Primary": "၀၅၈-၂၃၄၉၆",
+   "Contact_Secondary": "၀၉-၂၅၆၁၂၀၄၆၈",
+   "Fax": "၀၅၈-၂၃၄၉၆",
+   "Email": "epi.kayin@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "ပြည်နယ်ကျန်းမာ",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "6",
+   "Person": "ဦးစောသိန်းစိုး",
+   "Description": "လက်ထောက်ကျန်းမာရေးမှူး (EPI)",
+   "Township": "ဘားအံ",
+   "Contact_Primary": "၀၅၈-၂၃၄၉၆",
+   "Contact_Secondary": "၀၉-၉၆၃၀၉၈၅၇၆ ၀၉-၆၉၅၆၈၇၉၂၄",
+   "Fax": "၀၅၈-၂၃၄၉၆",
+   "Email": "epi.kayin@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "ပြည်နယ်ကျန်းမာ",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "7",
+   "Person": "‌ဒေါက်တာခင်မိုးအေး",
+   "Description": "Townshipကုသရေးဦးစီးဌာနမှူး",
+   "Township": "ဘားအံTownship",
+   "Contact_Primary": "၀၉-၇၇၉၁၁၁၆၁၇",
+   "Contact_Secondary": "၀၉-၇၉၄၆၄၀၃၇၅",
+   "Fax": "",
+   "Email": "dawkhinmoeaye2017@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "8",
+   "Person": "‌ဒေါ်နန်းစောမြင့်",
+   "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+   "Township": "ဘားအံTownship",
+   "Contact_Primary": "၀၉-၇၇၉၁၁၁၆၁၇",
+   "Contact_Secondary": "၀၉-၃၀၃၆၄၄၈၄ ၀၉-၇၇၅၃၂၁၂၆၂",
+   "Fax": "",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "9",
+   "Person": "‌ဒေါက်တာဝင်းဇော်ဦး",
+   "Description": "Townshipကုသရေးဦးစီးဌာနမှူး",
+   "Township": "လှိုင်းဘွဲ့Township",
+   "Contact_Primary": "၀၅၈-၄၅၀၀၈",
+   "Contact_Secondary": "၀၉-၂၅၀၁၂၇၅၁၂",
+   "Fax": "၀၅၈-၄၅၀၀၈",
+   "Email": "dr.winzawoo431@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "10",
+   "Person": "‌ဒေါ်နန်းသောသီဖော",
+   "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+   "Township": "လှိုင်းဘွဲ့Township",
+   "Contact_Primary": "၀၅၈-၄၅၀၀၈",
+   "Contact_Secondary": "၀၉-၇၈၄၂၄၂၅၁၀",
+   "Fax": "၀၅၈-၄၅၀၀၈",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "11",
+   "Person": "‌ဒေါက်တာကြည်သူဆန်း",
+   "Description": "Townshipကုသရေးဦးစီးမှူး",
+   "Township": "သံတောင်ကြီးTownship",
+   "Contact_Primary": "၀၅၄-၄၅၀၀၇",
+   "Contact_Secondary": "",
+   "Fax": "၀၅၄-၄၅၀၀၇",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "12",
+   "Person": "ဦးစောဘွယ်ထူးနု",
+   "Description": "ကျန်းမာရေးကြီးကြပ်(၁)",
+   "Township": "သံတောင်ကြီးTownship",
+   "Contact_Primary": "၀၅၄-၄၅၀၀၇",
+   "Contact_Secondary": "၀၉-၂၅၅၂၁၂၄၂၂",
+   "Fax": "၀၅၄-၄၅၀၀၇",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "13",
+   "Person": "‌ဒေါက်တာကျော်ထိုက်ဦး",
+   "Description": "Townshipကုသရေးဦးစီးဌာနမှူး",
+   "Township": "‌ကော့ကရိတ်Township",
+   "Contact_Primary": "၀၅၈-၄၀၆၄၉",
+   "Contact_Secondary": "၀၉-၂၅၀၁၁၉၁၂၁",
+   "Fax": "၀၅၈-၄၀၆၄၉",
+   "Email": "kawkareikdmsContact_Primary@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "14",
+   "Person": "ဦးဆန်းမိုးဦး",
+   "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+   "Township": "‌ကော့ကရိတ်Township",
+   "Contact_Primary": "၀၅၈-၄၀၆၄၉",
+   "Contact_Secondary": "၀၉-၄၅၄၈၀၇၇၅၉",
+   "Fax": "၀၅၈-၄၀၆၄၉",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "15",
+   "Person": "ဒေါက်တာရန်နိုင်ဦး",
+   "Description": "ခရိုင်ကုသရေးဦးစီးဌာနမှူး",
+   "Township": "မြဝတီTownship",
+   "Contact_Primary": "၀၅၈-၅၀၅၁၁",
+   "Contact_Secondary": "၀၉-၂၅၅၈၀၃၇၃၇",
+   "Fax": "၀၅၈-၅၀၅၁၁",
+   "Email": "yanaingoo69@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "16",
+   "Person": "ဦးစောထူးစော",
+   "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+   "Township": "မြဝတီTownship",
+   "Contact_Primary": "၀၅၈-၅၀၅၁၁",
+   "Contact_Secondary": "၀၉-၇၈၄၆၃၂၂၇၅",
+   "Fax": "၀၅၈-၅၀၅၁၁",
+   "Email": "htoosaw4974@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "17",
+   "Person": "‌ဒေါက်တာကျော်ဇင်ထွန်း",
+   "Description": "Townshipကုသရေးဦးစီးဌာနမှူး",
+   "Township": "ကြာအင်းဆိပ်ကြီးTownship",
+   "Contact_Primary": "၀၅၈-၆၀၀၂၀",
+   "Contact_Secondary": "၀၉-၂၅၅၇၃၇၃၃၅ ၀၉-၇၉၇၂၉၈၄၂၂",
+   "Fax": "၀၅၈-၆၀၀၂၀",
+   "Email": "kyawzintun.dr@gmail.com",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "18",
+   "Person": "‌ဒေါ်မိုဇင်ထွေး",
+   "Description": "ကျန်းမာရေးကြီးကြပ်(၁)",
+   "Township": "ကြာအင်းဆိပ်ကြီးTownship",
+   "Contact_Primary": "၀၅၈-၆၀၀၂၀",
+   "Contact_Secondary": "၀၉-၂၅၅၉၄၉၇၁၁",
+   "Fax": "၀၅၈-၆၀၀၂၀",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "19",
+   "Person": "ဒေါက်တာဝေလင်း",
+   "Description": "Townshipကုသရေးဦးစီးဌာနမှူး",
+   "Township": "ဖာပွန်Township",
+   "Contact_Primary": "၀၅၈-၂၀၇၀၀၀၃",
+   "Contact_Secondary": "၀၉-၄၀၂၆၃၅၃၂၁",
+   "Fax": "၀၅၈-၂၀၇၀၀၀၃",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},
+ {
+   "Field_ID": "20",
+   "Person": "‌ဒေါ်နန်းအဲမွီ",
+   "Description": "Townshipကျန်းမာရေးမှူး",
+   "Township": "ဖာပွန်Township",
+   "Contact_Primary": "၀၅၈-၂၀၇၀၀၀၃",
+   "Contact_Secondary": "၀၉-၂၅၅၇၆၈၄၅၈",
+   "Fax": "၀၅၈-၂၀၇၀၀၀၃",
+   "Email": "",
+   "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ကရင်"
+   },
+   "SR_Eng": "Kayin",
+   "Department": "",
+   "FIELD12": ""
+},{
+  "Field_ID": "1",
+  "Person": "​ဒေါက်တာထွန်းမြင့်",
+  "Description": "တိုင်းကျန်းမာရေးဦးစီးမှူး",
+  "Township": "ရန်ကုန်",
+  "Contact_Primary": "၀၁-၅၄၄၂၇၉",
+  "Contact_Secondary": "၀၉-၄၄၉၀၀၁၂၆၁",
+  "Fax": "",
+  "Email": "tunmyint13264@gmail.com",
+  "ပြည်နယ်": {
+    "တိုင်းဒေသကြီး": "ရန်ကုန်"
+  },
+  "SR_Eng": "Yangon",
+  "Department": "တိုင်းကျန်းမာ",
+  "FIELD12": ""
+},
+  {
+    "Field_ID": "2",
+    "Person": "​ဒေါက်တာမျိုးသန့်",
+    "Description": "ဒု-တိုင်းကျန်းမာရေးဦးစီးမှူး(ရန)",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "3",
+    "Person": "ဒေါက်တာတင်သစ္စာလွင်",
+    "Description": "ဒု-တိုင်းကျန်းမာရေးဦးစီးမှူး(ပက)",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၅၆၀၅၀",
+    "Contact_Secondary": "၀၉-၅၀၆၃၇၀၅",
+    "Fax": "",
+    "Email": "tinthitsalwin@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "4",
+    "Person": "ဒေါက်တာသက်ဆုမွန်",
+    "Description": "လက်ထောက်ညွှန်ကြားရေးမှူး",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၅၅၇၃၄",
+    "Contact_Secondary": "၀၉-၇၉၄၅၁၀၀၅၇",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "5",
+    "Person": "‌ဒေါက်တာဘုန်းမြတ်ဟိန်း",
+    "Description": "အဖွဲ့ခေါင်းဆောင်ဆရာဝန်",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၅၅၇၃၄",
+    "Contact_Secondary": "၀၉-၅၁၀၀၁၈၂",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "drbhonemyathein@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "6",
+    "Person": "‌ဒေါက်တာရဲလင်းနိုင်",
+    "Description": "အဖွဲ့ခေါင်းဆောင်ဆရာဝန်",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၅၅၇၃၄",
+    "Contact_Secondary": "၀၉-၄၂၀၂၇၆၈၆၁",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "yelinnaing88@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "7",
+    "Person": "‌ဒေါက်တာနန်းဝင့်ရည်လွင်",
+    "Description": "အဖွဲ့ခေါင်းဆောင်ဆရာဝန်",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၅၅၇၃၄",
+    "Contact_Secondary": "၀၉-၄၃၀၀၅၇၀၅",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "dr.nangwindyeenlwin@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "8",
+    "Person": "ဦးမျိုးနိုင်",
+    "Description": "Townshipကျန်းမာရေးမှူး",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၄၆၇၉၁",
+    "Contact_Secondary": "၀၉-၄၂၁၀၄၀၈၈၇",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "9",
+    "Person": "‌ဒေါ်ချိုချိုမာ",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁) (SDCU)",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "၀၁-၅၅၅၇၃၄",
+    "Contact_Secondary": "၀၉-၇၉၁၉၆၀၉၀၂",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "10",
+    "Person": "‌ဒေါ်ခင်ခင်မြ",
+    "Description": "လ/ထကျန်းမာရေးမှူး(SDCU)",
+    "Township": "ရန်ကုန်",
+    "Contact_Primary": "1555734",
+    "Contact_Secondary": "၀၉-၄၂၂၄၆၄၄၃၅",
+    "Fax": "၀၁-၅၅၅၇၃၄",
+    "Email": "khinkhinmya.wha@gamil.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "တိုင်းကျန်းမာ",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "11",
+    "Person": "‌ဒေါက်တာကေသီအောင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "အလုံTownship",
+    "Contact_Primary": "၀၁-၂၂၀၈၄၅",
+    "Contact_Secondary": "၀၉-၉၇၅၈၅၀၄၈၅ ၀၉-၂၅၆၃၆၆၉၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "12",
+    "Person": "‌ဒေါ်လှသိန်းယဉ်",
+    "Description": "Townshipပြည်သူ့ကျန်းမာရေးဆရာမ",
+    "Township": "အလုံTownship",
+    "Contact_Primary": "၀၁-၂၂၀၈၄၅",
+    "Contact_Secondary": "၀၉-၉၇၅၈၅၀၄၈၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "13",
+    "Person": "‌ဒေါက်တာနီနီသော်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဗဟန်းTownship",
+    "Contact_Primary": "၀၁-၅၅၄၀၈",
+    "Contact_Secondary": "၀၉-၉၆၀၁၄၄၂၀၀",
+    "Fax": "",
+    "Email": "ninithaw93@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "14",
+    "Person": "‌ဒေါ်ညိုညိုစန်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "ဗဟန်းTownship",
+    "Contact_Primary": "၀၁-၅၅၄၀၈",
+    "Contact_Secondary": "၀၉-၃၁၂၈၈၆၃၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "15",
+    "Person": "‌ဒေါက်တာဇင်မင်းမင်းလတ်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဗိုလ်တထောင်Township",
+    "Contact_Primary": "၀၁-၂၀၁၃၄၈",
+    "Contact_Secondary": "၀၉-၃၀၃၆၃၇၅၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "16",
+    "Person": "ဦးကျော်သူရ",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "ဗိုလ်တထောင်Township",
+    "Contact_Primary": "၀၁-၂၀၁၃၄၈",
+    "Contact_Secondary": "၀၉-၄၃၀၅၂၈၈၂",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "17",
+    "Person": "‌ဒေါက်တာသန့်ဇင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ကိုကိုးကျွန်းTownship",
+    "Contact_Primary": "၉၄၉-၅၇၈၀၆",
+    "Contact_Secondary": "၀၉-၃၄၀၁၅၀၉၇၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "18",
+    "Person": "ဒေါ်ချိုချိုမာ",
+    "Description": "အမျိုးသမီးကျန်းမာရေးဆရာမ",
+    "Township": "ကိုကိုးကျွန်းTownship",
+    "Contact_Primary": "၉၄၉-၅၇၈၀၆",
+    "Contact_Secondary": "၀၉-၃၄၀၁၅၀၉၈၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "19",
+    "Person": "‌ဒေါက်တာရွှေပြည်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဒဂုံTownship",
+    "Contact_Primary": "၀၁-၃၇၅၈၆၄",
+    "Contact_Secondary": "၀၉-၄၅၀၀၂၇၇၇၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "20",
+    "Person": "‌ဒေါ်မီမီအောင်",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "ဒဂုံTownship",
+    "Contact_Primary": "၀၁-၃၇၅၈၆၄",
+    "Contact_Secondary": "၀၉-၄၄၉၀၀၂၅၁၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "21",
+    "Person": "​ဒေါက်တာထွန်းဝင်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဒလTownship",
+    "Contact_Primary": "၀၁-၂၆၉၁၉၃",
+    "Contact_Secondary": "၀၉-၂၆၁၆၆၅၃၀၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "22",
+    "Person": "‌ဒေါ်နီနီဝင်း",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "ဒလTownship",
+    "Contact_Primary": "၀၁-၂၆၉၁၉၃",
+    "Contact_Secondary": "၀၉-၇၈၁၂၈၀၄၆၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "23",
+    "Person": "",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌ဒေါပုံTownship",
+    "Contact_Primary": "၀၁-၅၅၆၈၅၂",
+    "Contact_Secondary": "၀၉-၃၁၂၈၈၆၃၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "24",
+    "Person": "‌ဒေါ်နော်စေးဒါး",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "‌ဒေါပုံTownship",
+    "Contact_Primary": "၀၁-၅၅၆၈၅၂",
+    "Contact_Secondary": "၀၉-၂၆၀၈၁၆၀၂၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "25",
+    "Person": "‌ဒေါက်တာဝေဆင့်ကျော်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "လှိုင်Township",
+    "Contact_Primary": "၀၁-၅၃၅၉၀၂",
+    "Contact_Secondary": "၀၉-၅၀၅၄၆၅၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "26",
+    "Person": "ဒေါ်အေးအေးသန်း",
+    "Description": "Townshipသူနာပြုအဆင့် (၁)",
+    "Township": "လှိုင်Township",
+    "Contact_Primary": "၀၁-၅၃၅၉၀၂",
+    "Contact_Secondary": "၀၉-၄၂၀၀၅၀၃၉၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "27",
+    "Person": "‌ဒေါက်တာခင်ရူပါစိုး",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "လှိုသာယာTownship",
+    "Contact_Primary": "၀၁-၆၄၅၀၃၁",
+    "Contact_Secondary": "၀၉-၇၃၀၄၇၃၁၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "28",
+    "Person": "‌ဦးစိုးထက်",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "လှိုသာယာTownship",
+    "Contact_Primary": "၀၁-၆၄၅၀၃၁",
+    "Contact_Secondary": "၀၉-၂၅၀၈၇၆၄၁၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "29",
+    "Person": "‌ဒေါက်တာရန်နိုင်ဆွေ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "လှည်းကူးTownship",
+    "Contact_Primary": "၀၁-၆၂၉၀၂၅",
+    "Contact_Secondary": "၀၉-၄၂၂၂၁၅၅၅၂",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "30",
+    "Person": "ဦးတင်မြအေး",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "လှည်းကူးTownship",
+    "Contact_Primary": "၀၁-၆၂၉၀၂၅",
+    "Contact_Secondary": "၀၉-၇၇၃၀၃၂၂၄၄",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "31",
+    "Person": "‌ဒေါက်တာတင်မူမြင့်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌မှော်ဘီTownship",
+    "Contact_Primary": "၀၁-၆၂၀၀၄၁",
+    "Contact_Secondary": "၀၉-၇၈၅၀၆၉၂၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "32",
+    "Person": "‌ဒေါ်ခင်အေးဝင်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "‌မှော်ဘီTownship",
+    "Contact_Primary": "၀၁-၆၂၀၀၄၁",
+    "Contact_Secondary": "၀၉-၄၄၈၀၂၅၆၅၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "33",
+    "Person": "‌ဒေါက်တာလမင်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌ထန်းတပင်Township",
+    "Contact_Primary": "၀၁-၆၁၉၀၁၄",
+    "Contact_Secondary": "၀၉-၄၄၀၇၃၀၀၃၂",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "34",
+    "Person": "‌ဒေါ်နွဲ့နွဲ့",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "‌ထန်းတပင်Township",
+    "Contact_Primary": "၀၁-၆၁၉၀၁၄",
+    "Contact_Secondary": "၀၉-၇၉၇၉၈၅၁၁၀",
+    "Fax": "",
+    "Email": "dawnewtnwet@gamil.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "35",
+    "Person": "‌ဒေါက်တာသန္တာဆွေ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "အင်းစိန်Township",
+    "Contact_Primary": "၀၁-၆၄၀၂၃၉",
+    "Contact_Secondary": "၀၉-၄၃၁၈၉၉၄၈ ၀၉-၉၆၀၂၅၃၁၆၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "36",
+    "Person": "ဦးလှကျော်",
+    "Description": "ကျန်းမာရေးမှူးကြီးကြပ်(၁)",
+    "Township": "အင်းစိန်Township",
+    "Contact_Primary": "၀၁-၆၄၀၂၃၉",
+    "Contact_Secondary": "၀၉-၄၂၁၀၂၉၃၈၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "37",
+    "Person": "‌ဒေါက်တာသင်းသင်းနိုင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ကမာရွတ်Township",
+    "Contact_Primary": "၀၁-၅၃၄၂၆၂",
+    "Contact_Secondary": "၀၉-၇၃၀၁၂၇၄၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "38",
+    "Person": "‌ဦးတင်နိုင်ဝင်း",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "ကမာရွတ်Township",
+    "Contact_Primary": "၀၁-၅၃၄၂၆၂",
+    "Contact_Secondary": "၀၉-၂၆၁၉၆၁၈၆၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "39",
+    "Person": "‌ဒေါက်တာသန်းဌေး",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌ကော့မှူးTownship",
+    "Contact_Primary": "၀၁-၂၆၄၀၀၆",
+    "Contact_Secondary": "၀၉-၉၆၅၁၂၅၆၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "40",
+    "Person": "‌ဦးစိုးဝင်းထွန်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "‌ကော့မှူးTownship",
+    "Contact_Primary": "၀၁-၂၆၄၀၀၆",
+    "Contact_Secondary": "၀၉-၉၇၁၈၁၉၄၆၀",
+    "Fax": "",
+    "Email": "soewinhtun21@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "41",
+    "Person": "‌ဒေါက်တာစောသူရိန်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးဌာနမှူး",
+    "Township": "ခရမ်းTownship",
+    "Contact_Primary": "၀၅၆-၃၀၀၁၈",
+    "Contact_Secondary": "၀၉-၂၅၄၂၂၀၀၂၀",
+    "Fax": "",
+    "Email": "ayeayemyo1170@gmailcom",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "42",
+    "Person": "‌ဒေါ်ရင်ရင်အေး",
+    "Description": "အမျိုးသမီးကျန်းမာရေးဆရာမ",
+    "Township": "ခရမ်းTownship",
+    "Contact_Primary": "၀၅၆-၃၀၀၁၈",
+    "Contact_Secondary": "၀၉-၇၉၅၇၂၂၀၀၈",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "43",
+    "Person": "‌ဒေါက်တာမြတ်သူ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ကွမ်းခြံကုန်းTownship",
+    "Contact_Primary": "၀၁-၂၆၅၀၂၃",
+    "Contact_Secondary": "၀၉-၅၃၆၀၄၇၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "44",
+    "Person": "ဒေါ်ခင်ပြုံးရီ",
+    "Description": "ကျန်းမာရေးမှူးအဆင့်(၁)",
+    "Township": "ကွမ်းခြံကုန်းTownship",
+    "Contact_Primary": "၀၁-၂၆၅၀၂၃",
+    "Contact_Secondary": "၀၉-၅၃၆၀၄၇၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "45",
+    "Person": "‌ဒေါက်တာမင်းမင်းထွန်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌ကျောက်တံတားTownship",
+    "Contact_Primary": "၀၁-၃၇၅၃၃၈",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "mimihtun2012@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "46",
+    "Person": "‌ဒေါ်မြဝင်းမွန်",
+    "Description": "Townshipကျန်းမာရေးမှူး",
+    "Township": "‌ကျောက်တံတားTownship",
+    "Contact_Primary": "၀၁-၃၇၅၃၃၈",
+    "Contact_Secondary": "၀၉-၄၅၀၀၁၄၄၉၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "47",
+    "Person": "‌ဒေါက်တာမို့မို့ခိုင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ကျောက်တန်းTownship",
+    "Contact_Primary": "၀၅၆-၂၅၅၁၁",
+    "Contact_Secondary": "၀၉-၇၉၆၂၆၉၄၄၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "48",
+    "Person": "ဒေါ်အိသူဖြိုး",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "ကျောက်တန်းTownship",
+    "Contact_Primary": "၀၅၆-၂၅၅၁၁",
+    "Contact_Secondary": "၀၉-၄၅၅၂၁၂၄၀၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "49",
+    "Person": "‌ဒေါက်တာခင်မောင်လွင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ကြည့်မြင်တိုင်Township",
+    "Contact_Primary": "၀၁-၉၃၁၇၃၉၇",
+    "Contact_Secondary": "၀၉-၂၅၀၂၉၀၆၆၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "50",
+    "Person": "ဒေါ်ခင်ပပစိုး",
+    "Description": "Townshipသူနာပြုအဆင့် (၁)",
+    "Township": "ကြည့်မြင်တိုင်Township",
+    "Contact_Primary": "19317397",
+    "Contact_Secondary": "၀၉-၇၉၁၀၁၁၀၇၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "51",
+    "Person": "‌ဒေါက်တာသန်းသန်းချစ်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "လမ်းမတော်Township",
+    "Contact_Primary": "၀၁-၂၂၂၂၇၀",
+    "Contact_Secondary": "၀၉-၅၃၃၇၄၃၅",
+    "Fax": "",
+    "Email": "dr.thanthanchit@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "52",
+    "Person": "‌ဒေါ်ယုယုလွင်",
+    "Description": "Townshipသူနာပြုအဆင့် (၁)",
+    "Township": "လမ်းမတော်Township",
+    "Contact_Primary": "၀၁-၂၂၂၂၇၀",
+    "Contact_Secondary": "၀၉-၇၉၁၄၅၈၅၉၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "53",
+    "Person": "‌ဒေါက်တာမင်းလွင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "လသာTownship",
+    "Contact_Primary": "၀၁-၂၅၀၆၃၆",
+    "Contact_Secondary": "၀၉-၅၀၈၀၂၈၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "54",
+    "Person": "‌ဒေါ်ခင်အေးဝင်း",
+    "Description": "Townshipသူနာပြုအဆင့် (၁)",
+    "Township": "လသာTownship",
+    "Contact_Primary": "၀၁-၂၅၀၆၃၆",
+    "Contact_Secondary": "၀၉-၅၃၉၃၂၀၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "55",
+    "Person": "‌ဒေါက်တာအေးအေးမျိုး",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "မရမ်းကုန်းTownship",
+    "Contact_Primary": "၀၁-၆၆၀၇၂၉",
+    "Contact_Secondary": "၀၉-၅၀၈၉၉၀၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "56",
+    "Person": "ဆန်းသူရကျော်ထွေးလေး",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "မရမ်းကုန်းTownship",
+    "Contact_Primary": "၀၁-၆၆၀၇၂၉",
+    "Contact_Secondary": "၀၉-၇၉၈၃၉၁၂၅၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "57",
+    "Person": "‌ ဒေါက်တာဥမ္မာမြင့်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "မင်္ဂလာတောင်ညွန့်Township",
+    "Contact_Primary": "၀၁-၂၉၂၂၂၃",
+    "Contact_Secondary": "၀၉-၅၀၄၈၈၂၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "58",
+    "Person": "‌ဒေါ်မိုးသီတာဦး",
+    "Description": "Townshipသူနာပြုအဆင့် (၁)",
+    "Township": "မင်္ဂလာတောင်ညွန့်Township",
+    "Contact_Primary": "၀၁-၂၉၂၂၂၃",
+    "Contact_Secondary": "၀၉-၄၂၀၇၁၉၁၁၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "59",
+    "Person": "‌ဒေါက်တာဝင်းဝင်းမာ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "မင်္ဂလာဒုံTownship",
+    "Contact_Primary": "၀၁၆၃၈၅၇၀ ၀၁-၆၃၅၂၉၄",
+    "Contact_Secondary": "၀၉-၅၀၆၁၈၆၀၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "60",
+    "Person": "‌ဒေါ်ခင်နန်းဘိုလ်",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "မင်္ဂလာဒုံTownship",
+    "Contact_Primary": "၀၁-၆၃၈၅၇၀ ၀၁-၆၃၅၂၉၄",
+    "Contact_Secondary": "၀၉-၉၆၅၂၇၆၀၃၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "61",
+    "Person": "‌ဒေါက်တာလဲ့လဲ့ဝင်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဒဂုံအရှေ့ပိုင်းTownship",
+    "Contact_Primary": "၀၁-၅၈၅၁၉၅",
+    "Contact_Secondary": "၀၉-၇၈၃၂၅၄၅၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "62",
+    "Person": "‌ဒေါ်အေးအေးစန်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ဒဂုံအရှေ့ပိုင်းTownship",
+    "Contact_Primary": "၀၁-၅၈၅၁၉၅",
+    "Contact_Secondary": "၀၉-၄၂၁၀၀၁၉၇၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "63",
+    "Person": "‌ဒေါက်တာအေးမူယာကျော်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဒဂုံဆိပ်ကမ်းTownship",
+    "Contact_Primary": "၀၁-၂၀၁၃၄၈",
+    "Contact_Secondary": "၀၉-၂၂၁၅၂၁၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "64",
+    "Person": "ဒေါ်ကေသီစိုး",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "ဒဂုံဆိပ်ကမ်းTownship",
+    "Contact_Primary": "၀၁-၂၀၁၃၄၈",
+    "Contact_Secondary": "၀၉-၄၃၀၂၄၃၂၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "65",
+    "Person": "‌ဒေါက်တာကျော်ဇင်ပြုံး",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဒဂုံမြောက်ပိုင်းTownship",
+    "Contact_Primary": "",
+    "Contact_Secondary": "၀၉-၅၂၅၀၉၉၂ ၀၉-၄၄၅၁၈၄၁၈၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "66",
+    "Person": "‌ဒေါ်စန်းစန်းဦး",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ဒဂုံမြောက်ပိုင်းTownship",
+    "Contact_Primary": "၀၁-၅၈၄၀၇၁",
+    "Contact_Secondary": "၀၉-၇၉၄၈၄၁၇၈၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "67",
+    "Person": "‌ဒေါက်တာတင်တင်ဆွေ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဒဂုံတောင်ပိုင်းTownship",
+    "Contact_Primary": "၀၁-၅၉၀၀၇၄",
+    "Contact_Secondary": "၀၉-၅၀၆၁၇၁၈",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "68",
+    "Person": "ဦးထွန်းလှိုင်",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ဒဂုံတောင်ပိုင်းTownship",
+    "Contact_Primary": "၀၁-၅၉၀၀၇၄",
+    "Contact_Secondary": "၀၁-၄၅၄၉၁၉၈၅၈",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "69",
+    "Person": "‌ဒေါက်တာဥမ္မာစိန်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌မြောက်ဥက္ကလာပTownship",
+    "Contact_Primary": "၀၁-၉၆၉၉၃၆၅",
+    "Contact_Secondary": "၀၉-၅၁၅၈၁၁၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "70",
+    "Person": "‌ဦးဇေယျာလင်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "‌မြောက်ဥက္ကလာပTownship",
+    "Contact_Primary": "၀၁-၉၆၉၉၃၆၅",
+    "Contact_Secondary": "၀၉-၅၉၅၀၄၀၉၅ ၀၉-၇၇၅၄၃၅၅၃၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "71",
+    "Person": "‌ဒေါက်တာခင်ချိုလတ်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ပန်းပဲတန်းTownship",
+    "Contact_Primary": "၀၁-၃၈၀၉၁၈",
+    "Contact_Secondary": "၀၉-၄၂၂၄၆၂၇၇၂",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "72",
+    "Person": "ဦးဇော်လင်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ပန်းပဲတန်းTownship",
+    "Contact_Primary": "၀၁-၃၈၀၉၁၈",
+    "Contact_Secondary": "၀၉-၇၉၂၃၉၇၃၇၄ ၄၂၀၅၉၂၆၇၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "73",
+    "Person": "‌ဒေါက်တာဇင်နွယ်ဦး",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ပုဇွန်တောင်Township",
+    "Contact_Primary": "၀၁-၅၀၄၀၃၇၃",
+    "Contact_Secondary": "၀၉-၄၅၀၀၁၃၉၄၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "74",
+    "Person": "ဦးတင်ဖုန်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ပုဇွန်တောင်Township",
+    "Contact_Primary": "၀၁-၅၀၄၀၃၇၃",
+    "Contact_Secondary": "၀၉-၆၉၃၈၁၇၅၇၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "75",
+    "Person": "‌ဒေါက်တာအေးအေးမိုး",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌တောင်ဥက္ကလာပTownship",
+    "Contact_Primary": "၀၁-၅၆၃၂၇၆",
+    "Contact_Secondary": "၀၉-၄၅၀၅၄၂၄၅၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "76",
+    "Person": "‌ဒေါ်ယုယုခိုင်",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "‌တောင်ဥက္ကလာပTownship",
+    "Contact_Primary": "၀၁-၅၆၃၂၇၆",
+    "Contact_Secondary": "၀၉-၂၅၀၁၇၅၁၆၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "77",
+    "Person": "‌ဒေါက်တာမိမိခိုင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "စမ်းချောင်းTownship",
+    "Contact_Primary": "၀၁-၅၁၀၆၈",
+    "Contact_Secondary": "၀၉-၇၉၄၄၆၈၃၉၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "78",
+    "Person": "‌ဒေါ်အေးရွှေ",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "စမ်းချောင်းTownship",
+    "Contact_Primary": "၀၁-၅၁၀၆၈",
+    "Contact_Secondary": "၀၉-၂၅၀၄၃၃၆၄၈",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "79",
+    "Person": "‌ဒေါက်တာသီတာတင်ဝင်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ဆိတ်ကြီးခနောင်Township",
+    "Contact_Primary": "၀၁-၂၆၈၀၃၆",
+    "Contact_Secondary": "၀၉-၄၀၁၅၃၁၀၁၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "80",
+    "Person": "‌ဒေါ်နှင်းဝေ",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ဆိတ်ကြီးခနောင်Township",
+    "Contact_Primary": "၀၁-၂၆၈၀၃၆",
+    "Contact_Secondary": "၀၉-၇၉၉၄၃၃၄၅၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "81",
+    "Person": "‌ဒေါက်တာမြတ်မြတ်နှင်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "‌ရွှေပြည်သာTownship",
+    "Contact_Primary": "၀၁-၁၁၁၅၇",
+    "Contact_Secondary": "၀၉-၂၅၁၀၀၄၇၄၄",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "82",
+    "Person": "ဒေါ်ဖြူဖြူအောင်",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "‌ရွှေပြည်သာTownship",
+    "Contact_Primary": "၀၁-၁၁၁၅၇",
+    "Contact_Secondary": "၀၉-၂၅၆၃၂၅၇၃၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "83",
+    "Person": "‌ဒေါက်တာသန်းမြင့်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "တိုက်ကြီးTownship",
+    "Contact_Primary": "၀၅၅-၂၀၀၃၂",
+    "Contact_Secondary": "၀၉-၄၄၆၂၃၀၇၄၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "84",
+    "Person": "‌ဒေါ်နော်ခါရီ",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "တိုက်ကြီးTownship",
+    "Contact_Primary": "၀၅၅-၂၀၀၃၂",
+    "Contact_Secondary": "၀၉-၅၃၉၄၄၅၉",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "85",
+    "Person": "ဒေါက်တာမိမိတင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "တာမွေTownship",
+    "Contact_Primary": "၀၁-၅၅၈၃၀",
+    "Contact_Secondary": "၀၉-၄၂၀၁၂၉၁၉၃",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "86",
+    "Person": "‌ဒေါ်တင်တင်အုန်း",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "တာမွေTownship",
+    "Contact_Primary": "၀၁-၅၅၈၃၀",
+    "Contact_Secondary": "၀၉-၇၃၀၈၁၀၀၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "87",
+    "Person": "‌ဒေါက်တာသိန်းထွန်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "သာကေတTownship",
+    "Contact_Primary": "၀၁-၅၅၆၈၃၉",
+    "Contact_Secondary": "၀၉-၄၉၂၄၂၃၁၄",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "88",
+    "Person": "‌ဒေါ်တင်တင်ဝင်း",
+    "Description": "လက်ထောက်ကျန်းမာရေးမှူး",
+    "Township": "သာကေတTownship",
+    "Contact_Primary": "၀၁-၅၅၆၈၃၉",
+    "Contact_Secondary": "၀၉-၄၂၀၁၉၀၉၅၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "89",
+    "Person": "‌ဒေါက်တာမြကြေးမုံ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "သံလျင်Township",
+    "Contact_Primary": "၀၅၆-၂၁၅၁၁",
+    "Contact_Secondary": "၀၉-၄၅၂၂၉၃၅၂၆",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "90",
+    "Person": "ဒေါက်တာဇာနည်မောင်",
+    "Description": "",
+    "Township": "သံလျင်Township",
+    "Contact_Primary": "၀၅၆-၂၁၅၁၁",
+    "Contact_Secondary": "၀၉-၉၆၆၇၁၂၅၈၁",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "91",
+    "Person": "ဦးဆန်းလွင်",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "သံလျှင်Township",
+    "Contact_Primary": "၀၅၆-၂၁၅၁၁",
+    "Contact_Secondary": "၀၉-၄၂၀၀၉၂၇၅၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "92",
+    "Person": "ဒေါက်တာစောအောင်ရွှေဖြူ",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "သင်္ဃန်းကျွန်းTownship",
+    "Contact_Primary": "၀၁-၅၆၄၁၆၁",
+    "Contact_Secondary": "၀၉-၄၂၈၁၇၂၀၀၀",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "93",
+    "Person": "‌ဒေါ်စန်းစန်းဝေ",
+    "Description": "Townshipသူနာပြုအဆင့် (၁)",
+    "Township": "သင်္ဃန်းကျွန်းTownship",
+    "Contact_Primary": "၀၁-၅၆၄၁၆",
+    "Contact_Secondary": "၀၉-၇၈၃၇၃၈၉၈၄",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "94",
+    "Person": "‌ဒေါက်တာဇော်ဝင်းသန်း",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "သုံးခွTownship",
+    "Contact_Primary": "၀၅၆-၄၀၃၉၅",
+    "Contact_Secondary": "၀၉-၇၇၁၂၃၁၁၇၈",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "95",
+    "Person": "ဦးအောင်ဇော်ထက်",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "သုံးခွTownship",
+    "Contact_Primary": "၀၅၆-၄၀၃၉၅",
+    "Contact_Secondary": "၀၉-၇၉၆၂၇၀၄၇၂ ၀၉-၄၂၀၀၅၃၅၆၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "96",
+    "Person": "‌ဒေါက်တာသင်းသင်းကြည်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "တွံ့တေးTownship",
+    "Contact_Primary": "၀၄၅-၅၀၄၄၃",
+    "Contact_Secondary": "၀၉-၄၂၀၀၂၄၈၄၈",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "97",
+    "Person": "ဦးလှတိုး",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "တွံ့တေးTownship",
+    "Contact_Primary": "၀၄၅-၅၀၄၄၃",
+    "Contact_Secondary": "၀၉-၇၉၁၄၁၈၆၆၅",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "98",
+    "Person": "‌ဒေါက်တာသီသီလတ်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "ရန်ကင်းTownship",
+    "Contact_Primary": "၀၁-၅၆၆၄၈၂",
+    "Contact_Secondary": "၀၉-၅၁၂၄၇၃၉",
+    "Fax": "",
+    "Email": "suthilatt@gmail.com",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "99",
+    "Person": "‌ဒေါ်ချိုချိုဦး",
+    "Description": "ကျန်းမာရေးမှူးအဆင့် (၁)",
+    "Township": "ရန်ကင်းTownship",
+    "Contact_Primary": "၀၁-၅၆၆၄၈၂",
+    "Contact_Secondary": "၀၉-၇၉၄၃၁၀၃၅၇",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "100",
+    "Person": "",
+    "Description": "Yangon Airport Health Quarantine Unit",
+    "Township": "ကမာရွတ်",
+    "Contact_Primary": "09 799983833",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "101",
+    "Person": "",
+    "Description": "ရန်ကုန်တိုင်း COVID-19 Hotline",
+    "Township": "ကမာရွတ်",
+    "Contact_Primary": "09 756341601",
+    "Contact_Secondary": "09 756 341 602",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "102",
+    "Person": "U Kyaw Min Htet",
+    "Description": "People's Pioneer Party",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 685171235",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "103",
+    "Person": "ဦးကျော်ကျော်",
+    "Description": "Townshipအုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 5022892",
+    "Contact_Secondary": "09 5022892",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "104",
+    "Person": "ဒေါ်မိမိခိုင်",
+    "Description": "Townshipကျန်းမာရေးဦးစီးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 5394569",
+    "Contact_Secondary": "09 5394569",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "105",
+    "Person": "ဦးဝင်းဇော်",
+    "Description": "Townshipလဝကဦးစီးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 788050899",
+    "Contact_Secondary": "09 788050899",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "106",
+    "Person": "ဦးနေဝင်းထွန်း",
+    "Description": "ဝေ/မြောက် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 250082834, 09 429966211",
+    "Contact_Secondary": "09 250082834,09 429966211",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "107",
+    "Person": "ဦးဝင်းဇော်",
+    "Description": "ဝေ/တောင် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 442527445",
+    "Contact_Secondary": "09 442527445",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "108",
+    "Person": "ဦးတင်ထွန်း",
+    "Description": "မုန့်/မြောက် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 794596124",
+    "Contact_Secondary": "09 794596124",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "109",
+    "Person": "ဦးကျော်ကျော်ဦး",
+    "Description": "မုန့်/တောင် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 250648104, 09 346030788",
+    "Contact_Secondary": "09 250648104, 09 346030788",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "110",
+    "Person": "ဦးဇော်ဝင်းခိုင်",
+    "Description": "သံတံတား ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 254044490",
+    "Contact_Secondary": "09 254044490",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "111",
+    "Person": "ဦးသန့်စင်",
+    "Description": "လင်း/မြောက် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 5503611",
+    "Contact_Secondary": "09 5503611",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "112",
+    "Person": "ဦးမြင့်ထွန်း",
+    "Description": "လင်း/တောင် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 77509 6229",
+    "Contact_Secondary": "09 77509 6229",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "113",
+    "Person": "ဦးအောင်မြင့်",
+    "Description": "ကျွန်း/မြောက် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 448032988",
+    "Contact_Secondary": "09 448032988",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "114",
+    "Person": "ဦးတင်ထက်ကို",
+    "Description": "ကျွန်း/လယ် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 36147376",
+    "Contact_Secondary": "09 36147376",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "115",
+    "Person": "ဦးမောင်ရွှေ",
+    "Description": "ကျွန်း/တောင် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 441887450",
+    "Contact_Secondary": "09 441887450",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "116",
+    "Person": "ဦးဝင်းဇော်",
+    "Description": "စမ်း/မြောက် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 31641612",
+    "Contact_Secondary": "09 31641612",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "117",
+    "Person": "ဦးမျိုးမြင့်",
+    "Description": "စမ်း/တောင် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 427526141",
+    "Contact_Secondary": "09 427526141",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "118",
+    "Person": "ဦးဇော်ဝင်း",
+    "Description": "ရှင်စောပု ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 420123255",
+    "Contact_Secondary": "09 420123255",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "119",
+    "Person": "ဦးဇော်မြင့်လွင်",
+    "Description": "သီရိခေမာ ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 43118771",
+    "Contact_Secondary": "09 43118771",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "120",
+    "Person": "ဦးအောင်ကျော်စိုး",
+    "Description": "အောင်ချမ်းသာ ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 799667064, 09 792779920",
+    "Contact_Secondary": "09 799667064, 09 792779920",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "121",
+    "Person": "ဦးသောင်းရွှေ",
+    "Description": "ဟုမ်းလမ်းဘူတာ ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 251036433",
+    "Contact_Secondary": "09 251036433",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "122",
+    "Person": "ဦးစည်သူအောင်",
+    "Description": "မြေ/မြောက် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 5052962",
+    "Contact_Secondary": "09 5052962",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "123",
+    "Person": "ဦးမြင့်စိုး",
+    "Description": "မြေ/တောင် ရပ်ကွက်အုပ်ချုပ်ရေးမှူး",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 262194660",
+    "Contact_Secondary": "09 262194660",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "124",
+    "Person": "ဒေါ်တင်တင်ဌေး",
+    "Description": "မုန့်/တောင်ရပ်ကွက် ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 684831841",
+    "Contact_Secondary": "09 684831841",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "125",
+    "Person": "ဒေါ်နန်းသန်းသန်းဝင်း",
+    "Description": "မြေ/တောင်၊ မြေ/မြောက် ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 5080630",
+    "Contact_Secondary": "09 5080630",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "126",
+    "Person": "ဒေါ်ဟေမာဝင်း",
+    "Description": "စမ်း/တောင်၊ စမ်း/မြောက်၊ ရှင်စောပု ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 799345233",
+    "Contact_Secondary": "09 799345233",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "127",
+    "Person": "ဒေါ်ဇူးရည်နန္ဒာလှိုင်",
+    "Description": "မုန့်/မြောက်၊ သံတံတား ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 424185663",
+    "Contact_Secondary": "09 424185663",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "128",
+    "Person": "ဒေါ်အေးအေးထွေး",
+    "Description": "ကျွန်း/လယ်၊ ကျွန်း/မြောက်၊ လင်း/မြောက် ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 31694704",
+    "Contact_Secondary": "09 31694704",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "129",
+    "Person": "ဒေါ်မေမီဂျူး",
+    "Description": "ဝေ/မြောက်၊ ဝေ/တောင် ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 796117128",
+    "Contact_Secondary": "09 796117128",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "130",
+    "Person": "ဒေါ် ငြိမ်းဝဿန်ထွန်း",
+    "Description": "ဟုမ်းလမ်း၊ သီရိခေမာ၊ အောင်ချမ်းသာ ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 798567203",
+    "Contact_Secondary": "09 798567203",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "131",
+    "Person": "ဒေါ်ဟောက်ခန့်ကျိန်",
+    "Description": "ကျွန်း/တောင်၊ လင်း/တောင် ကျန်းမာရေးတာဝန်ခံ",
+    "Township": "စမ်းချောင်း",
+    "Contact_Primary": "09 420150312",
+    "Contact_Secondary": "09 420150312",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "132",
+    "Person": "ဒေါ်ဖြူဖြူသင်း",
+    "Description": "ပြည်သူ့လွှတ်တော်ကိုယ်စားလှယ်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 5024056",
+    "Contact_Secondary": "09 790249128",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "133",
+    "Person": "ဦးသန်းစိုး",
+    "Description": "အမျိုးသားလွှတ်တော်ကိုယ်စားလှယ်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 428023274",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "134",
+    "Person": "ဦးအောင်ဝင်း",
+    "Description": "Townshipအုပ်ချုပ်ရေးမှူး",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 451231626",
+    "Contact_Secondary": "09 791321140",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "135",
+    "Person": "ဦးလှဌေး",
+    "Description": "တိုင်းဒေသကြီးလွှတ်တော်ကိုယ်စားလှယ်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 4309 4259",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "136",
+    "Person": "ဦးရန်အောင်",
+    "Description": "တိုင်းဒေသကြီးလွှတ်တော်ကိုယ်စားလှယ်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 250238625",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "137",
+    "Person": "ဦးဆန်းဝင်း",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး ၊ ပုသိမ်ညွန့်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 509 2522",
+    "Contact_Secondary": "09 250141633",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "138",
+    "Person": "ဦးချမ်းငြိမ်းအောင်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ကူးတို့ဆိပ်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 420007594",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "139",
+    "Person": "ဦးဝင်းလှိုင်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ မလွကုန်း မီးရထား",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 790493366",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "140",
+    "Person": "ဦးတင်ထွဋ်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ စက်ဆန်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 796281580",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "141",
+    "Person": "ဦးခင်လှ",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊တောင်လုံးပျံ",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 30207041",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "142",
+    "Person": "ဦးဇော်ဝင်းမောင်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ကျီတော်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 798112443",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "143",
+    "Person": "ဦးကျော်ဇေယျ",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ သာယာကုန်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 425494108",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "144",
+    "Person": "ဦးတင်ဝင်း",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ မင်္ဂလာတောင်ညွန့်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 5045016",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "145",
+    "Person": "ဦးသွင်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊တောင် ညွန့် မီးရထား",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 423392844",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "146",
+    "Person": "ဒေါ်လှလှအေး",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ လွတ်လပ်ရေး",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 421022059",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "147",
+    "Person": "ဦးဇော်ဝင်းထွန်း",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ဖို့မြေ",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 400444545",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "148",
+    "Person": "ဦးသီဟစိုး",
+    "Description": "ရပ်ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ရေတွင်းကုန်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 250013887",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "149",
+    "Person": "ဦးသိန်းမြင့်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ သပြေကုန်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 5145476",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "150",
+    "Person": "ဦးမြင့်ဇော်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ကန်တော်ကလေး အရှေ့ပိုင်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 5006808",
+    "Contact_Secondary": "09 785006808",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "151",
+    "Person": "ဒေါ်ခင်စန်းတင့်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ကန်တော်ကလေး အနောက်ပိုင်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 425326060",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "152",
+    "Person": "ဦးတင်အေး",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ကန်တော်ကလေးတောင်ပိုင်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 250509 011",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "153",
+    "Person": "ဦးဘုန်းမြင့်ဝင်း",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ကန်တော်ကလေးမြောက်ပိုင်း",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 73069646",
+    "Contact_Secondary": "09 443069646",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "154",
+    "Person": "ဦးရဲမြင့်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ စံပြ ဖဆပလ",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 5034052",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "155",
+    "Person": "ဦးအောင်မျိုးခိုင်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ သိမ်ဖြူမီးရထား",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 781264667",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "156",
+    "Person": "ဦးအေးလှိုင်",
+    "Description": "ရပ်ကွက်အုပ်ချုပ်ရေးမှူး၊ ဥယျာဉ်",
+    "Township": "မင်္ဂလာတောင်ညွန့်",
+    "Contact_Primary": "09 2544909 11",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "157",
+    "Person": "Thura Aung",
+    "Description": "Radanar Ayar Association",
+    "Township": "မရမ်းကုန်း",
+    "Contact_Primary": "09 54577874",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "158",
+    "Person": "ဦးအေးလွင်",
+    "Description": "တညင်းကုန်းရပ်ကွက်အုပ်ချုပ်ရေးမှုး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 4303009 5",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "159",
+    "Person": "ဦးတင်‌မောင်နိုင်",
+    "Description": "အောင်ဆန်းရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 775059775",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "160",
+    "Person": "ဦးထွန်းလွင်",
+    "Description": "စဥ့်ငူရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 427065656",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "161",
+    "Person": "ဦးဝင်းမြင့်",
+    "Description": "ဖော့ကန်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 5040339",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "162",
+    "Person": "ဦးဝင်းသိန်း",
+    "Description": "ရွာမအရှေ့ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 455053134",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "163",
+    "Person": "ဦးကျော်ကျော်",
+    "Description": "ရွာမအနောက်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 254343292",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "164",
+    "Person": "ဦးသောင်းဝင်း",
+    "Description": "ရွာမအလယ်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 43055521",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "165",
+    "Person": "ဦးရဲနိုင်ထွန်း",
+    "Description": "တောင်သူကုန်းရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 43140534",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "166",
+    "Person": "ဦးခင်ဝင်း",
+    "Description": "နံ့သာကုန်းရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 5400727",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "167",
+    "Person": "ဦးမောင်မောင်ခိုင်",
+    "Description": "စော်ဘွားကြီးကုန်း(ယာယီ) ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 250661771",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "168",
+    "Person": "ဦးစိုးအောင်",
+    "Description": "ကြို့ကုန်းအရှေ့ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 751303081",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "169",
+    "Person": "ဦးစည်သူဇော်",
+    "Description": "ဥက္ကဌ၊",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 420234887",
+    "Contact_Secondary": "09 420234887",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "170",
+    "Person": "ဦးထွန်းငွေ",
+    "Description": "ကြို့ကုန်းအနောက်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 424391042",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "171",
+    "Person": "ဦးဝင်းလွင်ဦး",
+    "Description": "ဈေးကုန်းအရှေ့ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 44309 4735",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "172",
+    "Person": "ဦးအောင်ကြီး",
+    "Description": "ဈေးကုန်းအနောက်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 5004793",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "173",
+    "Person": "ဦးနီထွန်း",
+    "Description": "အတွင်းရေးမှူး၊ ကြက်ခြေနီအသင်း",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 250291100",
+    "Contact_Secondary": "09 250 291 100",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "174",
+    "Person": "ဦးအောင်ကျော်ခင်",
+    "Description": "ပိန္နဲကုန်းရပ်ကွက် အု်ပချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 421179422",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "175",
+    "Person": "ဦးစိုးမြင်သန်း",
+    "Description": "ကွက်သစ်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 254000550",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "176",
+    "Person": "ဒေါ်ခင်ငြိမ်းသွယ်",
+    "Description": "ပေါက်တောရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 421158082",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "177",
+    "Person": "ဦးခင်စိုး",
+    "Description": "မြို့သစ်(က+ခ) ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 5412629",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "178",
+    "Person": "ဦးလှဝင်း",
+    "Description": "မြို့သစ်(ဂ) ရပ်ကွက် အုပ်ချုပ်ရေးမှူ",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 428033560",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "179",
+    "Person": "ဦးစိုးမြင့်",
+    "Description": "ကမ်းနားအလယ်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 254519905",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "180",
+    "Person": "ဦးစိုးသန်း",
+    "Description": "ကမ်းနားအနောက်ရပ်ကွက် အုပ်ချုပ်ရေးမှူး",
+    "Township": "အင်းစိန်",
+    "Contact_Primary": "09 796264025",
+    "Contact_Secondary": "",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  },
+  {
+    "Field_ID": "181",
+    "Person": "",
+    "Description": "ပြည်ထောင်စုသမ္မတ မြန်မာနိုင်ငံ ကုန်သည်များနှင့် စက်မှုလက်မှု လုပ်ငန်းရှင်များ အသင်းချုပ်",
+    "Township": "အလုံ",
+    "Contact_Primary": "12314343",
+    "Contact_Secondary": "01 230 24 85, 01 230 15 62",
+    "Fax": "",
+    "Email": "",
+    "ပြည်နယ်": {
+      "တိုင်းဒေသကြီး": "ရန်ကုန်"
+    },
+    "SR_Eng": "Yangon",
+    "Department": "",
+    "FIELD12": ""
+  }
+]

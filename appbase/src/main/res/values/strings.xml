@@ -14,7 +14,7 @@
     <string name="SP_USER_EXPIRE_DATE" />
     <string name="SP_USER_EXPIRE_AT" />
     <string name="SP_FB_FCM_TOKEN" />
-    <string name="SP_IS_FIRST_TIME" />
+    <string name="SP_IS_FIRST_TIME" >is_first_time_user</string>
     <string name="SP_IS_IN_TRIAL" />
     <string name="SP_IS_IN_PREMIUM" />
     <string name="SP_IS_IN_PENDING" />
@@ -27,4 +27,5 @@
     <string name="SP_TOKEN" />
     <string name="SP_MES_ID" />
     <string name="SP_USER_NAME" />
+    <string name="SP_INSTALLED_DATE">intall_date</string>
 </resources>

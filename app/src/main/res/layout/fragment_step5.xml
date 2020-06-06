@@ -107,7 +107,7 @@
                 android:layout_marginTop="@dimen/margin_xSmall"
                 android:layout_marginBottom="@dimen/margin_xSmall"
                 android:minHeight="50dp"
-                android:text="ကင်ဆာဆေးသွင်းနေရခြင်" />
+                android:text="ကင်ဆာဆေးသွင်းနေရခြင်း" />
 
             <CheckBox
                 android:id="@+id/kidneyCleansingBtn"

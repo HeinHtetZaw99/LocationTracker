@@ -10,7 +10,7 @@
         android:id="@+id/titleTv"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/QuestionTitleStyle"
-        android:text="အခုလောလောဆယ်ချောင်းခြောက်ဆိုးနေပါလား?"
+        android:text="ယခုလတ်တလောတွင် ချောင်းခြောက်ဆိုးနေပါသလား?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="Not at all" />
+            android:text="မရှိ" />
 
         <RadioButton
             android:id="@+id/choiceTwo"
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="A little bit" />
+            android:text="အနည်းငယ်" />
 
         <RadioButton
             android:id="@+id/choiceThree"
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_2xlarge"
-            android:text="Severely" />
+            android:text="ပြင်းထန်" />
 
     </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>

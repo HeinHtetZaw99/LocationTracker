@@ -8,9 +8,11 @@
     android:background="@color/white"
     tools:context=".fragments.HistoryFragment">
 
+
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="280dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapseActionView"
@@ -21,13 +23,23 @@
             app:contentScrim="@color/white"
             app:layout_scrollFlags="scroll">
 
-            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
+            <fragment
                 android:id="@+id/mapView"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".activities.MapsActivity" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/locateMySelfBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_2xlarge"
+                android:src="@drawable/ic_start_loaction"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="mini"
+                app:tint="@color/colorAccent" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -44,7 +56,7 @@
 
             <TextView
                 style="@style/SemiBoldN"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/dateSelector"
                 android:layout_marginEnd="@dimen/margin_2xlarge"
@@ -56,16 +68,18 @@
             <TextView
                 android:id="@+id/dateSelector"
                 style="@style/SemiBoldN"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="@dimen/margin_2xlarge"
                 android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
                 android:layout_marginBottom="@dimen/margin_small"
                 android:background="@drawable/background_primary_button"
                 android:drawableEnd="@drawable/ic_arrow_drop_down_white_24dp"
                 android:gravity="center"
-                android:text="04 04 2020"
+                android:paddingStart="@dimen/margin_small"
+                android:text="04 04 2020 - 04 04 2020"
                 android:textColor="@color/white" />
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -93,5 +107,69 @@
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/locationPermissionDisabledView"
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_above="@id/emptyTitleTv"
+                android:layout_marginBottom="@dimen/margin_2xlarge"
+                android:src="@drawable/ic_undraw_access_denied_6w73" />
+
+            <TextView
+                android:id="@+id/emptyTitleTv"
+                style="@style/BoldN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingTop="@dimen/margin_3xlarge"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:gravity="center"
+                android:text="တည်နေရာ ဒေတာကို ရယူရန် Location Permission ကို ကျေးဇူးပြု၍ enableလုပ်ပေးပါ"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/enableLocationPermissionBtn"
+                style="@style/PrimaryButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="120dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_2xlarge"
+                android:layout_marginTop="@dimen/margin_3xlarge"
+                android:layout_marginEnd="@dimen/margin_2xlarge"
+                android:gravity="center"
+                android:padding="@dimen/margin_2xSmall"
+                android:text="တည်နေရာ ဒေတာကို ရယူရန် \n Location Permission enableလုပ်မည်" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/convertToCSVBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:text="CSV အနေနဲ့သိမ်းမည်"
+        android:textAppearance="@style/BoldN"
+        android:textColor="@color/white"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_marginBottom="80dp"
+        app:icon="@drawable/ic_exportcsv"
+        app:iconTint="@color/white"
+        android:src="@drawable/ic_start_loaction"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:tint="@color/colorAccent" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

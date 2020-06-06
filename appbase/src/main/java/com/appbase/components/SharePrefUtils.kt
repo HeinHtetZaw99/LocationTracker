@@ -117,11 +117,12 @@ class SharePrefUtils @Inject constructor(
      */
     enum class KEYS(val label: Int, val defaultValue: String) {
         //langauge settings
-        CURRENT_LANGUAGE(R.string.SP_LANGUAGE, "en")
+        CURRENT_LANGUAGE(R.string.SP_LANGUAGE, "en"),
+        INSTALLED_DATE(R.string.SP_INSTALLED_DATE,"")
     }
 
     enum class KEYB(val label: Int, val defaultValue: Boolean) {
-
+        IS_FIRST_TIME_USER(R.string.SP_IS_FIRST_TIME,true)
     }
 
     enum class KEYI(val label: Int, val defaultValue: Int) {

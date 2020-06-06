@@ -13,7 +13,7 @@ import androidx.room.PrimaryKey
 class LocationEntity {
     @PrimaryKey
     @NonNull
-    var timeStamp: String = ""
+    var timeStamp: Long = 0
     var time: String = ""
     var latitude: String = ""
     var longitude: String = ""
@@ -47,15 +47,18 @@ class LocationEntity {
 
     companion object {
         fun toCSV(list: List<LocationEntity>): String {
+            val header = "timestamp, time, latitude, longitude, dateTime\n"
             val sb = StringBuilder()
+            sb.append(header)
             list.forEach {
                 sb.append(toCSVLine(it))
             }
+
             return sb.toString()
         }
 
         private fun toCSVLine(data: LocationEntity): String {
-            return "\"${data.timeStamp}\",\"${data.time}\",\"${data.latitude}\",\"${data.longitude}\",\"${data.city}\",\"${data.road}\", \"${data.suburb}\",\"${data.county}\",\"${data.state}\",\"${data.postCode}\",\"${data.country}\",\"${data.dateTime}\"\n"
+            return "\"${data.timeStamp}\",\"${data.time}\",\"${data.latitude}\",\"${data.longitude}\",\"${data.dateTime}\"\n"
         }
 
 
@@ -72,12 +75,12 @@ class LocationEntity {
                     previousAddress!!.startToEndTime = previousAddress!!.time + " to current"
                     convertedList.add(previousAddress!!)
                 }
-
                     if (previousAddress!!.latitude == data.latitude && previousAddress!!.longitude == data.longitude) {
                         return@forEachIndexed
                     } else {
-                        previousAddress!!.startToEndTime =
+                        previousAddress!!.startToEndTime = if(previousAddress!!.time != list[index - 1].time)
                             previousAddress!!.time + " to " + list[index - 1].time
+                        else previousAddress!!.time
                         convertedList.add(previousAddress!!)
                         previousAddress = null
                     }

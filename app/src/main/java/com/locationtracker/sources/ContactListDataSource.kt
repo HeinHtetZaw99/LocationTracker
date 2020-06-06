@@ -1,6 +1,7 @@
 package com.locationtracker.sources
 
 import com.locationtracker.sources.cache.data.ContactVO
+import com.locationtracker.sources.cache.data.FocClinicVO
 import com.locationtracker.sources.cache.data.SettingsVO
 
 interface ContactListDataSource {
@@ -10,6 +11,10 @@ interface ContactListDataSource {
 
     fun getContactListByRegion(regionCode: String): List<ContactVO>
 
-    fun getRegionsByCode(): List<SettingsVO>
+    fun getFOCClinicListByRegion(regionCode: String): List<FocClinicVO>
+
+    fun getRegionsByCode(listType: ListType): List<SettingsVO>
+
+    fun saveClinicList(clinicList: List<FocClinicVO>)
 
 }

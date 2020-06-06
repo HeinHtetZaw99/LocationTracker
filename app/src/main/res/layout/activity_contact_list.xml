@@ -12,6 +12,7 @@
         android:layout_height="?actionBarSize">
 
         <TextView
+            android:id="@+id/toolBarTitleTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/ToolBarTitleStyle"

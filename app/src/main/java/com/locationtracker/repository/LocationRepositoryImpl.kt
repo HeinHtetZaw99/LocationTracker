@@ -21,8 +21,16 @@ class LocationRepositoryImpl @Inject constructor(
 
 ) : LocationRepository {
 
-    override fun getLocationListByDate(date: String): Observable<List<LocationEntity>> {
-        return Observable.fromCallable { locationDataSource.getLocationListByDate(date) }
+    override fun getLocationListByDate(
+        startDate: String,
+        endDate: String
+    ): Observable<List<LocationEntity>> {
+        return Observable.fromCallable {
+            locationDataSource.getLocationListByDate(
+                startDate,
+                endDate
+            )
+        }
     }
 
     override fun addLocationRepository(data: LocationEntity): Completable {
@@ -70,7 +78,7 @@ class LocationRepositoryImpl @Inject constructor(
                 this.longitude = longitude
                 this.time = time
                 this.dateTime = date
-                this.timeStamp = Calendar.getInstance().timeInMillis.toString()
+                this.timeStamp = Calendar.getInstance().timeInMillis
             })
         }
     }

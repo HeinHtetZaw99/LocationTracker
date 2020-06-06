@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_backdrop"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="90dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <View
+        android:id="@+id/stopperView"
+        android:layout_width="80dp"
+        android:layout_height="6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_xSmall"
+        android:background="@drawable/background_sheet_stopper_button"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/SemiBoldL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopperView"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="မိမိသိရှိလိုသည့်ရက်အပိုင်းအခြားကိုရွေးပေးပါ"
+        android:textColor="@color/black" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tipsTv"
+        style="@style/MediumS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_marginTop="@dimen/margin_xSmall"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="ပထမဆုံးနှိပ်လျှင် စတင်သည့်ရက်ကိုရွေးချယ်နိုင်ပြီး နောက်တစ်ခါထပ်နှိပ်ပါက ပြီးဆုံးသည့်ရက်ကိုရပါမည်။ တစ်ရက်ထဲအတွက်ကြည့်ရှုလိုပါက မိမိသိရှိလိုသည့်ရက်ကိုသာ နှစ်ချက်နှိပ်ပေးပါ"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tipsTv"
+        android:layout_marginTop="@dimen/margin_xSmall"
+        tools:itemCount="8"
+        tools:listitem="@layout/cardview_settings" />
+
+    <TextView
+        android:id="@+id/okBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="မြေပုံတွင်ကြည့်မည်"
+        style="@style/PrimaryButtonStyle"
+        android:layout_marginBottom="@dimen/margin_2xlarge"
+        android:layout_marginTop="-32dp"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_below="@id/calendarView"
+        />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

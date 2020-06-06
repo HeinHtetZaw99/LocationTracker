@@ -5,11 +5,10 @@
     <color name="colorPrimaryDark">#0033bc</color>
     <color name="colorAccent">#fffe6d</color>
 
-
     <color name="colorGoodHint">#360F78FF</color>
     <color name="colorDangerHint">#3CFF0000</color>
     <color name="colorMediumDangerHint">#4DFF6B46</color>
-
+    <color name="colorWarning">#72FF0000</color>
     <color name="colorPrimarySupport">#7C92E9</color>
     <color name="colorSecondaryLight">#f9cb39</color>
     <color name="colorSecondaryDark">#c29b00</color>

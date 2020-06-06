@@ -10,16 +10,17 @@ import android.os.Handler
 import android.os.Message
 import android.provider.Settings
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.appbase.*
 import com.appbase.components.Locator
-import com.appbase.components.PermissionListUtil
+import com.appbase.components.SharePrefUtils
 import com.appbase.components.SpeedController
 import com.appbase.fragments.BaseFragment
 import com.appbase.models.vos.ReturnResult
@@ -27,32 +28,41 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.locationtracker.BuildConfig
 import com.locationtracker.R
 import com.locationtracker.activities.ContactListActivity
+import com.locationtracker.activities.ContactListActivity.Companion.CLINICS_LIST
+import com.locationtracker.activities.ContactListActivity.Companion.CONTACT_LIST
 import com.locationtracker.activities.MainActivity
 import com.locationtracker.activities.SelfExaminationActivity
+import com.locationtracker.adapters.AboutUsAdapter
 import com.locationtracker.adapters.ImageViewPagerAdapter
+import com.locationtracker.sources.cache.data.AboutUsVO
 import com.locationtracker.sources.cache.data.BannerVO
-import com.locationtracker.sources.cache.data.LocationEntity.Companion.toCSV
 import com.locationtracker.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.layout_settings_sheet_about.view.*
+import kotlinx.android.synthetic.main.layout_settings_sheet_about_app.view.*
+import kotlinx.android.synthetic.main.layout_settings_sheet_about_app.view.closeBtn
+import kotlinx.android.synthetic.main.layout_settings_sheet_about_us.*
+import kotlinx.android.synthetic.main.layout_settings_sheet_about_us.view.*
 import java.lang.ref.WeakReference
 import java.lang.reflect.Field
+import java.util.*
+import javax.inject.Inject
 
 
-class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListener,
+class HomeFragment : BaseFragment(),
     Locator.Listener {
 
     private val handler = CustomHandler()
+
+    @Inject
+    lateinit var sharePrefUtils: SharePrefUtils
     private val mImagePagerAdapter: ImageViewPagerAdapter by lazy {
         ImageViewPagerAdapter(
             parentActivity
-        );
+        )
     }
-
 
     private lateinit var sliderPage: SliderRunner
     private var mScroller: Field? = null
-
 
     private val locationManager: LocationManager by lazy {
         parentActivity.getSystemService(
@@ -65,13 +75,13 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
             R.style.SheetDialog
         )
     }
+    private val aboutAPPSheet: BottomSheetDialog by lazy {
+        BottomSheetDialog(
+            context!!,
+            R.style.SheetDialog
+        )
+    }
     private val locator: Locator by lazy { Locator(view!!.context, locationManager) }
-    private var exportAsCSV = false
-    private val LOCATION_PERMISSION = 120
-    private val ALL_APP_PERMISSION = 130
-
-    private var permissionListUtil = PermissionListUtil(ALL_APP_PERMISSION)
-
 
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
@@ -91,28 +101,8 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
     }
 
     override fun initViews(view: View) {
-
+        checkGPS()
         versionNumberTv.text = getString(R.string.version_number, BuildConfig.VERSION_NAME)
-
-        permissionListUtil.checkAndAskPermissions(
-            parentActivity,
-            arrayOf(
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            ),
-            this
-        )
-
-
-        locationDisabledView.setVisible(false)
-        convertToCSVBtn.setVisible(true)
-        writeStoragePermissionDisabledView.setVisible(false)
-
-        allowAccessLocationBtn.setOnClickListener {
-            parentActivity.showShortToast("Please enable the location permission in the settings")
-            parentActivity.goToAppSettings()
-        }
-
 
         viewModel.locationStatusLD.observe(this, androidx.lifecycle.Observer {
             if (it is ReturnResult.PositiveResult) {
@@ -131,37 +121,25 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
                 parentActivity.showSnackBar(view, it)
         })
 
-        viewModel.locationListLD.observe(this, Observer {
-            if (exportAsCSV) {
-                writeFileToDisk(
-                    "Android/locationData/",
-                    "location_data_csv.txt",
-                    toCSV(it),
-                    true
-                )
-                parentActivity.showShortToast("Exporting as CSV")
-                exportAsCSV = false
-            }
-        })
-
-
 
         checkSymptomsBtn.setOnClickListener {
             startActivity(SelfExaminationActivity.newIntent(parentActivity))
         }
-        convertToCSVBtn.setOnClickListener {
-            exportAsCSV = true
-            permissionListUtil.checkAndAskPermissions(
-                parentActivity,
-                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                this
-            )
+
+        goToFocClinics.setOnClickListener {
+            startActivity(ContactListActivity.newIntent(parentActivity, CLINICS_LIST))
         }
+
+
         goToContacts.setOnClickListener {
-            startActivity(ContactListActivity.newIntent(parentActivity))
+            startActivity(ContactListActivity.newIntent(parentActivity, CONTACT_LIST))
+        }
+        aboutAppBtn.setOnClickListener {
+            this.showAboutAppDialog()
         }
         aboutUsBtn.setOnClickListener {
-            showAboutDialog()
+            this.showAboutUsDialog()
+//            parentActivity.showLongToast("လောလောဆယ်မထည့််ရသေးပါ 😁")
         }
 
         //for scrolling effect
@@ -173,23 +151,19 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         mScroller!!.isAccessible = true
 
         setUpViewPager(viewModel.loadBannerList())
-    }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        showLogD("Permission callback called-------")
-        if (requestCode == ALL_APP_PERMISSION && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            showLogD("PERMISSION IS GRANTED")
-            trackLocation()
-        } else if (requestCode == ALL_APP_PERMISSION && grantResults.isNotEmpty() && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-            showLogD("PERMISSION IS GRANTED")
-            if (exportAsCSV)
-                convertToCSV()
-        } else
-            showLogD("PERMISSION IS NOT GRANTED")
+
+
+        if (sharePrefUtils.load(SharePrefUtils.KEYB.IS_FIRST_TIME_USER)) {
+            showLogE("HE is a first time user , so today date is recorded !")
+            sharePrefUtils.save(
+                SharePrefUtils.KEYS.INSTALLED_DATE,
+                getDateFormatter().format(Calendar.getInstance().time)
+            )
+
+            sharePrefUtils.save(SharePrefUtils.KEYB.IS_FIRST_TIME_USER, false)
+        }
+        parentActivity.askPermissions()
     }
 
 
@@ -210,67 +184,11 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
     }
 
 
-    private fun trackLocation() {
-        parentActivity.startLocationTrackingService()
-    }
+    /*   fun trackLocation() {
+           parentActivity.startLocationTrackingService()
+       }
+   */
 
-
-    override fun onNeedPermission(permission: String) {
-        permissionListUtil.requestPermission(parentActivity, permission)
-    }
-
-    override fun onPermissionPreviouslyDenied(permission: String) {
-        permissionListUtil.requestPermission(parentActivity, permission)
-    }
-
-    override fun onPermissionDisabled(permission: String) {
-        when (permission) {
-            Manifest.permission.ACCESS_FINE_LOCATION -> {
-                //showing layout which is saying user to enabling location
-                locationDisabledView.setVisible(true)
-            }
-            Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
-                //showing layout which is saying user to enabling location
-                convertToCSVBtn.setVisible(false)
-                writeStoragePermissionDisabledView.setVisible(true)
-            }
-        }
-
-    }
-
-    override fun onPermissionGranted(permission: String) {
-        when (permission) {
-            Manifest.permission.ACCESS_FINE_LOCATION -> {
-                if (isLocationEnabled())
-                    trackLocation()
-                else
-                    showForceGPSEnableDialog()
-            }
-            Manifest.permission.WRITE_EXTERNAL_STORAGE -> {
-                //showing layout which is saying user to enabling location
-                convertToCSV()
-            }
-        }
-
-    }
-
-    private fun convertToCSV() {
-        viewModel.getLocationHistory()
-    }
-
-    override fun onAllPermissionGranted() {
-        /*      if (isLocationEnabled())
-                  trackLocation()
-              else
-                  showForceGPSEnableDialog()*/
-
-        trackLocation()
-        convertToCSV()
-    }
-
-    override fun onAllPermissionRequested() {
-
-    }
 
     private fun isLocationEnabled(): Boolean =
         locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
@@ -279,7 +197,7 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         ContextCompat.checkSelfPermission(
             context!!,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
-        ) != PackageManager.PERMISSION_GRANTED
+        ) == PackageManager.PERMISSION_GRANTED
 
 
     private fun showForceGPSEnableDialog() {
@@ -297,9 +215,25 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
         alert.show()
     }
 
-    private fun showAboutDialog() {
-        val dialogView = parentActivity.createView(R.layout.layout_settings_sheet_about)
+    private fun showAboutAppDialog() {
+        val dialogView = parentActivity.createView(R.layout.layout_settings_sheet_about_app)
+        dialogView.closeBtn.setOnClickListener { aboutAPPSheet.dismiss() }
+        aboutAPPSheet.setContentView(dialogView)
+        aboutAPPSheet.show()
+    }
+
+    private fun showAboutUsDialog() {
+        val dialogView = parentActivity.createView(R.layout.layout_settings_sheet_about_us)
         dialogView.closeBtn.setOnClickListener { aboutUsSheet.dismiss() }
+        val devTeamAdapter = AboutUsAdapter(context!!)
+        val taAdapter = AboutUsAdapter(context!!)
+        val stAdapter = AboutUsAdapter(context!!)
+        dialogView.devTeamRv.configure(context!!,devTeamAdapter)
+        dialogView.technicalAdvisorRv.configure(context!!,taAdapter)
+        dialogView.specialThanksRv.configure(context!!,stAdapter)
+        devTeamAdapter.appendNewData(AboutUsVO.getDevTeamList())
+        taAdapter.appendNewData(AboutUsVO.getTechnicalAdvisorList())
+        stAdapter.appendNewData(AboutUsVO.getSpecialThanksList())
         aboutUsSheet.setContentView(dialogView)
         aboutUsSheet.show()
     }
@@ -329,11 +263,14 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
 
             @SuppressLint("SyntheticAccessor")
             override fun onPageSelected(position: Int) {
-                dotIndicator.selection = position
-               sliderPage.setCurrent(current = position)
-                handler.removeCallbacks(sliderPage)
-                handler.removeCallbacksAndMessages(null)
-                handler.postDelayed(sliderPage, 3000)
+                if (dotIndicator != null) {
+                    dotIndicator.selection = position
+                    sliderPage.setCurrent(current = position)
+                    handler.removeCallbacks(sliderPage)
+                    handler.removeCallbacksAndMessages(null)
+                    handler.postDelayed(sliderPage, 3000)
+                    checkGPS()
+                }
             }
 
             override fun onPageScrollStateChanged(state: Int) {}
@@ -344,12 +281,20 @@ class HomeFragment : BaseFragment(), PermissionListUtil.PermissionListAskListene
             e.printStackTrace()
         }
     }
+
+    fun checkGPS() {
+        if (isLocationEnabled()) {
+            warningLayout.visibility = GONE
+        } else {
+            warningLayout.visibility = VISIBLE
+        }
+    }
 }
 
 class SliderRunner internal constructor(adViewPager: ViewPager, private val bannerImageSize: Int) :
     Runnable {
     private var currentPage = 0
-    var adViewPagerWeakReference: WeakReference<ViewPager?> = WeakReference(adViewPager)
+    private var adViewPagerWeakReference: WeakReference<ViewPager?> = WeakReference(adViewPager)
     override fun run() {
         currentPage++
         if (currentPage == bannerImageSize) {
@@ -357,12 +302,13 @@ class SliderRunner internal constructor(adViewPager: ViewPager, private val bann
         }
         if (adViewPagerWeakReference.get() != null) adViewPagerWeakReference.get()!!
             .setCurrentItem(currentPage, true)
+
+
     }
 
     fun setCurrent(current: Int) {
         this.currentPage = current
     }
-
 
 
 }

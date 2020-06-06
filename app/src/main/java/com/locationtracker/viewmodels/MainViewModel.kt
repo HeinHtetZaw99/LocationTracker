@@ -10,10 +10,8 @@ import com.appbase.showLogE
 import com.locationtracker.R
 import com.locationtracker.repository.ContactListRepository
 import com.locationtracker.repository.LocationRepository
-import com.locationtracker.sources.cache.data.BannerVO
-import com.locationtracker.sources.cache.data.ContactVO
-import com.locationtracker.sources.cache.data.LocationEntity
-import com.locationtracker.sources.cache.data.SettingsVO
+import com.locationtracker.sources.ListType
+import com.locationtracker.sources.cache.data.*
 import com.locationtracker.sources.cache.mapper.LocationEntityMapper
 import com.pv.viewmodels.BaseViewModel
 import io.reactivex.rxkotlin.addTo
@@ -33,13 +31,12 @@ class MainViewModel @Inject constructor(
         add(BannerVO("နှာစေးချောင်းဆိုးသည့်အခါ လက်ကိုင်ပဝါဖြင့်သေချာအုပ်ပါ"))
         add(BannerVO("ဖျားနာလျှင် face mask တပ်ထားပါ"))
         add(BannerVO("ဖျားနာလျှင် နီးစပ်ရာဆေးခန်းကိုဆက်သွယ်ပါ"))
-
     }
     val locationStatusLD: SingleEventLiveData<ReturnResult> by lazy { SingleEventLiveData<ReturnResult>() }
     val locationHistoryStatusLD: SingleEventLiveData<ReturnResult> by lazy { SingleEventLiveData<ReturnResult>() }
     val locationListLD: MutableLiveData<List<LocationEntity>> by lazy { MutableLiveData<List<LocationEntity>>() }
 
-    val contactListLD: MutableLiveData<List<ContactVO>> by lazy { MutableLiveData<List<ContactVO>>() }
+    val contactListLD: MutableLiveData<List<BaseContactVO>> by lazy { MutableLiveData<List<BaseContactVO>>() }
     val settingsListLD: MutableLiveData<List<SettingsVO>> by lazy { MutableLiveData<List<SettingsVO>>() }
 
     fun getLocationHistory() {
@@ -57,9 +54,11 @@ class MainViewModel @Inject constructor(
             }).addTo(compositeDisposable)
     }
 
-    fun getLocationHistoryByDate(date: String) {
-        locationRepository.getLocationListByDate(date).handle()
+    fun getLocationHistoryByDate(startDate: String , endDate : String) {
+        showLogD("location data is being fetched for the range - $startDate to $endDate")
+        locationRepository.getLocationListByDate(startDate, endDate).handle()
             .subscribe({
+                showLogD("location data being fetched for the range - $startDate to $endDate have ( ${it.size} ) entries")
                 locationListLD.postValue(it)
             }, {
                 showLogE("Error in getGeoEncodeData()", it)
@@ -116,6 +115,14 @@ class MainViewModel @Inject constructor(
         }.addTo(compositeDisposable)
     }
 
+
+    fun saveClinicsListToDB(clinicList : List<FocClinicVO>) {
+        contactListRepository.saveClinicList(clinicList).subscribe {
+            showLogD("clinicList : ${clinicList.size} saved")
+        }.addTo(compositeDisposable)
+    }
+
+
     fun getRegionContactList(regionCode: String) {
         contactListRepository.getContactListByRegion(regionCode)
             .handle().subscribe({
@@ -125,8 +132,17 @@ class MainViewModel @Inject constructor(
             }).addTo(compositeDisposable)
     }
 
-    fun getSettingsList() {
-        contactListRepository.getSettingsList().handle()
+    fun getRegionClinicsList(regionCode: String) {
+        contactListRepository.getClinicListByRegion(regionCode)
+            .handle().subscribe({
+                contactListLD.postValue(it)
+            }, {
+                showLogE("Error in saving contact List to local db ", it)
+            }).addTo(compositeDisposable)
+    }
+
+    fun getSettingsList(listType: ListType) {
+        contactListRepository.getSettingsList(listType).handle()
             .subscribe({
                 settingsListLD.postValue(it)
             }, {

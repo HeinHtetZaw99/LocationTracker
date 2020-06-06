@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_backdrop"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="90dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <View
+        android:id="@+id/stopperView"
+        android:layout_width="80dp"
+        android:layout_height="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_xSmall"
+        android:background="@drawable/background_sheet_stopper_button" />
+
+    <TextView
+        android:id="@+id/titleTv"
+        style="@style/SemiBoldL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stopperView"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:gravity="center"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="CSV အနေနဲ့သိမ်းမည်"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/dateRangeTitleTv"
+        style="@style/SemiBoldN"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTv"
+        android:layout_marginTop="@dimen/margin_small"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="ရွေးခြယ်ထားသောနေ့အပိုင်းအခြား"
+        android:textColor="@color/darkGrey" />
+
+    <LinearLayout
+        android:id="@+id/dateRangeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateRangeTitleTv"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginTop="@dimen/margin_2xSmall"
+        android:layout_marginEnd="@dimen/margin_xlarge"
+        android:weightSum="7">
+
+        <TextView
+            android:id="@+id/startDateTv"
+            style="@style/MediumN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            tools:text="04 Apr 2020"
+            android:drawablePadding="@dimen/margin_2xSmall"
+            android:drawableStart="@drawable/ic_date_range_black_24dp"
+            android:gravity="center"
+            android:padding="@dimen/margin_small"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:src="@drawable/ic_right" />
+
+        <TextView
+            android:id="@+id/endDateTv"
+            style="@style/MediumN"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3"
+            tools:text="04 Apr 2020"
+            android:drawableStart="@drawable/ic_date_range_black_24dp"
+            android:drawablePadding="@dimen/margin_2xSmall"
+            android:gravity="center"
+            android:padding="@dimen/margin_small"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/savedLocationTitle"
+        style="@style/RegularN"
+
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateRangeLayout"
+        android:layout_marginTop="@dimen/margin_small"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="CSVကို Android / locationData /location_data.csv တွင်သိမ်းဆည်းထားမည်ဖြစ်ပါသည်"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/savedAsCSVBtn"
+        style="@style/PrimaryButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/margin_2xlarge"
+        android:layout_marginEnd="@dimen/margin_2xlarge"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_2xlarge"
+        android:layout_below="@id/savedLocationTitle"
+        android:layout_marginTop="@dimen/margin_3xlarge"
+        android:padding="@dimen/margin_3xSmall"
+        android:text="သိမ်းဆည်းမည်"
+
+         />
+
+
+</RelativeLayout>

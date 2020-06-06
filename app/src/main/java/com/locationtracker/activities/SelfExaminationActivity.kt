@@ -7,11 +7,8 @@ import android.util.SparseArray
 import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.core.util.forEach
+import com.appbase.*
 import com.appbase.activities.BaseActivity
-import com.appbase.getKeyByValue
-import com.appbase.setVisible
-import com.appbase.showLogD
-import com.appbase.showShortToast
 import com.locationtracker.R
 import com.locationtracker.fragments.BaseStepFragment
 import com.locationtracker.fragments.selfexamine.*
@@ -21,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_self_examination.*
 class SelfExaminationActivity : BaseActivity<MainViewModel>() {
 
     val data = SelfExamineDataVO()
-    private val resultFragment = ResultFragment()
+
     private val fragmentList = SparseArray<BaseStepFragment<SelfExaminationActivity>>().apply {
         put(0, IntroFragment())
         put(1, AgeFragment())
@@ -33,7 +30,8 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         put(7, Step6Fragment())
         put(8, Step7Fragment())
         put(9, Step8Fragment())
-        put(10, ResultFragment())
+        put(10, Step9Fragment())
+        put(11, ResultFragment())
     }
     private var currentFragment: BaseStepFragment<SelfExaminationActivity> = fragmentList.get(0)
     private var currentFragmentIndex = 0
@@ -43,7 +41,6 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         setContentView(R.layout.activity_self_examination)
         initUI()
     }
-
 
     override val layoutResId: Int = R.layout.activity_self_examination
 
@@ -66,6 +63,7 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
     override fun initUI() {
         buildFragmentList()
         nextBtn.setOnClickListener { currentFragment.verify() }
+        previousBtn.visibility = GONE
         previousBtn.setOnClickListener { goToPrevious() }
     }
 
@@ -86,18 +84,22 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
     }
 
     fun hideNavigationBtns() {
-
         previousBtn.visibility = GONE
         nextBtn.visibility = GONE
     }
 
     fun goToPrevious() {
-        if (currentFragmentIndex > 0) {
-            currentFragment.saveData()
-            currentFragmentIndex--
-            showFragment(fragmentList.get(currentFragmentIndex), true)
+        if (fragmentList.get(currentFragmentIndex) is ResultFragment) {
+            startActivity(MainActivity.newIntent(this))
+            finish()
         } else {
-            super.onBackPressed()
+            if (currentFragmentIndex > 0) {
+                currentFragment.saveData()
+                currentFragmentIndex--
+                showFragment(fragmentList.get(currentFragmentIndex), true)
+            } else {
+                super.onBackPressed()
+            }
         }
     }
 
@@ -123,10 +125,10 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
 
 
         }
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainerLayout, resultFragment, "result")
-            .hide(resultFragment)
-            .commitAllowingStateLoss()
+        /* supportFragmentManager.beginTransaction()
+             .add(R.id.fragmentContainerLayout, resultFragment, "result")
+             .hide(resultFragment)
+             .commitAllowingStateLoss()*/
     }
 
     override fun onBackPressed() {
@@ -145,14 +147,22 @@ class SelfExaminationActivity : BaseActivity<MainViewModel>() {
         currentFragment = fragment
         currentFragmentIndex = fragmentList.getKeyByValue(fragment)
 
+        if (currentFragment is IntroFragment) {
+            previousBtn.setVisible(false)
+        } else
+            previousBtn.setVisible(true)
+
         if (currentFragment is ResultFragment) {
             hideNavigationBtns()
             (currentFragment as ResultFragment).reloadView()
+
+            logEvent(FunctionType.CheckSymptoms, Bundle().apply {
+                putString("Date", getDate())
+                putString("Patient_Type", data.getFinalizedResult().data)
+                putString("Patient_Report", data.generateReport())
+            })
         }
-        if (currentFragment is IntroFragment) {
-            previousBtn.setVisible(false)
-        }else
-            previousBtn.setVisible(true)
+
     }
 
     companion object {

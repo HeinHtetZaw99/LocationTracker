@@ -63,19 +63,19 @@ fun String.removeSpaces() = this.replace("\\s".toRegex(), "")
 
 fun <T> Class<T>.showLogE(text: String) {
     if (BuildConfig.DEBUG)
-        Timber.tag(this.name).e(text)
+        Log.e("APP_TAG", text)
 }
 
 
 fun showLogE(text: String) {
     if (BuildConfig.DEBUG)
-        Timber.tag("APP_TAG").e(text)
+        Log.e("APP_TAG", text)
 }
 
 fun showLogE(customTag: String, text: String) {
     if (BuildConfig.DEBUG)
         Log.e(
-            "APP_TAG",
+            customTag,
             "-------------------------------------\n" +
                     "$text"
         )
@@ -84,7 +84,7 @@ fun showLogE(customTag: String, text: String) {
 
 fun showLogE(throwable: Throwable) {
     if (BuildConfig.DEBUG)
-        Timber.tag("APP_TAG").e(throwable)
+        Log.e("APP_TAG", throwable.localizedMessage)
 //        Timber.e(throwable)
 }
 
@@ -394,7 +394,12 @@ fun getTime(): String {
 
 @SuppressLint("SimpleDateFormat")
 fun getDate(): String {
-    return SimpleDateFormat("dd MM yyyy").format(Calendar.getInstance().time)
+    return getDateFormatter().format(Calendar.getInstance().time)
+}
+
+@SuppressLint("SimpleDateFormat")
+fun parseDate(date : String ): Date {
+    return getDateFormatter().parse(date)
 }
 
 fun getDp(context: Context, sizeInDp: Int): Int {
@@ -447,5 +452,7 @@ fun writeFileToDisk(
     }
 }
 
+@SuppressLint("SimpleDateFormat")
+fun getDateFormatter() = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
 
 //todo add tab-support for handleNavigationTransactions

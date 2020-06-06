@@ -23,11 +23,19 @@ interface LocationDao : BaseDAO<LocationEntity> {
     fun getLocationByLatLng(lat: String, lng: String): List<LocationEntity>
 
     @Query("select * from location_history where timeStamp =:timeStamp")
-    fun getAllLocationData(timeStamp: String): List<LocationEntity>
+    fun getAllLocationData(timeStamp: Long): List<LocationEntity>
 
     @Query("select * from location_history where dateTime =:date")
     fun getLocationListByDate(date: String): List<LocationEntity>
 
+/*    @Query("SELECT *  FROM location_history WHERE dateTime >= :startDate AND dateTime < :endDate")
+    fun getLocationListByDate(startDate: String , endDate : String): List<LocationEntity>*/
+
+    @Query("SELECT *  FROM location_history WHERE timeStamp between :startDate and :endDate")
+    fun getLocationListByDate(startDate: Long , endDate : Long): List<LocationEntity>
+
     @Query("select * from location_history where city is null or city =\'\'")
     fun getUnCompleteLocationData(): List<LocationEntity>
+
+
 }

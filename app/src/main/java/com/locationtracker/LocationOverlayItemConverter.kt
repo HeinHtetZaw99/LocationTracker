@@ -11,7 +11,7 @@ class LocationOverlayItemConverter @Inject constructor() :
     UnidirectionalMap<LocationEntity, OverlayItem> {
     override fun map(data: LocationEntity): OverlayItem {
         return OverlayItem(
-            data.timeStamp,
+            data.timeStamp.toString(),
             data.getAddress(),
             data.startToEndTime,
             GeoPoint(data.latitude.toDouble(), data.longitude.toDouble())

@@ -7,7 +7,7 @@ import io.reactivex.Observable
 
 interface LocationDataSource {
 
-    fun getLocationListByDate(date : String) : List<LocationEntity>
+    fun getLocationListByDate(startDate  : String , endDate : String) : List<LocationEntity>
 
     fun addLocation(data : LocationEntity)
     fun getLocationDataByLatLong(lat: String , long : String ) : LocationEntity?

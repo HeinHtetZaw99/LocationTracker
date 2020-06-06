@@ -13,8 +13,11 @@ import com.locationtracker.R
 import com.locationtracker.fragments.LocationHistoryFragment.OnListFragmentInteractionListener
 
 import com.locationtracker.sources.cache.data.LocationEntity
+import kotlinx.android.synthetic.main.cardview_history.view.*
 
 import kotlinx.android.synthetic.main.fragment_location_history.view.*
+import kotlinx.android.synthetic.main.fragment_location_history.view.address
+import kotlinx.android.synthetic.main.fragment_location_history.view.time_interval
 
 /**
  * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
@@ -38,6 +41,7 @@ class MyLocationHistoryRecyclerViewAdapter(
         override fun setData(data: LocationEntity) {
             mAddressView.text = data.getAddress()
             mTimeIntervalView.text = data.startToEndTime
+            mView.dateTv.text = data.dateTime
             mView.setOnClickListener { listener.onListFragmentInteraction(adapterPosition) }
         }
     }

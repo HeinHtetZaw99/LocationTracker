@@ -12,7 +12,7 @@
         style="@style/QuestionTitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="လက်ရှိ‌ကိုယ်အပူချိန်မှာ 100.4 F သို့မဟုတ် 38 C နှင့်အထက်ရှိပါသလား?"
+        android:text="လက်ရှိ‌ကိုယ်အပူချိန်မှာ 100.4 ဒီဂရီဖာရင်ဟိုက် သို့မဟုတ် 38 ဒီဂရီစင်တီဂရိတ် နှင့်အထက်ရှိပါသလား?"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

@@ -62,7 +62,7 @@
             style="@style/PrimaryDangerButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ဆရာဝန်များနှင့်ဆက်သွယ်မည်"
+            android:text="တာ၀န်ရှိသူများနှင့်ဆက်သွယ်မည်"
             android:layout_marginTop="@dimen/margin_large"
             android:layout_marginBottom="@dimen/margin_large"
             app:layout_constraintBottom_toBottomOf="parent"

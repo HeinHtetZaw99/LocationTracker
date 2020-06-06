@@ -15,7 +15,7 @@ class LocationEntityMapper @Inject constructor() :
     BidirectionalMap<ReverseGeoEncodeResponse, LocationEntity> {
     override fun map(data: ReverseGeoEncodeResponse): LocationEntity {
         return LocationEntity().apply {
-            timeStamp = Calendar.getInstance().timeInMillis.toString()
+            timeStamp = Calendar.getInstance().timeInMillis
             time = getTime()
             latitude = data.lat ?: ""
             longitude = data.lon ?: ""

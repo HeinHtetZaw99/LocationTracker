@@ -71,7 +71,28 @@
                 />
         </RelativeLayout>
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
+            android:id="@+id/warningLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorWarning"
+            android:layout_marginTop="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_small"
+            android:padding="@dimen/margin_small"
+            >
+
+            <TextView
+                android:textColor="@color/white"
+                android:padding="@dimen/margin_3xSmall"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_marginStart="@dimen/margin_3xlarge"
+                android:layout_marginEnd="@dimen/margin_3xlarge"
+                android:text="တည်နေရာဒေတာကိုရယူရန် သင့်ဖုန်း၏GPSကိုဖွင့်ထားပေးရန်လိုအပ်ပါသည်။ လောလောဆယ် သင့်ဖုန်း GPS မှာပိတ်ထားပါသည်"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+       <!-- <androidx.cardview.widget.CardView
             android:id="@+id/locationDisabledView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -150,7 +171,7 @@
                     android:textAppearance="@style/BoldS"
                     android:textColor="@color/white" />
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>-->
 
 
         <androidx.cardview.widget.CardView
@@ -226,6 +247,43 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/goToFocClinics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_2xlarge"
+            android:layout_marginBottom="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/margin_small">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_cardview_color_primary_default">
+
+                <ImageView
+                    android:id="@+id/focClinicIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="@dimen/margin_2xSmall"
+                    android:src="@drawable/ic_go_to_hospital" />
+
+                <TextView
+                    style="@style/BoldN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/focClinicIv"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:gravity="center"
+                    android:text="အခမဲ့ဆေးပေးခန်းများ"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -233,10 +291,9 @@
             android:weightSum="2">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/convertToCSVBtn"
+                android:id="@+id/aboutAppBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/locationDisabledView"
                 android:layout_marginStart="@dimen/margin_2xlarge"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_xSmall"
@@ -252,9 +309,9 @@
                     <ImageView
                         android:id="@+id/exportCSVIv"
                         android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:layout_marginTop="@dimen/margin_small"
-                        android:src="@drawable/ic_exportcsv" />
+                        android:layout_height="120dp"
+
+                        android:src="@drawable/ic_undraw_mobile_images_rc0q" />
 
                     <TextView
                         style="@style/BoldN"
@@ -267,7 +324,7 @@
                         android:gravity="center"
                         android:minLines="2"
                         android:padding="@dimen/margin_3xSmall"
-                        android:text="CSVအနေနဲ့သိမ်းမည်"
+                        android:text="@string/txt_about_application"
                         android:textAppearance="@style/BoldS" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -276,8 +333,7 @@
                 android:id="@+id/aboutUsBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/locationDisabledView"
-                android:layout_marginStart="@dimen/margin_xSmall"
+                android:layout_marginStart="@dimen/margin_small"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_2xlarge"
                 android:layout_marginBottom="@dimen/margin_3xSmall"
@@ -307,11 +363,11 @@
                         android:gravity="center"
                         android:minLines="2"
                         android:padding="@dimen/margin_3xSmall"
-                        android:text="@string/txt_about_application"
+                        android:text="@string/txt_about_us"
                         android:textAppearance="@style/BoldS" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-        </LinearLayout>
+      </LinearLayout>
 
         <TextView
             android:id="@+id/versionNumberTv"

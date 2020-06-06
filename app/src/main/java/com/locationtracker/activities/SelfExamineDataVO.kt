@@ -1,20 +1,19 @@
 package com.locationtracker.activities
 
-import com.appbase.showLogD
+class SelfExamineDataVO {
+    var ageRangeSelection: Int = -1
+    var havingTempAbove38CSelection: Int = -1
+    var havingDryCoughSelection: Int = -1
+    var havingTroubleInBreathing: Int = -1
+    var symptomSelection: ArrayList<Int> = ArrayList()
+    var medicalBackgroundSelection: ArrayList<Int> = ArrayList()
+    var wentToCovidOutBreakPlacesSelection: Int = -1
+    var havingAnyCOVIDPatientInVincinitySelection: Int = -1
+    var livingInTheHighlyInfectedArea: Int = -1
+    var workTypeSelection: Int = -1
 
-class SelfExamineDataVO() {
-     var ageRangeSelection: Int = -1
-     var havingTempAbove38CSelection: Int = -1
-     var havingDryCoughSelection: Int = -1
-     var havingTroubleInBreathing: Int = -1
-     var symptomSelection: ArrayList<Int> = ArrayList()
-     var medicalBackgroundSelection: ArrayList<Int> = ArrayList()
-     var wentToCovidOutBreakPlacesSelection: Int = -1
-     var havingAnyCOVIDPatientInVincinitySelection: Int = -1
-     var workTypeSelection: Int = -1
 
-
-    fun getAgeRange(): String {
+    private fun getAgeRange(): String {
         return when (ageRangeSelection) {
             1 -> "under 18"
             2 -> "between 18 and 60"
@@ -23,11 +22,11 @@ class SelfExamineDataVO() {
         }
     }
 
-    fun havingFever(): Boolean {
+    private fun havingFever(): Boolean {
         return havingTempAbove38CSelection == 1
     }
 
-    fun getDryCoughType(): String {
+    private fun getDryCoughType(): String {
         return when (havingDryCoughSelection) {
             1 -> "not at all"
             2 -> "a little bit"
@@ -36,7 +35,7 @@ class SelfExamineDataVO() {
         }
     }
 
-    fun hasDryCough(): Boolean {
+    private fun hasDryCough(): Boolean {
         return when (havingDryCoughSelection) {
             1 -> false
             2 -> true
@@ -45,7 +44,7 @@ class SelfExamineDataVO() {
         }
     }
 
-    fun hasTroubleInBreathing(): Boolean {
+    private fun hasTroubleInBreathing(): Boolean {
         return when (havingTroubleInBreathing) {
             1 -> false
             2 -> true
@@ -54,24 +53,17 @@ class SelfExamineDataVO() {
         }
     }
 
-    fun getSymptom(index: Int): String {
-        return when (index) {
-            1 -> "lethargy"
-            2 -> "sneezing"
-            3 -> "severely"
-            4 -> "headache"
-            5 -> "sore throat"
-            6 -> "diarrhea"
-            7 -> "vomiting"
-            8 -> "anosmia" // lack of sense of smell
-            9 -> "ageusia" // lack of sense of taste
-            10 -> "myalgia" // muscle pain
-            11 -> "rhinorrhea" // runny nose
-            else -> "none"
+    private fun hasTroubleInBreathingHeavily(): Boolean {
+        return when (havingTroubleInBreathing) {
+            1 -> false
+            2 -> false
+            3 -> true
+            else -> false
         }
     }
 
-    fun getMedicalBackground(index: Int): String {
+
+    private fun getMedicalBackground(index: Int): String {
         return when (index) {
             1 -> "diabetes"
             2 -> "dilated cardiomyopathy" //weaken heart
@@ -86,15 +78,49 @@ class SelfExamineDataVO() {
         }
     }
 
-    fun hadGoneToCOVIDOutbreakPlaces(): Boolean {
+    private fun getSymptom(index: Int): String {
+        return when (index) {
+            1 -> "lethargy"
+            2 -> "sneezing"
+            3 -> "headache"
+            4 -> "sore throat"
+            5 -> "diarrhea"
+            6 -> "vomiting"
+            7 -> "anosmia" // lack of sense of smell
+            8 -> "ageusia" // lack of sense of taste
+            9 -> "myalgia" // muscle pain
+            10 -> "rhinorrhea" // runny nose
+            else -> "none"
+        }
+    }
+
+    private fun hasCommonFluSymptoms() =
+        symptomSelection.contains(2) || symptomSelection.contains(4) || symptomSelection.contains(10)
+
+    private fun hasAdvancedCommonFluSymptoms() =
+        symptomSelection.contains(1) || symptomSelection.contains(2) || symptomSelection.contains(3) || symptomSelection.contains(
+            4
+        ) || symptomSelection.contains(5) || symptomSelection.contains(6) || symptomSelection.contains(
+            9
+        ) || symptomSelection.contains(10)
+
+    private fun hadGoneToCOVIDOutbreakPlaces(): Boolean {
         return wentToCovidOutBreakPlacesSelection == 1
     }
 
-    fun hasCovidPatientAround(): Boolean {
+    private fun hasBeenLivingInHighlyInfectedAreas(): Boolean {
+        return livingInTheHighlyInfectedArea == 1
+    }
+
+    private fun hasCovidPatientAround(): Boolean {
         return havingAnyCOVIDPatientInVincinitySelection == 1
     }
 
-    fun getWorkType(): String {
+    private fun hasLostOfSmell(): Boolean = symptomSelection.contains(7)
+
+    private fun hasLostOfTaste(): Boolean = symptomSelection.contains(8)
+
+    private fun getWorkType(): String {
         return if (workTypeSelection == 1)
             "still going to work"
         else
@@ -102,81 +128,119 @@ class SelfExamineDataVO() {
     }
 
 
-    //    private var
-    //command cold
-    /*(Page 1→1 or 2 or 3) & (Page 2→2) &
-    (Page 3→1) &
-    (Page 4→1) &
-    (Page 5→2 or 4 or 10) &
-    (Page 6→1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10) & (Page 7→2) &
-    (Page 8→2) &
-    (Page 9→1 or 2)*/
-/*
-covid
-  (Page 1→1 or 2 or 3) &
-  ( (Page 2→1) or (Page 3→2 or 3) or (Page 4→2 or 3) ) & (Page 5→1 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 11) &
-  (Page 6→1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10) & (Page 7→1) &
-  (Page 8→1) &
-  (Page 9→1 or 2)*/
-
     fun getFinalizedResult(): FinalResult {
-        val covidSymptomMatchArray: ArrayList<Boolean> = arrayListOf(
-            havingFever(),
-            hasDryCough(),
-            hasTroubleInBreathing(),
-            hasCovidPatientAround(),
-            hadGoneToCOVIDOutbreakPlaces()
-        )
+        /*  val covidSymptomMatchArray: ArrayList<Boolean> = arrayListOf(
+              havingFever() ||
+                      hasDryCough() ||
+                      hasTroubleInBreathing() ||
+                      hasLostOfSmell() ||
+                      hasLostOfTaste(),
+              hasCovidPatientAround() ||
+                      hadGoneToCOVIDOutbreakPlaces() ||
+                      hasBeenLivingInHighlyInfectedAreas()
+          )*/
 
-        /* if (havingFever() && hasDryCough() && hasTroubleInBreathing() && hasCovidPatientAround() && hadGoneToCOVIDOutbreakPlaces())
-             return FinalResult.COVID*/
-        var covidPercentage = 0.0
-        var fluPercentage = 0.0
 
-        covidSymptomMatchArray.forEach {
-            if (it)
-                covidPercentage += 0.2
-        }
+        /* val fluSymptomMatchArray: ArrayList<Boolean> = arrayListOf(
+             !havingFever(),
+             !hasDryCough(),
+             !hasTroubleInBreathing(),
+             hasCommonFluSymptoms(),
+             !hasCovidPatientAround(),
+             !hadGoneToCOVIDOutbreakPlaces(),
+             !hasBeenLivingInHighlyInfectedAreas()
+         )*/
 
-        symptomSelection.forEach {
-            if (it == 2 || it == 4 || it == 10){
-                fluPercentage += 0.33
-            }
-        }
-        showLogD(generateReport())
-        showLogD("covidPercentage = $covidPercentage && fluPercentage = $fluPercentage")
+
+        /*val totallyFineMatchArray: ArrayList<Boolean> = arrayListOf(
+            !havingFever(),
+            !hasDryCough(),
+            !hasTroubleInBreathing(),
+            !hasCommonFluSymptoms(),
+            !hasCovidPatientAround(),
+            !hadGoneToCOVIDOutbreakPlaces(),
+            !hasBeenLivingInHighlyInfectedAreas()
+        )*/
+
+        val isCovidSuspected = ((havingFever() ||
+                hasDryCough() ||
+                hasTroubleInBreathing() ||
+                hasLostOfSmell() ||
+                hasLostOfTaste()) && (
+                hasCovidPatientAround() ||
+                        hadGoneToCOVIDOutbreakPlaces() ||
+                        hasBeenLivingInHighlyInfectedAreas())) ||
+                ((hasTroubleInBreathingHeavily() ||
+                        hasLostOfSmell() ||
+                        hasLostOfTaste()) && !hasCovidPatientAround() &&
+                        !hadGoneToCOVIDOutbreakPlaces() &&
+                        !hasBeenLivingInHighlyInfectedAreas())
+
+        val isFluSuspected = !havingFever() &&
+                !hasDryCough() &&
+                !hasTroubleInBreathing() &&
+                hasCommonFluSymptoms() &&
+                !hasCovidPatientAround() &&
+                !hadGoneToCOVIDOutbreakPlaces() &&
+                !hasBeenLivingInHighlyInfectedAreas()
+
+        val isHomeIsolationNeeded =
+            ((((havingFever()) || hasDryCough() || hasAdvancedCommonFluSymptoms() || hasTroubleInBreathing()) && (!hasCovidPatientAround() &&
+                    !hadGoneToCOVIDOutbreakPlaces() &&
+                    !hasCovidPatientAround() &&
+                    !hasBeenLivingInHighlyInfectedAreas())) ||
+                    (!havingFever() && !hasDryCough() && !hasTroubleInBreathing() && (hasAdvancedCommonFluSymptoms() || !hasAdvancedCommonFluSymptoms()) && (hasCovidPatientAround() ||
+                            hadGoneToCOVIDOutbreakPlaces() ||
+                            hasBeenLivingInHighlyInfectedAreas())))
 
         return when {
-            covidPercentage > fluPercentage -> FinalResult.COVID
-            fluPercentage > 0.6 -> FinalResult.SeasonalFlu
-            else -> FinalResult.HomeStay
+            isCovidSuspected -> FinalResult.COVID
+            isFluSuspected -> FinalResult.SeasonalFlu
+            isHomeIsolationNeeded -> FinalResult.HomeStay
+            else -> FinalResult.TotallyFine
         }
     }
 
 
-    fun generateReport() : String{
+    fun generateReport(): String {
         return " ------------Report ------------\n" +
-                "age range : ${getAgeRange()} \n" +
+                " age range : ${getAgeRange()} \n" +
                 " hasFever : ${havingFever()} \n " +
                 " hasDryCough : ${hasDryCough()} \n " +
                 " hasTroubleInBreathing : ${hasTroubleInBreathing()} \n" +
                 " symptoms : \n" +
-                " ${symptomSelection.forEach { 
-                    getSymptom(it) +"\n"
-                }} \n" +
+                " ${getSymptomsList()} \n" +
                 " medical background : \n " +
-                " ${medicalBackgroundSelection.forEach {
-                    getMedicalBackground(it) +"\n"
-                }} \n" +
+                " ${getMedicalBackgroundList()} \n" +
                 " wentToCOVIDOutBreakPlaces : ${hadGoneToCOVIDOutbreakPlaces()} \n" +
                 " haveAnyCovidPatientsAround : ${hasCovidPatientAround()} \n" +
                 " workType : ${getWorkType()} \n" +
+                " Lost of Smell and Taste : ${hasLostOfSmell()} && ${hasLostOfTaste()} " +
+                " hasCommonFluSymptoms : ${hasCommonFluSymptoms()}" +
+                " hasBeenLivingInHighlyInflectedPlaces : ${hasBeenLivingInHighlyInfectedAreas()}" +
                 "-------------------------------------------"
     }
 
-    sealed class FinalResult {
-        object COVID : FinalResult()
-        object SeasonalFlu : FinalResult()
-        object HomeStay : FinalResult()
+    private fun getSymptomsList(): List<String> {
+        val convertedList = ArrayList<String>()
+        symptomSelection.forEach {
+            convertedList.add(getSymptom(it) + "\n")
+        }
+        return convertedList
+    }
+
+    private fun getMedicalBackgroundList(): List<String> {
+        val convertedList = ArrayList<String>()
+        medicalBackgroundSelection.forEach {
+            convertedList.add(getMedicalBackground(it) + "\n")
+        }
+        return convertedList
+    }
+
+    sealed class FinalResult(val data: String) {
+        object COVID : FinalResult("COVID_SUSPECTED_PATIENT")
+        object SeasonalFlu : FinalResult("PATIEN_WITH_FLU_SYMPTOMS")
+        object HomeStay : FinalResult("MAN_NEEDS_TO_STAY_HOME")
+        object TotallyFine : FinalResult("A GOOD MAN")
     }
 }

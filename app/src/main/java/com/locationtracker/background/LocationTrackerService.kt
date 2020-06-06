@@ -1,5 +1,6 @@
 package com.locationtracker.background
 
+import android.annotation.SuppressLint
 import android.app.Service
 import android.content.Context
 import android.content.Intent
@@ -24,7 +25,6 @@ import javax.inject.Inject
 class LocationTrackerService() : Service(), Locator.Listener {
 
     private val handler = Handler()
-
     private val CHANNEL_ID = "10100"
     private lateinit var context: Context
 
@@ -47,6 +47,7 @@ class LocationTrackerService() : Service(), Locator.Listener {
         context = this
     }
 
+    @SuppressLint("LogNotTimber")
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
 
 
@@ -68,8 +69,7 @@ class LocationTrackerService() : Service(), Locator.Listener {
 //        val notification = NotificationHelper(context).createNotification("", "", null)
 //        startForeground(12345, notification)
 
-        handler.postDelayed(Runnable {
-
+        handler.postDelayed({
             if (Connectivity.isConnected(this)) {
                 Log.d(TAG, "Location Tracked via network")
                 locator.getLocation(Locator.Method.NETWORK, this)
@@ -77,7 +77,6 @@ class LocationTrackerService() : Service(), Locator.Listener {
                 Log.d(TAG, "Location Tracked via GPS")
                 locator.getLocation(Locator.Method.GPS, this)
             }
-
         }, 120000)
 
         return START_STICKY
@@ -98,13 +97,8 @@ class LocationTrackerService() : Service(), Locator.Listener {
     private val compositeDisposable = CompositeDisposable()
 
     private val TAG = "LocationTrackerService"
-    /*
-    override fun doWork(): ListenableWorker.Result {
-        Log.d(TAG, "Injected $locationRepository")
-        locator.getLocation(Locator.Method.NETWORK, this)
-        return ListenableWorker.Result.success()
-    }*/
 
+    @SuppressLint("LogNotTimber")
     override fun onLocationFound(location: Location?) {
         val latitude = location?.latitude ?: 0.0
         val longitude = location?.longitude ?: 0.0
@@ -126,6 +120,7 @@ class LocationTrackerService() : Service(), Locator.Listener {
     }
 
     //todo refactor this method
+    @SuppressLint("LogNotTimber")
     fun processLocationData(latitude: String, longitude: String) {
         locationRepository.getReverseGeoEncodeData(latitude, longitude).subscribe({
             val data = mapper.map(it)

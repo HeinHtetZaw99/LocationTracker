@@ -9,5 +9,4 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".fragments.LocationHistoryFragment"
     tools:listitem="@layout/cardview_history" />

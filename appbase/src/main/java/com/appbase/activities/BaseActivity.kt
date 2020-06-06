@@ -45,6 +45,7 @@ import com.appbase.showLogE
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.pv.viewmodels.BaseViewModel
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -55,15 +56,12 @@ import javax.inject.Inject
 import kotlin.reflect.KClass
 
 /**Created by Daniel McCoy @ 25th Feb 2020*/
-abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSupportFragmentInjector {
+abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity(), HasSupportFragmentInjector {
 
     @get:LayoutRes
     abstract val layoutResId: Int
 
     abstract val rootLayout: ViewGroup?
-
-  /*  @Inject
-    lateinit var sharePrefUtils: SharePrefUtils*/
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -75,6 +73,8 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
     lateinit var genericErrorMessageFactory: GenericErrorMessageFactory
 
     protected val notificationManager: NotificationManager by lazy { getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager }
+
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
 
     protected abstract val viewModel: VM
 
@@ -88,12 +88,17 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
     abstract fun logOut()
 
-    private var displayMetrics: DisplayMetrics? = null
+    private val displayMetrics: DisplayMetrics by lazy {
+        DisplayMetrics().also {
+            windowManager.defaultDisplay.getMetrics(it)
+        }
+    }
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
@@ -194,17 +199,13 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
     }
 
     /**method for getting the current screen's height with desired percentage */
-    fun getScreenHeight(context: Context, percentage: Double): Int {
-        if (displayMetrics == null)
-            initDisplayMetrics(context)
-        return (displayMetrics!!.heightPixels * percentage).toInt()
+    fun getScreenHeight(percentage: Double): Int {
+        return (displayMetrics.heightPixels * percentage).toInt()
     }
 
     /**method for getting the current screen's width with desired percentage */
-    fun getScreenWidth(context: Context, percentage: Double): Int {
-        if (displayMetrics == null)
-            initDisplayMetrics(context)
-        return (displayMetrics!!.widthPixels * percentage).toInt()
+    fun getScreenWidth(percentage: Double): Int {
+        return (displayMetrics.widthPixels * percentage).toInt()
     }
 
     fun changeStatusColor(@ColorRes color: Int) {
@@ -270,14 +271,6 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
     }
 
 
-    fun initDisplayMetrics(context: Context) {
-        displayMetrics = DisplayMetrics()
-        (context as Activity).windowManager.defaultDisplay.getMetrics(displayMetrics)
-    }
-
-
-
-
     /**
      * Helper function for easily init of viewModel
      */
@@ -310,7 +303,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
      * This is for restricting the appbar draggable behavior
      * @param  appBarLayout -> the appBar that is needed to take action on
      */
-    protected fun disableAppBar(appBarLayout: AppBarLayout) {
+    fun disableAppBar(appBarLayout: AppBarLayout) {
         lockAppBarClosed(appBarLayout)
         changeAppbarLayoutDraggableBehavior(appBarLayout, false)
     }
@@ -361,7 +354,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
         val lp =
             mAppBarLayout.layoutParams as CoordinatorLayout.LayoutParams
         if (overrideParams != 1.0) {
-            lp.height = getScreenHeight(this, overrideParams)
+            lp.height = getScreenHeight(overrideParams)
         } else {
             lp.height = ViewGroup.LayoutParams.WRAP_CONTENT
         }
@@ -426,7 +419,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
 
 
     // slide the view from below itself to the current position
-    fun slideUp(view: View, anchorGravity: Int , rootLayout : ViewGroup) {
+    fun slideUp(view: View, anchorGravity: Int, rootLayout: ViewGroup) {
         val transition: Transition = Slide(anchorGravity)
         transition.duration = 300
         transition.addTarget(view)
@@ -435,15 +428,13 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
     }
 
     // slide the view from its current position to below itself
-    fun slideDown(view: View, anchorGravity: Int , rootLayout : ViewGroup) {
+    fun slideDown(view: View, anchorGravity: Int, rootLayout: ViewGroup) {
         val transition: Transition = Slide(anchorGravity)
         transition.duration = 300
         transition.addTarget(view)
         TransitionManager.beginDelayedTransition(rootLayout, transition)
         view.visibility = View.GONE
     }
-
-
 
 
     fun changeLanguage(languageToLoad: String) {
@@ -492,7 +483,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
                         builder.append(addressData.locality).append("\n")
                         builder.append(addressData.countryName)
                         currentAddressLD.postValue(builder.toString())
-                        showLogD ("Final Address : $builder")
+                        showLogD("Final Address : $builder")
                     } else currentAddressLD.postValue("")
                 } catch (e: java.lang.NullPointerException) {
                     ("Exception in getting Location" + e.message)
@@ -519,4 +510,14 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() , HasSuppo
         startActivity(intent)
     }
 
+
+    fun logEvent(functionName: FunctionType, bundle: Bundle) {
+        mFirebaseAnalytics!!.logEvent(functionName.data, bundle)
+    }
+
+    sealed class FunctionType(val data: String) {
+        object CSVConversion : FunctionType("csv_conversion")
+        object CheckSymptoms : FunctionType("ရောဂါစစ်")
+        object LocationTracking : FunctionType("နေရာစစ်")
+    }
 }

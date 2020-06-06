@@ -43,10 +43,21 @@
         android:textAppearance="?attr/textAppearanceListItem"
         tools:text="data" />
 
+    <TextView
+        android:id="@+id/dateTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_interval"
+        android:drawableStart="@drawable/ic_date_range_black_24dp"
+        android:drawablePadding="@dimen/margin_large"
+        android:padding="@dimen/margin_xSmall"
+        android:textAppearance="?attr/textAppearanceListItem"
+        tools:text="data" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/time_interval"
+        android:layout_below="@id/dateTv"
         android:layout_marginTop="@dimen/margin_xSmall"
         android:alpha="0.2"
         android:background="@color/black" />

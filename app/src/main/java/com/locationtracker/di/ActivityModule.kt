@@ -71,5 +71,8 @@ abstract class ActivityModule {
     abstract fun step8Fragment(): Step8Fragment
 
     @ContributesAndroidInjector
+    abstract fun step9Fragment(): Step9Fragment
+
+    @ContributesAndroidInjector
     abstract fun resultFragment(): ResultFragment
 }

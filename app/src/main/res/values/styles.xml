@@ -19,7 +19,7 @@
         <item name="android:background">@drawable/background_secondary_btn</item>
     </style>
 
-    <style name="PrimaryButtonStyle" parent="RegularN">
+    <style name="PrimaryButtonStyle" parent="RegularS">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:gravity">center</item>
@@ -74,7 +74,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="QuestionSubTitleStyle" parent="MediumXL">
+    <style name="QuestionSubTitleStyle" parent="MediumL">
         <item name="android:layout_marginTop">@dimen/margin_xlarge</item>
         <item name="android:textColor">@color/gray</item>
     </style>

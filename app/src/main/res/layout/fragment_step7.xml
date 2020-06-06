@@ -10,7 +10,7 @@
         android:id="@+id/titleTv"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/QuestionTitleStyle"
-        android:text="သင်၏ကျေးရွာ ၊ ရပ်ကွက်တွင် COVID-19 ရောဂါရှိသူနေထိုင်မှုရှိပါသလား"
+        android:text="သင်သည် COVID-19 လူနာနှင့် ထိတွေ့မှုရှိခဲ့ပါသလား"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
@@ -18,7 +18,7 @@
         android:layout_below="@id/titleTv"
         app:layout_constraintTop_toBottomOf="@id/titleTv"
         style="@style/QuestionSubTitleStyle"
-        android:text="Please choose one"
+        android:text="ကျေးဇူးပြု၍ တစ်ခုရွေးပေးပါ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

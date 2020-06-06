@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clinic"
+            type="com.locationtracker.sources.cache.data.FocClinicVO" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_cardview_color_primary_default">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatarIv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:background="@drawable/ic_contact_avatar"
+            android:src="@drawable/ic_cross" />
+
+        <TextView
+            android:id="@+id/nameTv"
+            style="@style/BoldL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/avatarIv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{clinic.suburb}"
+            android:textColor="@color/black"
+            tools:text="ဒဂုံမြို့သစ်အရှေ့ပိုင်း" />
+
+        <TextView
+            android:id="@+id/occupationTv"
+            style="@style/RegularS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{clinic.address}"
+            android:textColor="@color/black"
+            tools:text="အ.ထ.က (14)၊ ဒဂုံအရှေ့ မင်းရဲကျော်စွာလမ်း၊ (7) ရပ်ကွက် (ဂိတ်ဟောင်းနှင့် စျေးလမ်းမှတ်တိုင်ကြား" />
+
+
+        <TextView
+            android:id="@+id/placeTv"
+            style="@style/MediumN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/occupationTv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{clinic.getDateTime()}"
+            android:textColor="@color/black"
+            tools:text="နေ့စဉ် , နံနက် (8) နာရီမှ နံနက် (10) နာရီထိ" />
+
+        <TextView
+            android:id="@+id/phoneNumberTv"
+            style="@style/BoldL"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/placeTv"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_toEndOf="@id/avatarIv"
+            android:padding="@dimen/margin_3xSmall"
+            android:text="@{clinic.stateRegion}"
+            android:textColor="@color/black"
+            tools:text="ရန်ကုန်တိုင်းဒေသကြီး" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/phoneNumberTv"
+            android:layout_alignStart="@id/phoneNumberTv"
+            android:layout_alignEnd="@id/phoneNumberTv"
+            android:background="@color/gray" />
+
+    </RelativeLayout>
+</layout>
